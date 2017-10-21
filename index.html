@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to NEP’s documentation! &mdash; NEP 0.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="NEP 0.2 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+  
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="#" class="icon icon-home"> NEP
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to NEP&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#instalation">Instalation</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#mac">Mac</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started-developer">Getting started (Developer)</a><ul>
+<li><a class="reference internal" href="#core-api">Core API</a></li>
+<li><a class="reference internal" href="#interface">Interface</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#robots-supported-action-module">Robots supported (action module)</a></li>
+<li><a class="reference internal" href="#sensory-devices-supported">Sensory devices supported</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#methods-and-class-index">Methods and class index</a></li>
+<li><a class="reference internal" href="#module-index">Module index</a></li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+  
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">NEP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Welcome to NEP&#8217;s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-nep-s-documentation">
+<h1>Welcome to NEP&#8217;s documentation!<a class="headerlink" href="#welcome-to-nep-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Node primitives (NEP) is an open source experimental platform which allows the creation and design of social interactions with robots. This platform have the next characteristics:</p>
+<ul class="simple">
+<li>Cross-plataform: support Linux, Windows and OSX.</li>
+<li>End-user and expert programming platform.</li>
+<li>“Easy to install”, “easy to use” and “easy to develop”.</li>
+<li>Google blocky based for end-user programming.</li>
+<li>Use ZeroMQ for comunication between nodes</li>
+<li>Mostly witten in JavaScript(for code generation) and Python.</li>
+<li>Easy integration with ROS modules.</li>
+</ul>
+<p>In the current version the plataform support NAO robot, Kinect V2 (only Windows), Wii Balance Board (only Windows) and IMUs from Android smartwatches/smartphones.</p>
+</div>
+<div class="section" id="instalation">
+<h1>Instalation<a class="headerlink" href="#instalation" title="Permalink to this headline">¶</a></h1>
+<p>This section describe how to install the platform in diferent operating systems.</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download and install Python(x,y) from: <a class="reference external" href="https://python-xy.github.io/">https://python-xy.github.io/</a></li>
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+<li>Unzip the folder and run the <strong>install.sh</strong> script (with double click)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to use the actual modules of <strong>Kinect V2</strong> and <strong>Wii Balance Board</strong> in Windows, it is needed to Install C# from <a class="reference external" href="https://www.visualstudio.com/es/downloads/?utm_source=mscom&amp;utm_campaign=msdocs">Visual Studio Community</a> . If you are not sure, then install all the components.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to use <strong>Kinect V2</strong> in Windows, it is also needed to download and install <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=44561">Kinect SDK V2</a></p>
+</div>
+<p>The platform have been tested in Windows 8.1 and Windows 10 and using Visual Studio Community 2013 and 2017 for the Kinect and Wii Balance Board devices.</p>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+<li>Open the linux console and run the <strong>install.sh</strong> script</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is not a Kinect V2 and Wii Balance Board compatible nodes for Linux at the moment.</p>
+</div>
+</div>
+<div class="section" id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>If you want use a NAO or Papper robot, then install Python the newest version of 2.7 from: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li>Otherwise you can use the anaconda distribution of python 2.7 or the default python instalation.</li>
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+<li>Open the terminal and run the <strong>install.sh</strong> script</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is not a Kinect V2 and Wii Balance Board comptible nodes for OSX at the moment.</p>
+</div>
+</div>
+</div>
+<div class="section" id="getting-started-developer">
+<h1>Getting started (Developer)<a class="headerlink" href="#getting-started-developer" title="Permalink to this headline">¶</a></h1>
+<p>The NEP plataform is composed by tree main parts, the <strong>core</strong> API, the Google Blocky <strong>interface</strong> and the robot <strong>modules</strong>.</p>
+<div class="section" id="core-api">
+<h2>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>core</strong> API contains a set of python methods and classes used to:</p>
+<ul class="simple">
+<li>Perform inter-procces comunications using ZeroMQ publish/subcriber pattern. This is done using the <strong>comunication</strong> class.</li>
+<li>Define the human and robot high level social programming primitives, which are used for design social interactions with robots. This is done using the <strong>human</strong> and <strong>robot</strong> class respectively.</li>
+<li>Define the robot control programming primitives.  This is done using the <strong>robot_bahaviors</strong> class.</li>
+</ul>
+</div>
+<div class="section" id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<p>The Google Blocky <strong>interface</strong> provide a visual tool in which novice and expert user can design and program robot social interactions. This is done using the JavaScript based Google Blocky API which generate python code. The generated python code use the <strong>human</strong> and <strong>robot</strong> classes (social primitives) to create and execute the interaction with social robots.</p>
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Finally, the robot <strong>modules</strong> contains the hardware and algortihm programming primitives (low level programming asbtraction). There are tree main types of modules:</p>
+<ul class="simple">
+<li><strong>Sensory module:</strong> Gives to the robots the ability of sense the enviroment. This are the input modalities of the robot. Examples are vision (using cameras or kinect), and audio (using kinect).</li>
+<li><strong>Perceptual module:</strong> Gives to the robots the ability of understand the human actions in based to the sensory information. Exemples are gesture, emotion and speech reconition.</li>
+<li><strong>Action module:</strong> Gives to the robots the ability of react to the human actions. This are the outputs of the robot. Examples are robot speech, walking, robot gestures, face expresion, among others.</li>
+</ul>
+<p>This modules are necesary for the understading of the human actions and the execution of the robot behaviors. However are not directly involved in the design or programming of the robot social interactions. Instead are used or called inside the <strong>human</strong> and <strong>robot</strong> classes to create the high level social primitives. Social, and low level abstraction primitives comunicate togheter using ZeroMQ sockets.</p>
+<p>The sensory and perceptual modules can be written in python (Linux, OSX and Windows compatible) or C# (only Windows compatible).</p>
+</div>
+<div class="section" id="robots-supported-action-module">
+<h2>Robots supported (action module)<a class="headerlink" href="#robots-supported-action-module" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>NAO: using the NAO engine module in modules/action/NAO/nao_action_engine</li>
+<li>Papper (soon)</li>
+</ul>
+</div>
+<div class="section" id="sensory-devices-supported">
+<h2>Sensory devices supported<a class="headerlink" href="#sensory-devices-supported" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Kinect V2: using the mutimodal sensory WPF interface in <code class="docutils literal"><span class="pre">modules/sensing/csharp/kinect/multimodal</span></code></li>
+<li>Wii Balance Board using the C# program in <code class="docutils literal"><span class="pre">modules/sensing/csharp/wii_balance_board/wiibbtest</span></code></li>
+<li>IMU from Android smartwatches/smartphones: using the python script in <code class="docutils literal"><span class="pre">modules/sensing/python/smartwatch</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="methods-and-class-index">
+<h1>Methods and class index<a class="headerlink" href="#methods-and-class-index" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
+</ul>
+</div>
+<div class="section" id="module-index">
+<h1>Module index<a class="headerlink" href="#module-index" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Luis Enrique Coronado Zuniga.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+
+</body>
+</html>
