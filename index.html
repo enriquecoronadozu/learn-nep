@@ -75,8 +75,7 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to NEP&#8217;s documentation!</a></li>
-<li><a class="reference internal" href="#installation">Installation</a><ul>
-<li><a class="reference internal" href="#main-requirements">Main requirements</a></li>
+<li><a class="reference internal" href="#instalation">Instalation</a><ul>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 <li><a class="reference internal" href="#linux">Linux</a></li>
 <li><a class="reference internal" href="#mac">Mac</a></li>
@@ -84,9 +83,8 @@
 </li>
 <li><a class="reference internal" href="#getting-started-developer">Getting started (Developer)</a><ul>
 <li><a class="reference internal" href="#core-api">Core API</a></li>
-<li><a class="reference internal" href="#rize-interface">RIZE Interface</a></li>
-<li><a class="reference internal" href="#packages">Packages</a></li>
-<li><a class="reference internal" href="#nodes">Nodes</a></li>
+<li><a class="reference internal" href="#interface">Interface</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
 <li><a class="reference internal" href="#robots-supported-action-module">Robots supported (action module)</a></li>
 <li><a class="reference internal" href="#sensory-devices-supported">Sensory devices supported</a></li>
 </ul>
@@ -134,132 +132,103 @@
             
   <div class="section" id="welcome-to-nep-s-documentation">
 <h1>Welcome to NEP&#8217;s documentation!<a class="headerlink" href="#welcome-to-nep-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Node primitives (NEP) is an open source experimental platform which allows the creation and design of social interactions with robots.
-This platform have the next main features:</p>
+<p>Node primitives (NEP) is an open source experimental platform which allows the creation and design of social interactions with robots. This platform have the next characteristics:</p>
 <ul class="simple">
-<li>Supports Linux, Windows and OSX.</li>
+<li>Cross-plataform: support Linux, Windows and OSX.</li>
+<li>End-user and expert programming platform.</li>
 <li>“Easy to install”, “easy to use” and “easy to develop”.</li>
-<li>Uses an abstract transport layer, compatible with ROS, ZeroMQ and nanomsg (soon)</li>
-<li>Supports a Google blockly based enviroment for end-user programming.</li>
-<li>Mainly written in Python</li>
-<li>Robot independent</li>
+<li>Google blocky based for end-user programming.</li>
+<li>Use ZeroMQ for comunication between nodes</li>
+<li>Mostly witten in JavaScript(for code generation) and Python.</li>
+<li>Easy integration with ROS modules.</li>
 </ul>
+<p>In the current version the plataform support NAO robot, Kinect V2 (only Windows), Wii Balance Board (only Windows) and IMUs from Android smartwatches/smartphones.</p>
 </div>
-<div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="instalation">
+<h1>Instalation<a class="headerlink" href="#instalation" title="Permalink to this headline">¶</a></h1>
 <p>This section describe how to install the platform in diferent operating systems.</p>
-<div class="section" id="main-requirements">
-<h2>Main requirements<a class="headerlink" href="#main-requirements" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Python 2 for expert robot programming</li>
-</ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The NAO and Pepper SDK does not work in Python 3</p>
-</div>
-<ul class="simple">
-<li>A modern web browser (Chrome, Firefox or Safari) for end-user programming</li>
-</ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Internet explorer (IE) is not fully supported</p>
-</div>
-</div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Download and install Python(x,y) from: <a class="reference external" href="https://python-xy.github.io/">https://python-xy.github.io/</a></li>
-<li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
-<li>Unzip the folder and run the <strong>install.bat</strong> script (with double click)</li>
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+<li>Unzip the folder and run the <strong>install.sh</strong> script (with double click)</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to use the actual modules of <strong>Kinect V2</strong> and <strong>Wii Balance Board</strong> in Windows, it is needed to Install C# from <a class="reference external" href="https://www.visualstudio.com/es/downloads/?utm_source=mscom&amp;utm_campaign=msdocs">Visual Studio Community</a> . If you are not sure, then install all the components.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to use <strong>Kinect V2</strong> in Windows, it is also needed to download and install <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=44561">Kinect SDK V2</a></p>
+</div>
 <p>The platform have been tested in Windows 8.1 and Windows 10 and using Visual Studio Community 2013 and 2017 for the Kinect and Wii Balance Board devices.</p>
 </div>
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Download the most recent version of the NEP social robot programming platform from:</li>
-</ul>
-<p><a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-<ul class="simple">
 <li>Open the linux console and run the <strong>install.sh</strong> script</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Did you have problems running the script in Linux, then use the next commands:</p>
-</div>
-<div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
-<span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There is not a Kinect V2 and Wii Balance Board compatible nodes for Linux at the moment.</p>
 </div>
 </div>
 <div class="section" id="mac">
 <h2>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>If you want use a NAO or Papper robot, then install Python the newest version of 2.7 from: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li>Otherwise you can use the anaconda distribution of python 2.7 or the default python instalation.</li>
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+<li>Open the terminal and run the <strong>install.sh</strong> script</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">In Mac the NAO and Pepper SDK does not work with the default Python installation or with Anaconda</p>
-</div>
-<ul class="simple">
-<li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
-<li>Unzip the folder and with Mac Terminal run the install.sh script</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Did you have problems running the script in Mac, then use the next commands:</p>
-</div>
-<div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
-<span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
+<p class="last">There is not a Kinect V2 and Wii Balance Board comptible nodes for OSX at the moment.</p>
 </div>
 </div>
 </div>
 <div class="section" id="getting-started-developer">
 <h1>Getting started (Developer)<a class="headerlink" href="#getting-started-developer" title="Permalink to this headline">¶</a></h1>
-<p>The NEP plataform is composed by four main parts, the <strong>core</strong> API, the RIZE <strong>interface</strong>, <strong>packages</strong> and <strong>nodes</strong></p>
+<p>The NEP plataform is composed by tree main parts, the <strong>core</strong> API, the Google Blocky <strong>interface</strong> and the robot <strong>modules</strong>.</p>
 <div class="section" id="core-api">
 <h2>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>core</strong> API contains a set of python methods and classes used to:</p>
 <ul class="simple">
-<li>Perform inter-procces comunications using ROS, ZeroMQ and nanomsg publish/subcriber pattern. This is done using the <strong>comunication</strong> class.</li>
-<li>Define the human and robot high level social programming primitives, which are used for design social interactions with robots. This is done using the <strong>robot</strong> class.</li>
-<li>Define the robot advanced and dynamic control programming primitives. This is done using the <strong>robot_behaviors</strong> class.</li>
+<li>Perform inter-procces comunications using ZeroMQ publish/subcriber pattern. This is done using the <strong>comunication</strong> class.</li>
+<li>Define the human and robot high level social programming primitives, which are used for design social interactions with robots. This is done using the <strong>human</strong> and <strong>robot</strong> class respectively.</li>
+<li>Define the robot control programming primitives.  This is done using the <strong>robot_bahaviors</strong> class.</li>
 </ul>
 </div>
-<div class="section" id="rize-interface">
-<h2>RIZE Interface<a class="headerlink" href="#rize-interface" title="Permalink to this headline">¶</a></h2>
-<p>A Google Blocky <strong>interface</strong> that provide a visual programming tool in which novice and expert user can design and program robot social interactions. This is done using the JavaScript based Google Blocky API which generate python code. The generated python code uses the <strong>robot</strong> class (social primitives) to create and execute the interaction with robots.</p>
+<div class="section" id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<p>The Google Blocky <strong>interface</strong> provide a visual tool in which novice and expert user can design and program robot social interactions. This is done using the JavaScript based Google Blocky API which generate python code. The generated python code use the <strong>human</strong> and <strong>robot</strong> classes (social primitives) to create and execute the interaction with social robots.</p>
 </div>
-<div class="section" id="packages">
-<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
-<p>Set of third-party and user python libraries used to create nodes (basic robot functionalities or procceses).</p>
-</div>
-<div class="section" id="nodes">
-<h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
-<p>Basic robot functionalities or procceses regulaly organized in a information processing based cognitive model. Most cognitive architectures have distinct modules or processor, but they regularly present the described below:</p>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Finally, the robot <strong>modules</strong> contains the hardware and algortihm programming primitives (low level programming asbtraction). There are tree main types of modules:</p>
 <ul class="simple">
-<li><strong>Sensory nodes:</strong> Gives to the robots the ability of sense the enviroment. They are the input modalities of the robot. Examples are vision (using cameras or kinect), and audio (using kinect).</li>
-<li><strong>Perceptual nodes:</strong> Gives to the robots the ability of understand the human actions in based to the sensory information. Examples are gesture, emotion and speech reconition.</li>
-<li><strong>Cognitive node</strong> Gives the capacity of perform intelligent behaviors from the perceptual information obtained. Examples are decision making, dialog management, reactive and deliberative behaviors.</li>
-<li><strong>Action nodes:</strong> Gives to the robots the ability of react to the human actions. They are the outputs of the robot. Examples are robot speech, walking, robot gestures, face expresion, among others.</li>
+<li><strong>Sensory module:</strong> Gives to the robots the ability of sense the enviroment. This are the input modalities of the robot. Examples are vision (using cameras or kinect), and audio (using kinect).</li>
+<li><strong>Perceptual module:</strong> Gives to the robots the ability of understand the human actions in based to the sensory information. Exemples are gesture, emotion and speech reconition.</li>
+<li><strong>Action module:</strong> Gives to the robots the ability of react to the human actions. This are the outputs of the robot. Examples are robot speech, walking, robot gestures, face expresion, among others.</li>
 </ul>
-<p>These nodes or modules are necesary for the understading of the human actions and the execution of the robot behaviors.</p>
-<p>The sensory, perceptual and action modules can be written in python (Linux, OSX and Windows compatible) or C# (only Windows compatible).</p>
+<p>This modules are necesary for the understading of the human actions and the execution of the robot behaviors. However are not directly involved in the design or programming of the robot social interactions. Instead are used or called inside the <strong>human</strong> and <strong>robot</strong> classes to create the high level social primitives. Social, and low level abstraction primitives comunicate togheter using ZeroMQ sockets.</p>
+<p>The sensory and perceptual modules can be written in python (Linux, OSX and Windows compatible) or C# (only Windows compatible).</p>
 </div>
 <div class="section" id="robots-supported-action-module">
 <h2>Robots supported (action module)<a class="headerlink" href="#robots-supported-action-module" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>NAO:</li>
-<li>Papper</li>
+<li>NAO: using the NAO engine module in modules/action/NAO/nao_action_engine</li>
+<li>Papper (soon)</li>
 </ul>
 </div>
 <div class="section" id="sensory-devices-supported">
 <h2>Sensory devices supported<a class="headerlink" href="#sensory-devices-supported" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Kinect V2</li>
-<li>Wii Balance Board (soon)</li>
-<li>IMU from Android smartwatches/smartphones</li>
+<li>Kinect V2: using the mutimodal sensory WPF interface in <code class="docutils literal"><span class="pre">modules/sensing/csharp/kinect/multimodal</span></code></li>
+<li>Wii Balance Board using the C# program in <code class="docutils literal"><span class="pre">modules/sensing/csharp/wii_balance_board/wiibbtest</span></code></li>
+<li>IMU from Android smartwatches/smartphones: using the python script in <code class="docutils literal"><span class="pre">modules/sensing/python/smartwatch</span></code></li>
 </ul>
 </div>
 </div>
