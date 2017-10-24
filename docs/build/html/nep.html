@@ -76,8 +76,8 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">nep package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-communication">nep.communication module</a></li>
-<li><a class="reference internal" href="#module-human">nep.human module</a></li>
+<li><a class="reference internal" href="#nep-communication-module">nep.communication module</a></li>
+<li><a class="reference internal" href="#nep-human-module">nep.human module</a></li>
 <li><a class="reference internal" href="#module-robot">nep.robot module</a></li>
 <li><a class="reference internal" href="#module-robot_behaviors">nep.robot_behaviors module</a></li>
 <li><a class="reference internal" href="#id1">nep.robot module</a></li>
@@ -128,284 +128,11 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-communication">
-<span id="nep-communication-module"></span><h2>nep.communication module<a class="headerlink" href="#module-communication" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="communication.decode_message">
-<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">decode_message</code><span class="sig-paren">(</span><em>delimiter='</em>, <em>'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class is used to decode the sensory messages from devices such as Kinect.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delimiter</strong> (<em>string</em>) &#8211; This parameter indicate the delimiter between the info received. By default is <code class="docutils literal"><span class="pre">,</span></code>.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="communication.decode_message.decode_3axis_info">
-<code class="descname">decode_3axis_info</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message.decode_3axis_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>3 axis info decodification</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>string</em>) &#8211; Sample of 3 axis information</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
-<li><strong>success</strong> (<em>bool</em>) &#8211; True if the string has the correct format</li>
-<li><strong>value1</strong> (<em>float</em>) &#8211; x value</li>
-<li><strong>value2</strong> (<em>float</em>) &#8211; y value</li>
-<li><strong>value3</strong> (<em>float</em>) &#8211; z ValueError</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.decode_message.decode_smartwatch_imu">
-<code class="descname">decode_smartwatch_imu</code><span class="sig-paren">(</span><em>line</em>, <em>start=2</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message.decode_smartwatch_imu" title="Permalink to this definition">¶</a></dt>
-<dd><p>3 axis info decodification</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>line</strong> (<em>string</em>) &#8211; Sample of 3 axis information</li>
-<li><strong>start</strong> (<em>int</em>) &#8211; Starting line of the 3 axis information</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><strong>success</strong> (<em>bool</em>) &#8211; True if the string has the correct format</li>
-<li><strong>option</strong> (<em>int</em>) &#8211; if option == 0 then is aceleration data, if option = 1 then is gyroscope data, if option = 2 then angle axis representation</li>
-<li><strong>value1</strong> (<em>float</em>) &#8211; x value</li>
-<li><strong>value2</strong> (<em>float</em>) &#8211; y value</li>
-<li><strong>value3</strong> (<em>float</em>) &#8211; z value</li>
-</ul>
-</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Example</p>
-<p>An example of a format used for a wearAmi program is:</p>
-<ul class="simple">
-<li>&lt;indicator&gt;;number;x_value;y_value:z_value</li>
-</ul>
-<p>where &lt;indicator&gt; can be a (acceleration), y (gyroscope), e (euler angles)</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="communication.publisher">
-<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">publisher</code><span class="sig-paren">(</span><em>ip='127.0.0.1'</em>, <em>port='8080'</em>, <em>topic_name='/dummy_topic'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher" title="Permalink to this definition">¶</a></dt>
-<dd><p>Publisher class used for inter-process comunication between nodes. In order to publish some data it is needed to set <code class="docutils literal"><span class="pre">IP</span></code> address, a <code class="docutils literal"><span class="pre">port</span></code> number and a <code class="docutils literal"><span class="pre">topic</span></code> name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ip</strong> (<em>string</em>) &#8211; IP direction to publish the messages</li>
-<li><strong>port</strong> (<em>int</em>) &#8211; Port to publish the messages</li>
-<li><strong>topic_name</strong> (<em>string</em>) &#8211; Topic in which the messages will be published</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="communication.publisher.close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.close" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function closes the socket</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.publisher.send_info">
-<code class="descname">send_info</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used to publish a python dictionary. The message is first serialized using json format and then published by the socket</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>dictionary</em>) &#8211; Python dictionary to be send</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.publisher.send_string">
-<code class="descname">send_string</code><span class="sig-paren">(</span><em>message</em>, <em>topic=''</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_string" title="Permalink to this definition">¶</a></dt>
-<dd><p>Publish a string value. If a topic is not specified, then the messages will be published in the topic specified in the parameter topic_name when a object in this class is created.
-Otherwise it is published in the topic specified in the second parameter of this function.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>string String to be sended</em>) &#8211; </td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.publisher.serialization">
-<code class="descname">serialization</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.serialization" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used to serialize a python dictionary using json. In this function the message to be send is attached to the topic</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>dictionary</em>) &#8211; Python dictionary to be send</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>message</strong> &#8211; Message to be send, topic + message</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="communication.subscriber">
-<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">subscriber</code><span class="sig-paren">(</span><em>ip='127.0.0.1'</em>, <em>port='8080'</em>, <em>topic_name='/dummy_topic'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class used to subscribe a node to a ZeroMQ topic. It is nededd to set the <code class="docutils literal"><span class="pre">IP</span></code> and <code class="docutils literal"><span class="pre">port</span></code> of the publisher node.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ip</strong> (<em>string</em>) &#8211; IP address of the ZMQ socket to subscribe. Example: <code class="docutils literal"><span class="pre">ip</span> <span class="pre">=</span> <span class="pre">&quot;127.0.0.1&quot;</span></code></li>
-<li><strong>port</strong> (<em>string</em>) &#8211; Port value of the ZMQ socket to subscrube. Example <code class="docutils literal"><span class="pre">port</span> <span class="pre">=</span> <span class="pre">&quot;7070&quot;</span></code>.</li>
-<li><strong>topic_name</strong> (<em>string</em>) &#8211; Name of the topic in which we want to receive the information. <code class="docutils literal"><span class="pre">topic_name</span> <span class="pre">=</span> <span class="pre">&quot;/some_topic&quot;</span></code> .</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="communication.subscriber.deserialization">
-<code class="descname">deserialization</code><span class="sig-paren">(</span><em>topicmsg</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.deserialization" title="Permalink to this definition">¶</a></dt>
-<dd><p>Separate the topic and the json message from the data received from the ZeroMQ socket. If the deserialization was successful and the message as a python dictionary</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>topicmsg</strong> (<em>string</em>) &#8211; topic + message received by the ZQM socket</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>msg</strong> &#8211; String message as a python dictionary</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.subscriber.listen">
-<code class="descname">listen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used to read string data from the sokect. The read operation is in blocking mode</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>message</strong> &#8211; String received in the socket.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.subscriber.listen_csharp">
-<code class="descname">listen_csharp</code><span class="sig-paren">(</span><em>block_mode=True</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_csharp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used to read data from a NetMQ socket (C# version of ZeroMQ).
-The ZQM wrapper in C# (NetMQ) works different that ZMQ. Instead of send a message as <code class="docutils literal"><span class="pre">topic</span> <span class="pre">+</span> <span class="pre">space</span> <span class="pre">+</span> <span class="pre">message</span></code> where <code class="docutils literal"><span class="pre">topic</span></code> and <code class="docutils literal"><span class="pre">message</span></code> are strings, NetMQ send a message as <code class="docutils literal"><span class="pre">topic</span> <span class="pre">+</span> <span class="pre">enter</span> <span class="pre">+</span> <span class="pre">message</span></code>.
-Therefore, this function read first the topic part and then the message part and only returns the message part obtained.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>block_mode</strong> (<em>bool</em>) &#8211; Select blocking (True) or non blocking mode (False).</li>
-<li><strong>debug</strong> (<em>bool</em>) &#8211; If True the message is printed in the console</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>message</strong> &#8211; part from a NetQM socket message</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.subscriber.listen_human_state">
-<code class="descname">listen_human_state</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_human_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Listen for a json message that define the human state.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_mode</strong> (<em>bool</em>) &#8211; If == True, then the read operation is in blocking mode (the execution continue until there are something to read), otherwise in non blocking mode (if not data, then the execution of the program continues an exception is launched after a timeout).</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
-<li><strong>success</strong> (<em>bool</em>) &#8211; Return true if the read operation was successfull</li>
-<li><strong>action</strong> (<em>dictionaty</em>) &#8211; Human action performed by the robot as a python dictionary</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="communication.subscriber.listen_robot_action">
-<code class="descname">listen_robot_action</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_robot_action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Listen for a json message that define the robot action to execute</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_mode</strong> (<em>bool</em>) &#8211; If == True, then the read operation is in blocking mode (the execution continue until there are something to read), otherwise in non blocking mode (if not data, then the execution of the program continues an exception is launched after a timeout).</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
-<li><strong>success</strong> (<em>bool</em>) &#8211; Return true if the read operation was successfull</li>
-<li><strong>action</strong> (<em>dictionary</em>) &#8211; Action to be performed by the robot as a python dictionary</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="nep-communication-module">
+<h2>nep.communication module<a class="headerlink" href="#nep-communication-module" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-human">
-<span id="nep-human-module"></span><h2>nep.human module<a class="headerlink" href="#module-human" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="human.face_state">
-<em class="property">class </em><code class="descclassname">human.</code><code class="descname">face_state</code><a class="headerlink" href="#human.face_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class used to describe the face states of a human entity</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="human.human_state">
-<em class="property">class </em><code class="descclassname">human.</code><code class="descname">human_state</code><a class="headerlink" href="#human.human_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class used to describe the state of a human entity</p>
-</dd></dl>
-
+<div class="section" id="nep-human-module">
+<h2>nep.human module<a class="headerlink" href="#nep-human-module" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-robot">
 <span id="nep-robot-module"></span><h2>nep.robot module<a class="headerlink" href="#module-robot" title="Permalink to this headline">¶</a></h2>
@@ -466,25 +193,13 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="class">
 <dt id="robot.robot">
-<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code><span class="sig-paren">(</span><em>robot_type</em>, <em>robot_name</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code><a class="headerlink" href="#robot.robot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Robot independent social primitives orchestration class. This class works as a bridge between the social behaviors specified by the user/programmer, in a high level control script, and the robot behavior execution engines.</p>
 <p>First, the user must create the high level  control script using the Google Blockly based Web Interface (which generate a Python script) or using a Python script.</p>
 <p>This class will request for the execution of a specific behavior to the execution engines of the robot selected. The behavior to be executed are encoded in python dictionary and then sended to the execution engine using the <code class="docutils literal"><span class="pre">run_action()</span></code> function. After a execution request, the program will block until the execution of the requested action is performed. This is done using the <code class="docutils literal"><span class="pre">wait_for_execution()</span></code> function.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>robot_type</strong> (<em>string</em>) &#8211; Type of robot to be used, for example &#8220;humanoid&#8221;, &#8220;mobile&#8221; ...</li>
-<li><strong>robot_name</strong> (<em>string</em>) &#8211; Name of the robot to be used.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="robot.robot.count">
-<code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.count" title="Permalink to this definition">¶</a></dt>
+<code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em>, <em>to_person='no_person'</em>, <em>language='English'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Robot count definition (text to speech of the time that an action have been performed).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -525,6 +240,24 @@ Therefore, this function read first the topic part and then the message part and
 </dd></dl>
 
 <dl class="method">
+<dt id="robot.robot.doImitation">
+<code class="descname">doImitation</code><span class="sig-paren">(</span><em>imitation_name</em>, <em>with_sound='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.doImitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="robot.robot.do_gesture">
 <code class="descname">do_gesture</code><span class="sig-paren">(</span><em>gesture_name</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.do_gesture" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function create a python dictionaty with the description of the gesture to be performed by the robot.</p>
@@ -532,11 +265,17 @@ Therefore, this function read first the topic part and then the message part and
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gesture_name</strong> (<em>string</em>) &#8211; Name of the gesture to be performed</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gesture_name</strong> (<em>string</em>) &#8211; Name of the gesture to be performed</li>
+<li><strong>with_robot</strong> (<em>string</em>) &#8211; Name of the robot that will execute the requested behavior. This name represent the name of the topic to be used.</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -548,17 +287,9 @@ Therefore, this function read first the topic part and then the message part and
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="robot.robot.robot_setup">
-<code class="descname">robot_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.robot_setup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used to select the robot configuration. This configuration is perfromed using a python dictionary. An example is seen bellow:</p>
-<p><code class="docutils literal"><span class="pre">NAO</span> <span class="pre">=</span> <span class="pre">{'topic':</span> <span class="pre">'/nao_action',</span> <span class="pre">'ip':</span> <span class="pre">'127.0.0.1',</span> <span class="pre">'port':</span> <span class="pre">2020,</span>&nbsp; <span class="pre">'exe_port':</span> <span class="pre">2021</span>&nbsp; <span class="pre">}</span></code></p>
-<p>Where the parameters <code class="docutils literal"><span class="pre">topic</span></code>, <code class="docutils literal"><span class="pre">ip</span></code> and <code class="docutils literal"><span class="pre">port</span></code> must be equal that the subcriber in the robot execution engine selected. On the other hand, the <code class="docutils literal"><span class="pre">exe_port</span></code> must be equal that the port in the publisher of the execution engine.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="robot.robot.run_action">
 <code class="descname">run_action</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.run_action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function that send the request of an robot action execution sending a python dictionary with the description of such action.
+<dd><p>Function that send the request of a robot action execution. This request send a python dictionary with the description of such action.
 :param message: Robot action description.
 :type message: dictionary</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -581,7 +312,7 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="method">
 <dt id="robot.robot.say">
-<code class="descname">say</code><span class="sig-paren">(</span><em>text</em>, <em>gesture</em>, <em>to_person</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.say" title="Permalink to this definition">¶</a></dt>
+<code class="descname">say</code><span class="sig-paren">(</span><em>text</em>, <em>gesture</em>, <em>to_person</em>, <em>language</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.say" title="Permalink to this definition">¶</a></dt>
 <dd><p>Robot text to speech action definition. This function create the python dictionary to be send to the execution engines.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -591,6 +322,7 @@ Therefore, this function read first the topic part and then the message part and
 <li><strong>text</strong> (<em>string</em>) &#8211; Text to be said for the robot.</li>
 <li><strong>gesture</strong> (<em>string</em>) &#8211; Type of gesture that will be performed when the robot speaks.</li>
 <li><strong>to_person</strong> (<em>string</em>) &#8211; Specify an action of gaze to an speficic person. TODO: define the persons.</li>
+<li><strong>language</strong> (<em>string</em>) &#8211; Set the languge that the robot can speak</li>
 </ul>
 </td>
 </tr>
@@ -605,12 +337,30 @@ Therefore, this function read first the topic part and then the message part and
 </dd></dl>
 
 <dl class="method">
-<dt id="robot.robot.wait_for_execution">
-<code class="descname">wait_for_execution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_for_execution" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function that block the execution of the script until  the execution of a requested behavior has been performed successfully.
-:returns: <strong>result</strong> &#8211; Execution success, True or False.
-:rtype: bool</p>
+<dt id="robot.robot.setRobots">
+<code class="descname">setRobots</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.setRobots" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.setVoice">
+<code class="descname">setVoice</code><span class="sig-paren">(</span><em>speed</em>, <em>volum</em>, <em>pitch</em>, <em>doubleVoice</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.setVoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.wait_kill">
+<code class="descname">wait_kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen for kill signal of the program</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.wait_response">
+<code class="descname">wait_response</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.walk_to">
+<code class="descname">walk_to</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.walk_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -619,7 +369,7 @@ Therefore, this function read first the topic part and then the message part and
 <span id="nep-robot-behaviors-module"></span><h2>nep.robot_behaviors module<a class="headerlink" href="#module-robot_behaviors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="robot_behaviors.robot_behaviors">
-<em class="property">class </em><code class="descclassname">robot_behaviors.</code><code class="descname">robot_behaviors</code><span class="sig-paren">(</span><em>type_behavior</em>, <em>perception_description</em><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">robot_behaviors.</code><code class="descname">robot_behaviors</code><span class="sig-paren">(</span><em>type_behavior</em><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class used to execute the robot behaviors.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -640,6 +390,11 @@ Therefore, this function read first the topic part and then the message part and
 <span class="gp">&gt;&gt;&gt; </span><span class="n">behavior</span> <span class="o">=</span> <span class="n">robot_behaviors</span><span class="p">(</span><span class="s">&quot;reactive&quot;</span><span class="p">,</span> <span class="n">perceptual_description</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="method">
+<dt id="robot_behaviors.robot_behaviors.end_listening">
+<code class="descname">end_listening</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.end_listening" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="robot_behaviors.robot_behaviors.increase_counter">
 <code class="descname">increase_counter</code><span class="sig-paren">(</span><em>human_action</em>, <em>count_actions</em><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.increase_counter" title="Permalink to this definition">¶</a></dt>
@@ -719,25 +474,13 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="class">
 <dt>
-<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code><span class="sig-paren">(</span><em>robot_type</em>, <em>robot_name</em><span class="sig-paren">)</span></dt>
+<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code></dt>
 <dd><p>Robot independent social primitives orchestration class. This class works as a bridge between the social behaviors specified by the user/programmer, in a high level control script, and the robot behavior execution engines.</p>
 <p>First, the user must create the high level  control script using the Google Blockly based Web Interface (which generate a Python script) or using a Python script.</p>
 <p>This class will request for the execution of a specific behavior to the execution engines of the robot selected. The behavior to be executed are encoded in python dictionary and then sended to the execution engine using the <code class="docutils literal"><span class="pre">run_action()</span></code> function. After a execution request, the program will block until the execution of the requested action is performed. This is done using the <code class="docutils literal"><span class="pre">wait_for_execution()</span></code> function.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>robot_type</strong> (<em>string</em>) &#8211; Type of robot to be used, for example &#8220;humanoid&#8221;, &#8220;mobile&#8221; ...</li>
-<li><strong>robot_name</strong> (<em>string</em>) &#8211; Name of the robot to be used.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt>
-<code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em><span class="sig-paren">)</span></dt>
+<code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em>, <em>to_person='no_person'</em>, <em>language='English'</em><span class="sig-paren">)</span></dt>
 <dd><p>Robot count definition (text to speech of the time that an action have been performed).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -779,17 +522,41 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="method">
 <dt>
+<code class="descname">doImitation</code><span class="sig-paren">(</span><em>imitation_name</em>, <em>with_sound='default'</em><span class="sig-paren">)</span></dt>
+<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
 <code class="descname">do_gesture</code><span class="sig-paren">(</span><em>gesture_name</em><span class="sig-paren">)</span></dt>
 <dd><p>This function create a python dictionaty with the description of the gesture to be performed by the robot.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gesture_name</strong> (<em>string</em>) &#8211; Name of the gesture to be performed</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gesture_name</strong> (<em>string</em>) &#8211; Name of the gesture to be performed</li>
+<li><strong>with_robot</strong> (<em>string</em>) &#8211; Name of the robot that will execute the requested behavior. This name represent the name of the topic to be used.</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</p>
+</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -802,16 +569,8 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="method">
 <dt>
-<code class="descname">robot_setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Function used to select the robot configuration. This configuration is perfromed using a python dictionary. An example is seen bellow:</p>
-<p><code class="docutils literal"><span class="pre">NAO</span> <span class="pre">=</span> <span class="pre">{'topic':</span> <span class="pre">'/nao_action',</span> <span class="pre">'ip':</span> <span class="pre">'127.0.0.1',</span> <span class="pre">'port':</span> <span class="pre">2020,</span>&nbsp; <span class="pre">'exe_port':</span> <span class="pre">2021</span>&nbsp; <span class="pre">}</span></code></p>
-<p>Where the parameters <code class="docutils literal"><span class="pre">topic</span></code>, <code class="docutils literal"><span class="pre">ip</span></code> and <code class="docutils literal"><span class="pre">port</span></code> must be equal that the subcriber in the robot execution engine selected. On the other hand, the <code class="docutils literal"><span class="pre">exe_port</span></code> must be equal that the port in the publisher of the execution engine.</p>
-</dd></dl>
-
-<dl class="method">
-<dt>
 <code class="descname">run_action</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span></dt>
-<dd><p>Function that send the request of an robot action execution sending a python dictionary with the description of such action.
+<dd><p>Function that send the request of a robot action execution. This request send a python dictionary with the description of such action.
 :param message: Robot action description.
 :type message: dictionary</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -834,7 +593,7 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="method">
 <dt>
-<code class="descname">say</code><span class="sig-paren">(</span><em>text</em>, <em>gesture</em>, <em>to_person</em><span class="sig-paren">)</span></dt>
+<code class="descname">say</code><span class="sig-paren">(</span><em>text</em>, <em>gesture</em>, <em>to_person</em>, <em>language</em><span class="sig-paren">)</span></dt>
 <dd><p>Robot text to speech action definition. This function create the python dictionary to be send to the execution engines.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -844,6 +603,7 @@ Therefore, this function read first the topic part and then the message part and
 <li><strong>text</strong> (<em>string</em>) &#8211; Text to be said for the robot.</li>
 <li><strong>gesture</strong> (<em>string</em>) &#8211; Type of gesture that will be performed when the robot speaks.</li>
 <li><strong>to_person</strong> (<em>string</em>) &#8211; Specify an action of gaze to an speficic person. TODO: define the persons.</li>
+<li><strong>language</strong> (<em>string</em>) &#8211; Set the languge that the robot can speak</li>
 </ul>
 </td>
 </tr>
@@ -859,11 +619,29 @@ Therefore, this function read first the topic part and then the message part and
 
 <dl class="method">
 <dt>
-<code class="descname">wait_for_execution</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Function that block the execution of the script until  the execution of a requested behavior has been performed successfully.
-:returns: <strong>result</strong> &#8211; Execution success, True or False.
-:rtype: bool</p>
+<code class="descname">setRobots</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">setVoice</code><span class="sig-paren">(</span><em>speed</em>, <em>volum</em>, <em>pitch</em>, <em>doubleVoice</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">wait_kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Listen for kill signal of the program</p>
 </dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">wait_response</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">walk_to</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
