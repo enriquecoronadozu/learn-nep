@@ -76,8 +76,8 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">nep package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#nep-communication-module">nep.communication module</a></li>
-<li><a class="reference internal" href="#nep-human-module">nep.human module</a></li>
+<li><a class="reference internal" href="#module-communication">nep.communication module</a></li>
+<li><a class="reference internal" href="#module-human">nep.human module</a></li>
 <li><a class="reference internal" href="#module-robot">nep.robot module</a></li>
 <li><a class="reference internal" href="#module-robot_behaviors">nep.robot_behaviors module</a></li>
 <li><a class="reference internal" href="#id1">nep.robot module</a></li>
@@ -128,11 +128,321 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="nep-communication-module">
-<h2>nep.communication module<a class="headerlink" href="#nep-communication-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-communication">
+<span id="nep-communication-module"></span><h2>nep.communication module<a class="headerlink" href="#module-communication" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="communication.decode_message">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">decode_message</code><span class="sig-paren">(</span><em>delimiter='</em>, <em>'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is used to decode the sensory messages from devices such as Kinect.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delimiter</strong> (<em>string</em>) &#8211; This parameter indicate the delimiter between the info received. By default is <code class="docutils literal"><span class="pre">,</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="communication.decode_message.decode_3axis_info">
+<code class="descname">decode_3axis_info</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message.decode_3axis_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>3 axis info decodification</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<em>string</em>) &#8211; Sample of 3 axis information</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>success</strong> (<em>bool</em>) &#8211; True if the string has the correct format</li>
+<li><strong>value1</strong> (<em>float</em>) &#8211; x value</li>
+<li><strong>value2</strong> (<em>float</em>) &#8211; y value</li>
+<li><strong>value3</strong> (<em>float</em>) &#8211; z ValueError</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.decode_message.decode_smartwatch_imu">
+<code class="descname">decode_smartwatch_imu</code><span class="sig-paren">(</span><em>line</em>, <em>start=2</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.decode_message.decode_smartwatch_imu" title="Permalink to this definition">¶</a></dt>
+<dd><p>3 axis info decodification</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> (<em>string</em>) &#8211; Sample of 3 axis information</li>
+<li><strong>start</strong> (<em>int</em>) &#8211; Starting line of the 3 axis information</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>success</strong> (<em>bool</em>) &#8211; True if the string has the correct format</li>
+<li><strong>option</strong> (<em>int</em>) &#8211; if option == 0 then is aceleration data, if option = 1 then is gyroscope data, if option = 2 then angle axis representation</li>
+<li><strong>value1</strong> (<em>float</em>) &#8211; x value</li>
+<li><strong>value2</strong> (<em>float</em>) &#8211; y value</li>
+<li><strong>value3</strong> (<em>float</em>) &#8211; z value</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>An example of a format used for a wearAmi program is:</p>
+<ul class="simple">
+<li>&lt;indicator&gt;;number;x_value;y_value:z_value</li>
+</ul>
+<p>where &lt;indicator&gt; can be a (acceleration), y (gyroscope), e (euler angles)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="communication.node">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">node</code><span class="sig-paren">(</span><em>node_name</em>, <em>useROS=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="communication.node.config_pub">
+<code class="descname">config_pub</code><span class="sig-paren">(</span><em>msg_type='dict'</em>, <em>transport='ZMQ'</em>, <em>network='P2P'</em>, <em>port='9000'</em>, <em>ip='127.0.0.1'</em>, <em>mode='one2many'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.config_pub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.node.config_sub">
+<code class="descname">config_sub</code><span class="sig-paren">(</span><em>msg_type='dict'</em>, <em>transport='ZMQ'</em>, <em>network='P2P'</em>, <em>port='9000'</em>, <em>ip='127.0.0.1'</em>, <em>mode='one2many'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.config_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.node.new_pub">
+<code class="descname">new_pub</code><span class="sig-paren">(</span><em>topic</em>, <em>configuration={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.new_pub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.node.new_sub">
+<code class="descname">new_sub</code><span class="sig-paren">(</span><em>topic</em>, <em>configuration={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.new_sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="communication.publisher">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">publisher</code><span class="sig-paren">(</span><em>topic</em>, <em>node_name='default'</em>, <em>conf={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publisher class used for inter-process comunication between nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; topic name to publish the messages</li>
+<li><strong>node_name</strong> (<em>string</em>) &#8211; Name of the node</li>
+<li><strong>conf</strong> (<em>dictionary</em>) &#8211; Configuration of the publisher</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="communication.publisher.advertising_zqm">
+<code class="descname">advertising_zqm</code><span class="sig-paren">(</span><em>node_name</em>, <em>topic</em>, <em>master_ip='127.0.0.1'</em>, <em>master_port=7000</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.advertising_zqm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.create_ROS_publisher">
+<code class="descname">create_ROS_publisher</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.create_ROS_publisher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.create_ZMQ_publisher">
+<code class="descname">create_ZMQ_publisher</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.create_ZMQ_publisher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>message</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.send_info">
+<code class="descname">send_info</code><span class="sig-paren">(</span><em>message</em>, <em>topic=None</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to publish a python dictionary. The message is first serialized using json format and then published by the socket</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> (<em>dictionary</em>) &#8211; Python dictionary to be send</li>
+<li><strong>topic</strong> (<em>string</em>) &#8211; name of the topic to send the message</li>
+<li><strong>debug</strong> (<em>bool</em>) &#8211; if == True, then it print the message to send</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.send_string">
+<code class="descname">send_string</code><span class="sig-paren">(</span><em>message</em>, <em>topic=None</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish a string value. If a topic is not specified, then the messages will be published in the topic specified in the parameter topic_name when a object in this class is created.
+Otherwise it is published in the topic specified in the second parameter of this function. If the topic is not specified it send the message in the default topic.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>string String to be sended</em>) &#8211; <dl class="docutils">
+<dt>topic <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd>name of the topic to send the message</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.serialization">
+<code class="descname">serialization</code><span class="sig-paren">(</span><em>message</em>, <em>topic=None</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.serialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to serialize a python dictionary using json. In this function the message to be send is attached to the topic. If the topic is not specified it send the message in the default topic.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> (<em>dictionary</em>) &#8211; <p>Python dictionary to be send</p>
+<dl class="docutils">
+<dt>topic <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd>name of the topic to send the message</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>message</strong> &#8211; Message to be send, topic + message</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="communication.subscriber">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">subscriber</code><span class="sig-paren">(</span><em>topic</em>, <em>node_name='default'</em>, <em>conf={'ip': '127.0.0.1'</em>, <em>'type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscriber class used for inter-process comunication between nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; topic name to publish the messages</li>
+<li><strong>node_name</strong> (<em>string</em>) &#8211; Name of the node</li>
+<li><strong>conf</strong> (<em>dictionary</em>) &#8211; Configuration of the subscriber</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="communication.subscriber.advertising_zqm">
+<code class="descname">advertising_zqm</code><span class="sig-paren">(</span><em>node_name</em>, <em>topic</em>, <em>master_ip='127.0.0.1'</em>, <em>master_port=7000</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.advertising_zqm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.create_ZMQ_subscriber">
+<code class="descname">create_ZMQ_subscriber</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.create_ZMQ_subscriber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.deserialization">
+<code class="descname">deserialization</code><span class="sig-paren">(</span><em>info</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.deserialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separate the topic and the json message from the data received from the ZeroMQ socket. If the deserialization was successful and the message as a python dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>info</strong> (<em>string</em>) &#8211; topic + message received by the ZQM socket</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>msg</strong> &#8211; String message as a python dictionary</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.listen">
+<code class="descname">listen</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.listen_csharp">
+<code class="descname">listen_csharp</code><span class="sig-paren">(</span><em>block_mode=True</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_csharp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to read data from a NetMQ socket (C# version of ZeroMQ).
+The ZQM wrapper in C# (NetMQ) works different that ZMQ. Instead of send a message as <code class="docutils literal"><span class="pre">topic</span> <span class="pre">+</span> <span class="pre">space</span> <span class="pre">+</span> <span class="pre">message</span></code> where <code class="docutils literal"><span class="pre">topic</span></code> and <code class="docutils literal"><span class="pre">message</span></code> are strings, NetMQ send a message as <code class="docutils literal"><span class="pre">topic</span> <span class="pre">+</span> <span class="pre">enter</span> <span class="pre">+</span> <span class="pre">message</span></code>.
+Therefore, this function read first the topic part and then the message part and only returns the message part obtained.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>block_mode</strong> (<em>bool</em>) &#8211; Select blocking (True) or non blocking mode (False).</li>
+<li><strong>debug</strong> (<em>bool</em>) &#8211; If True the message is printed in the console</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>message</strong> &#8211; part from a NetQM socket message</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.listen_info">
+<code class="descname">listen_info</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen for a json message that define the human state or robot action.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_mode</strong> (<em>bool</em>) &#8211; If == True, then the read operation is in blocking mode (the execution continue until there are something to read), otherwise in non blocking mode (if not data, then the execution of the program continues an exception is launched after a timeout).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>success</strong> (<em>bool</em>) &#8211; Return true if the read operation was successfull</li>
+<li><strong>info</strong> (<em>dictionary</em>) &#8211; Message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.listen_string">
+<code class="descname">listen_string</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="nep-human-module">
-<h2>nep.human module<a class="headerlink" href="#nep-human-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-human">
+<span id="nep-human-module"></span><h2>nep.human module<a class="headerlink" href="#module-human" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="human.face_state">
+<em class="property">class </em><code class="descclassname">human.</code><code class="descname">face_state</code><a class="headerlink" href="#human.face_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class used to describe the face states of a human entity</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="human.human_state">
+<em class="property">class </em><code class="descclassname">human.</code><code class="descname">human_state</code><a class="headerlink" href="#human.human_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class used to describe the state of a human entity</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-robot">
 <span id="nep-robot-module"></span><h2>nep.robot module<a class="headerlink" href="#module-robot" title="Permalink to this headline">¶</a></h2>
@@ -240,24 +550,6 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="robot.robot.doImitation">
-<code class="descname">doImitation</code><span class="sig-paren">(</span><em>imitation_name</em>, <em>with_sound='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.doImitation" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="robot.robot.do_gesture">
 <code class="descname">do_gesture</code><span class="sig-paren">(</span><em>gesture_name</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.do_gesture" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function create a python dictionaty with the description of the gesture to be performed by the robot.</p>
@@ -276,6 +568,24 @@
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.imitate">
+<code class="descname">imitate</code><span class="sig-paren">(</span><em>thing2imitate</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.imitate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
@@ -522,24 +832,6 @@
 
 <dl class="method">
 <dt>
-<code class="descname">doImitation</code><span class="sig-paren">(</span><em>imitation_name</em>, <em>with_sound='default'</em><span class="sig-paren">)</span></dt>
-<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt>
 <code class="descname">do_gesture</code><span class="sig-paren">(</span><em>gesture_name</em><span class="sig-paren">)</span></dt>
 <dd><p>This function create a python dictionaty with the description of the gesture to be performed by the robot.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -557,6 +849,24 @@
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">imitate</code><span class="sig-paren">(</span><em>thing2imitate</em><span class="sig-paren">)</span></dt>
+<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>

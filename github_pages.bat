@@ -1,8 +1,3 @@
-# build the docs
-cd docs
-make clean
-make html
-cd ..
 
 # commit and push
 git add -A
