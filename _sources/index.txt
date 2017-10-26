@@ -44,7 +44,7 @@ Windows
 * Unzip the folder and run the **install.bat** script (with double click) 
 
 
-The platform have been tested in Windows 8.1 and Windows 10 and using Visual Studio Community 2013 and 2017 for the Kinect and Wii Balance Board devices.
+The platform have been tested in Windows 8.1 and Windows 10
 
 Linux
 **********************
