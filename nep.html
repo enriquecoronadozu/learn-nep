@@ -654,9 +654,16 @@ Otherwise it is published in the topic specified in the second parameter of this
 <dl class="class">
 <dt id="robot.robot">
 <em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code><a class="headerlink" href="#robot.robot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Robot independent social primitives orchestration class. This class works as a bridge between the social behaviors specified by the user/programmer, in a high level control script, and the robot behavior execution engines.</p>
+<dd><p>Robot independent social primitives orchestration class. This class works as a bridge between the social behaviors specified by the user/programmer, in a high level control script, and the robot behavior action nodes.</p>
 <p>First, the user must create the high level  control script using the Google Blockly based Web Interface (which generate a Python script) or using a Python script.</p>
-<p>This class will request for the execution of a specific behavior to the execution engines of the robot selected. The behavior to be executed are encoded in python dictionary and then sended to the execution engine using the <code class="docutils literal"><span class="pre">run_action()</span></code> function. After a execution request, the program will block until the execution of the requested action is performed. This is done using the <code class="docutils literal"><span class="pre">wait_for_execution()</span></code> function.</p>
+<p>This class will request for the execution of a specific behavior for a list of robots. The behavior to be executed are encoded in python dictionary and then sended to the action nodes. After a execution request, the program will block until the execution of the requested action is performed.</p>
+<p class="rubric">Example</p>
+<p>Creates a new robot instance:</p>
+<div class="highlight-python"><div class="highlight"><pre>
+</pre></div>
+</div>
+<p>import nep
+r = nep.robot()</p>
 <dl class="method">
 <dt id="robot.robot.count">
 <code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em>, <em>to_person='no_person'</em>, <em>language='English'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.count" title="Permalink to this definition">¶</a></dt>
@@ -807,12 +814,6 @@ Otherwise it is published in the topic specified in the second parameter of this
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="robot.robot.wait_kill">
-<code class="descname">wait_kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_kill" title="Permalink to this definition">¶</a></dt>
-<dd><p>Listen for kill signal of the program</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="robot.robot.wait_response">
 <code class="descname">wait_response</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -880,10 +881,27 @@ Otherwise it is published in the topic specified in the second parameter of this
 <dl class="class">
 <dt id="launcher.launcher">
 <em class="property">class </em><code class="descclassname">launcher.</code><code class="descname">launcher</code><a class="headerlink" href="#launcher.launcher" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>This class is used to launch nodes inside the node folder</p>
+<p class="rubric">Example</p>
+<p>Launch a node</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">lan</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">launcher</span><span class="p">()</span>
+<span class="n">lan</span><span class="o">.</span><span class="n">nep_launch</span><span class="p">(</span><span class="s">&quot;action&quot;</span><span class="p">,</span> <span class="s">&quot;nao_action_processor&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
 <dt id="launcher.launcher.launch">
 <code class="descname">launch</code><span class="sig-paren">(</span><em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#launcher.launcher.launch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Launch a python program</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script</strong> (<em>string</em>) &#8211; script name + extension. Example: &#8220;script.py&#8221;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="launcher.launcher.nep_launch">
@@ -910,11 +928,6 @@ Otherwise it is published in the topic specified in the second parameter of this
 </tbody>
 </table>
 </dd></dl>
-
-<dl class="method">
-<dt id="launcher.launcher.return_initial_path">
-<code class="descname">return_initial_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#launcher.launcher.return_initial_path" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

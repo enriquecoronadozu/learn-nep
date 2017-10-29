@@ -87,12 +87,11 @@
 <li><a class="reference internal" href="#rize-interface">RIZE Interface</a></li>
 <li><a class="reference internal" href="#packages">Packages</a></li>
 <li><a class="reference internal" href="#nodes">Nodes</a></li>
-<li><a class="reference internal" href="#robots-supported-action-module">Robots supported (action module)</a></li>
+<li><a class="reference internal" href="#robots-supported-action-processors">Robots supported (action processors)</a></li>
 <li><a class="reference internal" href="#sensory-devices-supported">Sensory devices supported</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#methods-and-class-index">Methods and class index</a></li>
-<li><a class="reference internal" href="#module-index">Module index</a></li>
 </ul>
 </div>
           
@@ -142,7 +141,6 @@ This platform have the next main features:</p>
 <li>Uses an abstract transport layer, compatible with ROS, ZeroMQ and nanomsg (soon)</li>
 <li>Supports a Google blockly based enviroment for end-user programming.</li>
 <li>Mainly written in Python</li>
-<li>Robot independent</li>
 </ul>
 </div>
 <div class="section" id="installation">
@@ -151,14 +149,14 @@ This platform have the next main features:</p>
 <div class="section" id="main-requirements">
 <h2>Main requirements<a class="headerlink" href="#main-requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Python 2 for expert robot programming</li>
+<li>Python (we recommend to install only one version of python, preferently python 2)</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">The NAO and Pepper SDK does not work in Python 3</p>
+<p class="last">The NAO and Pepper SDK are not compatible with Python 3</p>
 </div>
 <ul class="simple">
-<li>A modern web browser (Chrome, Firefox or Safari) for end-user programming</li>
+<li>A modern web browser for end user programming (Chrome, Firefox or Safari)</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -172,20 +170,17 @@ This platform have the next main features:</p>
 <li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
 <li>Unzip the folder and run the <strong>install.bat</strong> script (with double click)</li>
 </ul>
-<p>The platform have been tested in Windows 8.1 and Windows 10</p>
+<p>NEP have been tested in Windows 8.1 and Windows 10</p>
 </div>
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Download the most recent version of the NEP social robot programming platform from:</li>
-</ul>
-<p><a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-<ul class="simple">
+<li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
 <li>Open the linux console and run the <strong>install.sh</strong> script</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Did you have problems running the script in Linux, then use the next commands:</p>
+<p class="last">Did you have problems running the <strong>install.sh</strong> script in Linux, then use the next commands:</p>
 </div>
 <div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
 <span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
@@ -207,7 +202,7 @@ This platform have the next main features:</p>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Did you have problems running the script in Mac, then use the next commands:</p>
+<p class="last">Did you have problems running the <strong>install.sh</strong> in Mac, then use the next commands:</p>
 </div>
 <div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
 <span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
@@ -233,22 +228,21 @@ This platform have the next main features:</p>
 </div>
 <div class="section" id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
-<p>Set of third-party and user python libraries used to create nodes (basic robot functionalities or procceses).</p>
+<p>Set of third-party and user-defined python libraries used to create nodes (robot functionalities).</p>
 </div>
 <div class="section" id="nodes">
 <h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
-<p>Basic robot functionalities or procceses regulaly organized in a information processing based cognitive model. Most cognitive architectures have distinct modules or processor, but they regularly present the described below:</p>
+<p>Basic robot functionalities or proccesesors organized in a information processing based cognitive model. Most cognitive architectures have distinct modules or processor, but they regularly present the described below:</p>
 <ul class="simple">
 <li><strong>Sensory nodes:</strong> Gives to the robots the ability of sense the enviroment. They are the input modalities of the robot. Examples are vision (using cameras or kinect), and audio (using kinect).</li>
 <li><strong>Perceptual nodes:</strong> Gives to the robots the ability of understand the human actions in based to the sensory information. Examples are gesture, emotion and speech reconition.</li>
 <li><strong>Cognitive node</strong> Gives the capacity of perform intelligent behaviors from the perceptual information obtained. Examples are decision making, dialog management, reactive and deliberative behaviors.</li>
-<li><strong>Action nodes:</strong> Gives to the robots the ability of react to the human actions. They are the outputs of the robot. Examples are robot speech, walking, robot gestures, face expresion, among others.</li>
+<li><strong>Action nodes:</strong> Gives to the robots the ability of react to the human actions. They are the outputs of the robot. Examplesof outputs are robot speech, walking, robot gestures, face expresion, among others.</li>
 </ul>
-<p>These nodes or modules are necesary for the understading of the human actions and the execution of the robot behaviors.</p>
-<p>The sensory, perceptual and action modules can be written in python (Linux, OSX and Windows compatible) or C# (only Windows compatible).</p>
+<p>The sensory, perceptual and action modules are written by expert programming users. Cognitive nodes can be defined by end-users to generate applications.</p>
 </div>
-<div class="section" id="robots-supported-action-module">
-<h2>Robots supported (action module)<a class="headerlink" href="#robots-supported-action-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="robots-supported-action-processors">
+<h2>Robots supported (action processors)<a class="headerlink" href="#robots-supported-action-processors" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>NAO:</li>
 <li>Papper</li>
@@ -267,12 +261,6 @@ This platform have the next main features:</p>
 <h1>Methods and class index<a class="headerlink" href="#methods-and-class-index" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
-</ul>
-</div>
-<div class="section" id="module-index">
-<h1>Module index<a class="headerlink" href="#module-index" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
 </ul>
 </div>
 
