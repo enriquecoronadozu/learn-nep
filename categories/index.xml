@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on NEP</title>
-    <link>https://nep.org/categories/</link>
+    <link>https://enriquecoronadozu.github.io/learn-nep/categories/</link>
     <description>Recent content in Categories on NEP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     
-	<atom:link href="https://nep.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://enriquecoronadozu.github.io/learn-nep/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

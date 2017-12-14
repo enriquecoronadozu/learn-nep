@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NEP</title>
-    <link>https://nep.org/</link>
+    <link>https://enriquecoronadozu.github.io/learn-nep/</link>
     <description>Recent content on NEP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Thu, 09 Mar 2017 00:11:02 +0100</lastBuildDate>
     
-	<atom:link href="https://nep.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://enriquecoronadozu.github.io/learn-nep/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic tutorials</title>
-      <link>https://nep.org/tutorials/</link>
+      <link>https://enriquecoronadozu.github.io/learn-nep/tutorials/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
-      <guid>https://nep.org/tutorials/</guid>
+      <guid>https://enriquecoronadozu.github.io/learn-nep/tutorials/</guid>
       <description>Basic concepts There are some basic concepts that we need to know in order to create distribuited applications with robot. These concepts are described bellow. If you already have experience with frameworks such as ROS, then you can skip to the next section.
 Component-based software Robot software development tends to be a complex task. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures.</description>
     </item>
     
     <item>
       <title>NEP documentation</title>
-      <link>https://nep.org/</link>
+      <link>https://enriquecoronadozu.github.io/learn-nep/</link>
       <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
       
-      <guid>https://nep.org/</guid>
+      <guid>https://enriquecoronadozu.github.io/learn-nep/</guid>
       <description>What is NEP? Node primitives (NEP) is an open source programming platform which allows the creation and design of social interactions with robots.
  Works in Linux, Windows and OSX. Enables end-user and hard-code programming. Use ZeroMQ, nanomsg, normal sockets or ROS for inter-process comunication. Easy to install and use. Mostly written in Python.  The core API of NEP is very lightweight (less that 3Mb). The main requirement is to have a Python distribution installed.</description>
     </item>
