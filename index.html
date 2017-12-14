@@ -1,529 +1,340 @@
+
+
 <!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to NEP’s documentation! &mdash; NEP 0.2 documentation</title>
+  
+
   
   
+
+  
+
   
   
-   <html class="no-js"> 
-
-  <head lang="en-us">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>NEP</title>
-    <meta name="generator" content="Hugo 0.31.1" />
-
-    
-    <meta name="description" content="NEP documentation">
-    
-    <link rel="canonical" href="https://nep.org/">
-    
-    <meta name="author" content="Enrique Coronado">
     
 
-    <meta property="og:url" content="https://nep.org/">
-    <meta property="og:title" content="NEP">
-    <meta property="og:image" content="https://nep.org/images/logo2.png">
-    <meta name="apple-mobile-web-app-title" content="NEP">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
 
-    <link rel="shortcut icon" type="image/x-icon" href="https://nep.org/images/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="https://nep.org/images/favicon.ico">
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
 
-    <style>
-      @font-face {
-        font-family: 'Icon';
-        src: url('https://nep.org/fonts/icon.eot');
-        src: url('https://nep.org/fonts/icon.eot')
-               format('embedded-opentype'),
-             url('https://nep.org/fonts/icon.woff')
-               format('woff'),
-             url('https://nep.org/fonts/icon.ttf')
-               format('truetype'),
-             url('https://nep.org/fonts/icon.svg')
-               format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
+  
 
-    <link rel="stylesheet" href="https://nep.org/stylesheets/application.css">
-    <link rel="stylesheet" href="https://nep.org/stylesheets/temporary.css">
-    <link rel="stylesheet" href="https://nep.org/stylesheets/palettes.css">
-    <link rel="stylesheet" href="https://nep.org/stylesheets/highlight/highlight.css">
+  
+    <link rel="top" title="NEP 0.2 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+  
 
     
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
-    <style>
-      body, input {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-      }
-      pre, code {
-        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-      }
-    </style>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
 
-    
-    <script src="https://nep.org/javascripts/modernizr.js"></script>
+        
+          <a href="#" class="icon icon-home"> NEP
+        
 
-    
-    <link href="https://nep.org/index.xml" rel="alternate" type="application/rss+xml" title="NEP" />
-    <link href="https://nep.org/index.xml" rel="feed" type="application/rss+xml" title="NEP" />
-    
+        
+        </a>
 
-  </head>
-  <body class="palette-primary-purple palette-accent-teal">
-
-
-
-	
-	
-
-
-<div class="backdrop">
-	<div class="backdrop-paper"></div>
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-<input class="toggle" type="checkbox" id="toggle-drawer">
-<input class="toggle" type="checkbox" id="toggle-search">
-<label class="toggle-button overlay" for="toggle-drawer"></label>
-
-<header class="header">
-	<nav aria-label="Header">
-  <div class="bar default">
-    <div class="button button-menu" role="button" aria-label="Menu">
-      <label class="toggle-button icon icon-menu" for="toggle-drawer">
-        <span></span>
-      </label>
-    </div>
-    <div class="stretch">
-      <div class="title">
-        NEP
-      </div>
-    </div>
-
-    
-
-    
-    <div class="button button-github" role="button" aria-label="GitHub">
-      <a href="https://github.com/enriquecoronadozu/NEP" title="@enriquecoronadozu/NEP on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
-    </div>
-    
-    
-        
-  </div>
-  <div class="bar search">
-    <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back" for="toggle-search"></label>
-    </div>
-    <div class="stretch">
-      <div class="field">
-        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
-      </div>
-    </div>
-    <div class="button button-reset" role="button" aria-label="Search">
-      <button class="toggle-button icon icon-close" id="reset-search"></button>
-    </div>
-  </div>
-</nav>
-</header>
-
-<main class="main">
-	<div class="drawer">
-		<nav aria-label="Navigation">
-  <a href="https://github.com/enriquecoronadozu/NEP" class="project">
-    <div class="banner">
-      
-        <div class="logo">
-          <img src="https://nep.org/images/logo2.png">
-        </div>
-      
-      <div class="name">
-        <strong>NEP <span class="version">1.0.0</span></strong>
-        
-          <br>
-          enriquecoronadozu/NEP
         
       </div>
-    </div>
-  </a>
 
-  <div class="scrollable">
-    <div class="wrapper">
-      
-        <ul class="repo">
-          <li class="repo-download">
-            <a href="https://github.com/enriquecoronadozu/NEP/archive/master.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
-          <li class="repo-stars">
-            <a href="https://github.com/enriquecoronadozu/NEP/stargazers" target="_blank" title="Stargazers" data-action="star">
-              <i class="icon icon-star"></i> Stars
-              <span class="count">&ndash;</span>
-            </a>
-          </li>
-        </ul>
-        <hr>
-      
-
-      <div class="toc">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
-        <ul>
           
-
-
-
-
-<li>
-  
-    
-
-
-
-<a class="current" title="Quick start" href="https://nep.org/">
-	
-	Quick start
-</a>
-
-
-<ul id="scrollspy">
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to NEP&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#main-requirements">Main requirements</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#mac">Mac</a></li>
 </ul>
-
-
-  
 </li>
-
-
-
-<li>
-  
-    
-
-
-
-<a  title="Basic tutorials" href="https://nep.org/tutorials/">
-	
-	Basic tutorials
-</a>
-
-
-
-  
+<li><a class="reference internal" href="#getting-started-developer">Getting started (Developer)</a><ul>
+<li><a class="reference internal" href="#core-api">Core API</a></li>
+<li><a class="reference internal" href="#rize-interface">RIZE Interface</a></li>
+<li><a class="reference internal" href="#packages">Packages</a></li>
+<li><a class="reference internal" href="#nodes">Nodes</a></li>
+<li><a class="reference internal" href="#robots-supported-action-module">Robots supported (action module)</a></li>
+<li><a class="reference internal" href="#sensory-devices-supported">Sensory devices supported</a></li>
+</ul>
 </li>
-
-
-
-<li>
-  
-    
-
-
-
-<a  title="Cognitive architectures" href="https://nep.org/tutorials/">
-	
-	Cognitive architectures
-</a>
-
-
-
-  
-</li>
-
-
-
-<li>
-  
-    
-
-
-
-<a  title="Advanced interaction" href="https://nep.org/tutorials/">
-	
-	Advanced interaction
-</a>
-
-
-
-  
-</li>
-
-
-        </ul>
-        
-
-        
-        <hr>
-        <span class="section">The author</span>
-        
-        <ul>
+<li><a class="reference internal" href="#methods-and-class-index">Methods and class index</a></li>
+<li><a class="reference internal" href="#module-index">Module index</a></li>
+</ul>
+</div>
           
-
-          
-          <li>
-            <a href="https://github.com/enriquecoronadozu/NEP" target="_blank" title="@enriquecoronadozu/NEP on GitHub">
-              @enriquecoronadozu/NEP on GitHub
-            </a>
-          </li>
-          
-
-          
-          <li>
-            <a href="mailto:enriquecoronadozu@email.com" title="Email of enriquecoronadozu@email.com">
-              Contact via email
-            </a>
-          </li>
-          
-        </ul>
         
       </div>
-    </div>
-  </div>
-</nav>
+      &nbsp;
+    </nav>
+  
 
-	</div>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-	<article class="article">
-		<div class="wrapper">
-			
-				<h1>NEP documentation </h1>
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">NEP</a>
+      </nav>
 
-				
 
-<h2 id="what-is-nep">What is NEP?</h2>
-
-<p>Node primitives (NEP) is an open source programming platform which allows the creation and design of social interactions with robots.</p>
-
-<ul>
-<li>Works in Linux, Windows and OSX.</li>
-<li>Enables end-user and hard-code programming.</li>
-<li>Use ZeroMQ, nanomsg, normal sockets or ROS for inter-process comunication.</li>
-<li>Easy to install and use.</li>
-<li>Mostly written in Python.</li>
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Welcome to NEP&#8217;s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-nep-s-documentation">
+<h1>Welcome to NEP&#8217;s documentation!<a class="headerlink" href="#welcome-to-nep-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Node primitives (NEP) is an open source experimental platform which allows the creation and design of social interactions with robots.
+This platform have the next main features:</p>
+<ul class="simple">
+<li>Supports Linux, Windows and OSX.</li>
+<li>“Easy to install”, “easy to use” and “easy to develop”.</li>
+<li>Uses an abstract transport layer, compatible with ROS, ZeroMQ and nanomsg (soon)</li>
+<li>Supports a Google blockly based enviroment for end-user programming.</li>
+<li>Mainly written in Python</li>
+<li>Robot independent</li>
 </ul>
-
-<p>The core API of NEP is very lightweight  (less that 3Mb). The main requirement is to have a Python distribution installed.</p>
-
-<h2 id="instalation-in-windows">Instalation in Windows</h2>
-
-<ul>
-<li><p>Download and install Python 2.7. We recommend the Python (x,y) distribution:</p>
-
-<p><a href="https://python-xy.github.io/">https://python-xy.github.io/</a></p></li>
-
-<li><p>Download the most recent version of the NEP programming platform from:</p>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p></li>
-
-<li><p>Unzip the folder and run the file <code>install.bat</code> (with double click) that is inside the unzipped folder.</p></li>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This section describe how to install the platform in diferent operating systems.</p>
+<div class="section" id="main-requirements">
+<h2>Main requirements<a class="headerlink" href="#main-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python 2 for expert robot programming</li>
 </ul>
-
-<h2 id="instalation-in-ubuntu">Instalation in Ubuntu</h2>
-
-<ul>
-<li><p>Download the most recent version of the NEP programming platform from:</p>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p></li>
-
-<li><p>Unzip the folder and in linux console run the <code>install.sh</code> script that is inside the unzipped folder.</p></li>
-
-<li><p>See the &ldquo;Common problems&rdquo; section bellow if you have some installation problem.</p></li>
-</ul>
-
-<h2 id="instalation-in-mac">Instalation in Mac</h2>
-
-<ul>
-<li><p>If you will use a NAO or Pepper robot, you need to install and use the newest version of Python 2.7 from:</p>
-
-<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p></li>
-</ul>
-
 <div class="admonition warning">
-<p class="admonition-title">Python distributions and NAOSDK</p>
-<p>In Mac the NAO and Pepper SDK do not work with the default Python installation or with Anaconda</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">The NAO and Pepper SDK does not work in Python 3</p>
 </div>
-
-<ul>
-<li><p>Download the most recent version of the NEP programming platform from:</p>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p></li>
-
-<li><p>Unzip the folder and with Mac Terminal run the <code>install.sh</code> script that is inside the unzipped folder.</p></li>
-
-<li><p>See the &ldquo;Common problems&rdquo; section bellow if you have some installation problem.</p></li>
+<ul class="simple">
+<li>A modern web browser (Chrome, Firefox or Safari) for end-user programming</li>
 </ul>
-
-<h2 id="a-dummy-example">A dummy example</h2>
-
-<p>In order to test that NEP was suceffully installed we will create a simple publisher-subcriber application. For this we need to create 2 python files.</p>
-
-<p>The first one will be a node with a publisher. This script can be denoted as <code>pub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-import time
-
-node = nep.node(&quot;pub&quot;)
-conf = node.conf_pub(network = &quot;direct&quot;)
-pub = node.new_pub(&quot;test&quot;, conf)
-while True:
-    msg = &quot;hello world&quot;
-    pub.send_string(msg)
-    time.sleep(1)
-</code></pre>
-
-<p>The second one will be a node with a subscriber. This script can be denoted as  <code>sub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-
-node = nep.node(&quot;sub&quot;)
-conf = node.conf_sub(network = &quot;direct&quot;)
-sub = node.new_sub(&quot;test&quot;, conf)
-while True:
-    s, msg = sub.listen_string()
-    if s:
-        print msg
-</code></pre>
-
-<p>Then, execute both scripts in different terminal/console windows. If the message of <code>hello world</code> appears in the console of the subscriber node, then the installation has been successful.</p>
-
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Internet explorer (IE) is not fully supported</p>
+</div>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download and install Python(x,y) from: <a class="reference external" href="https://python-xy.github.io/">https://python-xy.github.io/</a></li>
+<li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
+<li>Unzip the folder and run the <strong>install.bat</strong> script (with double click)</li>
+</ul>
+<p>The platform have been tested in Windows 8.1 and Windows 10</p>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download the most recent version of the NEP social robot programming platform from:</li>
+</ul>
+<p><a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
+<ul class="simple">
+<li>Open the linux console and run the <strong>install.sh</strong> script</li>
+</ul>
 <div class="admonition note">
-<p class="admonition-title">About tutorials and examples</p>
-<p>The example before works in a local and direct network. In order to create complex and modular robot applications, we need to use a more convenient network architecture. Please see the <em>Tutorials</em> page to learn more about distributed systems and to see more useful examples for robot programming.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Did you have problems running the script in Linux, then use the next commands:</p>
+</div>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>If you want use a NAO or Papper robot, then install Python the newest version of 2.7 from: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In Mac the NAO and Pepper SDK does not work with the default Python installation or with Anaconda</p>
+</div>
+<ul class="simple">
+<li>Download the most recent version of the NEP social robot programming platform from: <a class="reference external" href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></li>
+<li>Unzip the folder and with Mac Terminal run the install.sh script</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Did you have problems running the script in Mac, then use the next commands:</p>
+</div>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">.</span><span class="n-Operator">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-started-developer">
+<h1>Getting started (Developer)<a class="headerlink" href="#getting-started-developer" title="Permalink to this headline">¶</a></h1>
+<p>The NEP plataform is composed by four main parts, the <strong>core</strong> API, the RIZE <strong>interface</strong>, <strong>packages</strong> and <strong>nodes</strong></p>
+<div class="section" id="core-api">
+<h2>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>core</strong> API contains a set of python methods and classes used to:</p>
+<ul class="simple">
+<li>Perform inter-procces comunications using ROS, ZeroMQ and nanomsg publish/subcriber pattern. This is done using the <strong>comunication</strong> class.</li>
+<li>Define the human and robot high level social programming primitives, which are used for design social interactions with robots. This is done using the <strong>robot</strong> class.</li>
+<li>Define the robot advanced and dynamic control programming primitives. This is done using the <strong>robot_behaviors</strong> class.</li>
+</ul>
+</div>
+<div class="section" id="rize-interface">
+<h2>RIZE Interface<a class="headerlink" href="#rize-interface" title="Permalink to this headline">¶</a></h2>
+<p>A Google Blocky <strong>interface</strong> that provide a visual programming tool in which novice and expert user can design and program robot social interactions. This is done using the JavaScript based Google Blocky API which generate python code. The generated python code uses the <strong>robot</strong> class (social primitives) to create and execute the interaction with robots.</p>
+</div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>Set of third-party and user python libraries used to create nodes (basic robot functionalities or procceses).</p>
+</div>
+<div class="section" id="nodes">
+<h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
+<p>Basic robot functionalities or procceses regulaly organized in a information processing based cognitive model. Most cognitive architectures have distinct modules or processor, but they regularly present the described below:</p>
+<ul class="simple">
+<li><strong>Sensory nodes:</strong> Gives to the robots the ability of sense the enviroment. They are the input modalities of the robot. Examples are vision (using cameras or kinect), and audio (using kinect).</li>
+<li><strong>Perceptual nodes:</strong> Gives to the robots the ability of understand the human actions in based to the sensory information. Examples are gesture, emotion and speech reconition.</li>
+<li><strong>Cognitive node</strong> Gives the capacity of perform intelligent behaviors from the perceptual information obtained. Examples are decision making, dialog management, reactive and deliberative behaviors.</li>
+<li><strong>Action nodes:</strong> Gives to the robots the ability of react to the human actions. They are the outputs of the robot. Examples are robot speech, walking, robot gestures, face expresion, among others.</li>
+</ul>
+<p>These nodes or modules are necesary for the understading of the human actions and the execution of the robot behaviors.</p>
+<p>The sensory, perceptual and action modules can be written in python (Linux, OSX and Windows compatible) or C# (only Windows compatible).</p>
+</div>
+<div class="section" id="robots-supported-action-module">
+<h2>Robots supported (action module)<a class="headerlink" href="#robots-supported-action-module" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>NAO:</li>
+<li>Papper</li>
+</ul>
+</div>
+<div class="section" id="sensory-devices-supported">
+<h2>Sensory devices supported<a class="headerlink" href="#sensory-devices-supported" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Kinect V2</li>
+<li>Wii Balance Board (soon)</li>
+<li>IMU from Android smartwatches/smartphones</li>
+</ul>
+</div>
+</div>
+<div class="section" id="methods-and-class-index">
+<h1>Methods and class index<a class="headerlink" href="#methods-and-class-index" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
+</ul>
+</div>
+<div class="section" id="module-index">
+<h1>Module index<a class="headerlink" href="#module-index" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
+</ul>
 </div>
 
-<h2 id="learn-more">Learn more</h2>
 
-<p>Before you start to develop complex robot application you need to know at least the next basic concepts:</p>
+           </div>
+          </div>
+          <footer>
+  
 
-<ul>
-<li>Nodes</li>
-<li>Comunication patterns</li>
-<li>Publisher-Subcriber</li>
-<li>Client-Server</li>
-<li>Broker</li>
-<li>Master name service</li>
-</ul>
+  <hr/>
 
-<p>A explanation of these and more concepts, toghether with examples of it application in the NEP framework is shown in the <em>Tutorials</em> page:</p>
-
-<h2 id="common-problems">Common problems</h2>
-
-<h3 id="problem-running-the-install-sh-script">Problem running the install.sh script?</h3>
-
-<p>Then, use the  <code>chmod +x install.sh</code> and <code>./install.sh</code> commands to allows the execution and run the script respectively.</p>
-
-			
-
-			<aside class="copyright" role="note">
-				
-				&copy; 2017 Released under the MIT license &ndash;
-				
-				Documentation built with
-				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
-				using the
-				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
-			</aside>
-
-			<footer class="footer">
-				
-
-
-
-<nav class="pagination" aria-label="Footer">
-  <div class="previous">
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Luis Enrique Coronado Zuniga.
+    </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
-  
-  
-  <div class="next">
-      <a href="https://nep.org/tags/" title="Tags">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Tags
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
+</footer>
+
         </div>
-      </a>
+      </div>
+
+    </section>
+
   </div>
-</nav>
+  
 
 
 
-			</footer>
-		</div>
-	</article>
-
-	<div class="results" role="status" aria-live="polite">
-		<div class="scrollable">
-			<div class="wrapper">
-				<div class="meta"></div>
-				<div class="list"></div>
-			</div>
-		</div>
-	</div>
-</main>
-
-    <script>
-    
-      var base_url = 'https:\/\/nep.org\/';
-      var repo_id  = 'enriquecoronadozu\/NEP';
-    
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
     </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-    <script src="https://nep.org/javascripts/application.js"></script>
-    
+  
+  
 
-    <script>
-      /* Add headers to scrollspy */
-      var headers   = document.getElementsByTagName("h2");
-      var scrollspy = document.getElementById('scrollspy');
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
 
-      if(scrollspy) {
-        if(headers.length > 0) {
-          for(var i = 0; i < headers.length; i++) {
-            var li = document.createElement("li");
-            li.setAttribute("class", "anchor");
+  
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
 
-            var a  = document.createElement("a");
-            a.setAttribute("href", "#" + headers[i].id);
-            a.setAttribute("title", headers[i].innerHTML);
-            a.innerHTML = headers[i].innerHTML;
-
-            li.appendChild(a)
-            scrollspy.appendChild(li);
-          }
-        } else {
-          scrollspy.parentElement.removeChild(scrollspy)
-        }
-
-
-        /* Add permanent link next to the headers */
-        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-
-        for(var i = 0; i < headers.length; i++) {
-            var a = document.createElement("a");
-            a.setAttribute("class", "headerlink");
-            a.setAttribute("href", "#" + headers[i].id);
-            a.setAttribute("title", "Permanent link")
-            a.innerHTML = "#";
-            headers[i].appendChild(a);
-        }
-      }
-    </script>
-
-    
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
+</body>
 </html>
-

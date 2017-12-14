@@ -1,0 +1,985 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NEP reference &mdash; NEP 0.2 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="NEP 0.2 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+  
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> NEP
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">NEP reference</a><ul>
+<li><a class="reference internal" href="#module-communication">communication</a></li>
+<li><a class="reference internal" href="#module-nep_msg">nep_msg</a></li>
+<li><a class="reference internal" href="#module-robot">robot</a></li>
+<li><a class="reference internal" href="#module-robot_behaviors">robot_behaviors</a></li>
+<li><a class="reference internal" href="#module-launcher">launcher</a></li>
+</ul>
+</li>
+</ul>
+</div>
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+  
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">NEP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>NEP reference</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/nep.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nep-reference">
+<h1>NEP reference<a class="headerlink" href="#nep-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-communication">
+<span id="communication"></span><h2>communication<a class="headerlink" href="#module-communication" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="communication.node">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">node</code><span class="sig-paren">(</span><em>node_name</em>, <em>useROS=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="communication.node.config_pub">
+<code class="descname">config_pub</code><span class="sig-paren">(</span><em>msg_type='dict'</em>, <em>transport='ZMQ'</em>, <em>network='P2P'</em>, <em>port='9000'</em>, <em>ip='127.0.0.1'</em>, <em>mode='one2many'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.config_pub" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configuration of publishers are defined using python dictionaries with a specific format. This function can be used to
+define the configuration of a publisher. By default &#8220;ZMQ&#8221; (ZeroMQ) in a &#8220;P2P&#8221; network in &#8220;one2many&#8221; mode it is used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>msg_type</strong> (<em>string</em>) &#8211; Type of data to send (recomended to allows ROS geometric messages compatibility)</li>
+<li><strong>transport</strong> (<em>string</em>) &#8211; Transport layer used to communicate, it can be:&#8221;ZMQ&#8221; to use ZeroMQ, &#8220;ROS&#8221; to use ROS, and &#8220;NANO&#8221; to use Nanomsg</li>
+<li><strong>network</strong> (<em>string</em>) &#8211; Type of network architecture, it can be &#8220;direct&#8221; and &#8220;P2P&#8221; (only for ZeroMQ and Nanomsg)</li>
+<li><strong>port</strong> (<em>string</em>) &#8211; Value of the port to perform the socket connection (only for ZeroMQ and Nanomsg in a &#8220;direct&#8221; network)</li>
+<li><strong>ip</strong> (<em>string</em>) &#8211; Value of the ip to perform the socket connection (only for ZeroMQ and Nanomsg in a &#8220;direct&#8221; network)</li>
+<li><strong>mode</strong> (<em>string</em>) &#8211; Only for ZeroMQ and Nanomsg. It can be &#8220;one2many&#8221; (one publisher and many subscribers in a topic) or &#8220;many2one&#8221; (one publisher and many subscribers in a topic).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>conf</strong> &#8211; Dictionary with the specifications of the publisher</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Creates a default publisher</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_pub</span><span class="p">()</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_pub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.node.config_sub">
+<code class="descname">config_sub</code><span class="sig-paren">(</span><em>msg_type='dict'</em>, <em>transport='ZMQ'</em>, <em>network='P2P'</em>, <em>port='9000'</em>, <em>ip='127.0.0.1'</em>, <em>mode='one2many'</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.config_sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configuration of subscribers are defined using python dictionaries with a specific format. This function can be used to
+define the configuration of a subscriber. By default &#8220;ZMQ&#8221; (ZeroMQ) in a &#8220;P2P&#8221; network in &#8220;one2many&#8221; mode it is used.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>msg_type</strong> (<em>string</em>) &#8211; Type of data to send (recomended to allows ROS geometric messages compatibility)</li>
+<li><strong>transport</strong> (<em>string</em>) &#8211; Transport layer used to communicate, it can be &#8220;ZMQ&#8221; to use ZeroMQ, &#8220;ROS&#8221; to use ROS, and &#8220;NANO&#8221; to use Nanomsg</li>
+<li><strong>network</strong> (<em>string</em>) &#8211; Type of network architecture, it can be &#8220;direct&#8221; and &#8220;P2P&#8221; (only for ZeroMQ and Nanomsg)</li>
+<li><strong>port</strong> (<em>string</em>) &#8211; Value of the port to perform the socket connection (only for ZeroMQ and Nanomsg in a &#8220;direct&#8221; network)</li>
+<li><strong>ip</strong> (<em>string</em>) &#8211; Value of the ip to perform the socket connection (only for ZeroMQ and Nanomsg in a &#8220;direct&#8221; network)</li>
+<li><strong>mode</strong> (<em>string</em>) &#8211; Only for ZeroMQ and Nanomsg. It can be &#8220;one2many&#8221; (one publisher and many subscribers in a topic) or &#8220;many2one&#8221; (one publisher and many subscribers in a topic).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>conf</strong> &#8211; Dictionary with the specifications of the subscriber</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Creates a default subscriber</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">()</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_sub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.node.new_pub">
+<code class="descname">new_pub</code><span class="sig-paren">(</span><em>topic</em>, <em>configuration={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.new_pub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to generate a new publisher in the current node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; Name of the topic</li>
+<li><strong>configuration</strong> (<em>dictionary</em>) &#8211; Configuration of the publisher</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pub</strong> &#8211; publisher instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#communication.publisher" title="communication.publisher">publisher</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Creates a default publisher</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_pub</span><span class="p">()</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_sub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.node.new_sub">
+<code class="descname">new_sub</code><span class="sig-paren">(</span><em>topic</em>, <em>configuration={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.node.new_sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to generate a new subscriber in the current node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; Name of the topic</li>
+<li><strong>configuration</strong> (<em>dictionary</em>) &#8211; Configuration of the subscriber</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>sub</strong> &#8211; subscriber instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#communication.subscriber" title="communication.subscriber">subscriber</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Creates a default subscriber</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">()</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_sub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="communication.publisher">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">publisher</code><span class="sig-paren">(</span><em>topic</em>, <em>node_name='default'</em>, <em>conf={'ip': '127.0.0.1'</em>, <em>'msg_type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publisher class used for inter-process comunication between nodes. We recommend to use the new_pub function to creates publisher instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; Topic name to publish the messages</li>
+<li><strong>node_name</strong> (<em>string</em>) &#8211; Name of the node</li>
+<li><strong>conf</strong> (<em>dictionary</em>) &#8211; Configuration of the publisher</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="communication.publisher.send_info">
+<code class="descname">send_info</code><span class="sig-paren">(</span><em>message</em>, <em>topic=None</em>, <em>debug=False</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to publish a python dictionary. The message is first serialized using json format and then published by the socket</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> (<em>dictionary</em>) &#8211; Python dictionary to be send</li>
+<li><strong>topic</strong> (<em>string</em>) &#8211; name of the topic to send the message</li>
+<li><strong>debug</strong> (<em>bool</em>) &#8211; if == True, then it print the message to send</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Send a dictionary in a default publisher:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">())</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_pub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+<span class="n">pub</span><span class="o">.</span><span class="n">send_info</span><span class="p">({</span><span class="s">&#39;message&#39;</span><span class="p">:</span><span class="s">&quot;hello&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Send a nep_msg in a default publisher:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">(</span><span class="n">msg_type</span> <span class="o">=</span> <span class="s">&quot;vector&quot;</span><span class="p">)</span> <span class="c"># nep_msg definition</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_pub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pub</span><span class="o">.</span><span class="n">send_info</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Send a nep_msg in ROS publisher:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">,</span> <span class="n">useROS</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c"># ROS Vector3 definition</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">(</span><span class="n">msg_type</span> <span class="o">=</span> <span class="s">&quot;vector&quot;</span><span class="p">,</span> <span class="n">transport</span> <span class="o">=</span> <span class="s">&quot;ROS&quot;</span><span class="p">)</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_pub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+<span class="n">vector</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">pub</span><span class="o">.</span><span class="n">send_info</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.publisher.send_string">
+<code class="descname">send_string</code><span class="sig-paren">(</span><em>message</em>, <em>topic=None</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.publisher.send_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish a string value. If a topic is not specified, then the messages will be published in the topic specified in the parameter topic_name when a object in this class is created.
+Otherwise it is published in the topic specified in the second parameter of this function. If the topic is not specified it send the message in the default topic.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> (<em>string</em>) &#8211; String to be sended</li>
+<li><strong>topic</strong> (<em>string</em>) &#8211; name of the topic to send the message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Send a string in a default publisher</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">nep</span>
+<span class="n">new_node</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s">&quot;dummy_node&quot;</span><span class="p">)</span>
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">config_sub</span><span class="p">()</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">new_node</span><span class="o">.</span><span class="n">new_pub</span><span class="p">(</span><span class="s">&quot;dummy_topic&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+<span class="n">pub</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="communication.subscriber">
+<em class="property">class </em><code class="descclassname">communication.</code><code class="descname">subscriber</code><span class="sig-paren">(</span><em>topic</em>, <em>node_name='default'</em>, <em>conf={'ip': '127.0.0.1'</em>, <em>'type': 'dict'</em>, <em>'network': 'P2P'</em>, <em>'transport': 'ZMQ'</em>, <em>'mode': 'one2many'}</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscriber class used for inter-process comunication between nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>topic</strong> (<em>string</em>) &#8211; topic name to publish the messages</li>
+<li><strong>node_name</strong> (<em>string</em>) &#8211; Name of the node</li>
+<li><strong>conf</strong> (<em>dictionary</em>) &#8211; Configuration of the subscriber</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="communication.subscriber.listen_info">
+<code class="descname">listen_info</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen for a json message that define the human state or robot action.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_mode</strong> (<em>bool</em>) &#8211; If True, the socket will set in blocking mode, otherwise the socket will be in non blocking mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>success</strong> (<em>bool</em>) &#8211; If True the information was obtained inside the timeline in non blocking mode</li>
+<li><strong>info</strong> (<em>dictionary</em>) &#8211; Message obtained</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="communication.subscriber.listen_string">
+<code class="descname">listen_string</code><span class="sig-paren">(</span><em>block_mode=True</em><span class="sig-paren">)</span><a class="headerlink" href="#communication.subscriber.listen_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to read string data from the sokect. The read operation is in blocking mode</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_mode</strong> (<em>bool</em>) &#8211; If True, the socket will set in blocking mode, otherwise the socket will be in non blocking mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>success</strong> (<em>bool</em>) &#8211; If True the information was obtained inside the timeline in non blocking mode</li>
+<li><strong>message</strong> (<em>string</em>) &#8211; String received in the socket.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-nep_msg">
+<span id="nep-msg"></span><h2>nep_msg<a class="headerlink" href="#module-nep_msg" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="nep_msg.accel">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">accel</code><span class="sig-paren">(</span><em>linear</em>, <em>angular</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.accel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new acceleration instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>linear</strong> (<em>nep.vector</em>) &#8211; linear acceleration</li>
+<li><strong>angular</strong> (<em>nep.vector</em>) &#8211; angular acceleration</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linear</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angular</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">accel</span><span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">accel</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span><span class="n">angular</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x_linear</span> <span class="o">=</span> <span class="n">accel</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;linear&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="nep_msg.pose">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">pose</code><span class="sig-paren">(</span><em>position</em>, <em>orientation</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.pose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new pose instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>position</strong> (<em>nep.vector</em>) &#8211; position component</li>
+<li><strong>orientation</strong> (<em>nep.quaternion</em>) &#8211; orientation component in quaternion representation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">position</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotation</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">quaternion</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pose</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">pose</span><span class="p">(</span><span class="n">position</span><span class="p">,</span><span class="n">rotation</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">pose</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;orientation&#39;</span><span class="p">][</span><span class="s">&#39;w&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="nep_msg.quaternion">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">quaternion</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>z=0</em>, <em>w=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new quaternion instance to represent orinetation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; x value</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; y value</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; z value</li>
+<li><strong>w</strong> (<em>float</em>) &#8211; w value</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">quaternion</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="nep_msg.vector">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">vector</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new 3D vector instance to represent 3D points, position, linear and angular velocity or acceleration, or other 3D representation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; x coordinate</li>
+<li><strong>y</strong> (<em>float</em>) &#8211; y coordinate</li>
+<li><strong>z</strong> (<em>float</em>) &#8211; z coordinate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">20.5</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">data</span> <span class="c"># Print dictionary value</span>
+<span class="go">{&#39;y&#39;: 20.5, &#39;x&#39;: 10, &#39;z&#39;: 30, &#39;type&#39;: &#39;point&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">]</span> <span class="c"># Print value of x</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Module <code class="xref py py-mod docutils literal"><span class="pre">vector</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="nep_msg.velocity">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">velocity</code><span class="sig-paren">(</span><em>linear</em>, <em>angular</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new velocity (twist) instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>linear</strong> (<em>nep.vector</em>) &#8211; linear velocity</li>
+<li><strong>angular</strong> (<em>nep.vector</em>) &#8211; angular velocity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linear</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">angular</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vel</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">velocity</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span><span class="n">angular</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x_linear</span> <span class="o">=</span> <span class="n">vel</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;linear&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="nep_msg.wrench">
+<em class="property">class </em><code class="descclassname">nep_msg.</code><code class="descname">wrench</code><span class="sig-paren">(</span><em>force</em>, <em>torque</em><span class="sig-paren">)</span><a class="headerlink" href="#nep_msg.wrench" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new wrench instance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>force</strong> (<em>nep.vector</em>) &#8211; force component</li>
+<li><strong>torque</strong> (<em>nep.vector</em>) &#8211; torque component</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>Access to the vector values using dictionary notation</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nep.nep_msg</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">force</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torque</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wr</span> <span class="o">=</span> <span class="n">nep</span><span class="o">.</span><span class="n">wrench</span><span class="p">(</span><span class="n">force</span><span class="p">,</span><span class="n">torque</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Fx</span> <span class="o">=</span> <span class="n">wr</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;force&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-robot">
+<span id="robot"></span><h2>robot<a class="headerlink" href="#module-robot" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="robot.memory">
+<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">memory</code><a class="headerlink" href="#robot.memory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot simple memory class. It is used for simple task such as count</p>
+<dl class="method">
+<dt id="robot.memory.increase_counter">
+<code class="descname">increase_counter</code><span class="sig-paren">(</span><em>human_action</em>, <em>count_actions</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.memory.increase_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increase the value of a couter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>human_action</strong> (<em>string</em>) &#8211; Name of the input human action to count</li>
+<li><strong>count_actions</strong> (<em>dictionary</em>) &#8211; Dictionary of possible human actions to count</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>count_actions</strong> (<em>dictionary</em>) &#8211; Update of the dictionary of human actions</li>
+<li><strong>times</strong> (<em>int</em>) &#8211; Times that the specific human action was performed.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.memory.select_message_for_count">
+<code class="descname">select_message_for_count</code><span class="sig-paren">(</span><em>counter_value</em>, <em>language='en'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.memory.select_message_for_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a sentence for a count action. You need to specify a number to count and the lenguaje.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>counter_value</strong> (<em>int</em>) &#8211; Number to be counted</li>
+<li><strong>lenguage</strong> (<em>string</em>) &#8211; Select &#8220;en&#8221; to select english, <code class="docutils literal"><span class="pre">es</span></code> for spanish, <code class="docutils literal"><span class="pre">jp</span></code> for japanesse, <code class="docutils literal"><span class="pre">it</span></code> for italian, <code class="docutils literal"><span class="pre">fr</span></code> for french</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>text_to_say</strong> &#8211; Complete text to be saud for the robot</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="robot.robot">
+<em class="property">class </em><code class="descclassname">robot.</code><code class="descname">robot</code><a class="headerlink" href="#robot.robot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot independent social primitives orchestration class. This class works as a bridge between the social behaviors specified by the user/programmer, in a high level control script, and the robot behavior execution engines.</p>
+<p>First, the user must create the high level  control script using the Google Blockly based Web Interface (which generate a Python script) or using a Python script.</p>
+<p>This class will request for the execution of a specific behavior to the execution engines of the robot selected. The behavior to be executed are encoded in python dictionary and then sended to the execution engine using the <code class="docutils literal"><span class="pre">run_action()</span></code> function. After a execution request, the program will block until the execution of the requested action is performed. This is done using the <code class="docutils literal"><span class="pre">wait_for_execution()</span></code> function.</p>
+<dl class="method">
+<dt id="robot.robot.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>number</em>, <em>gesture</em>, <em>to_person='no_person'</em>, <em>language='English'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot count definition (text to speech of the time that an action have been performed).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gesture</strong> (<em>string</em>) &#8211; Type of gesture that will be performed when the robot speaks.</li>
+<li><strong>number</strong> (<em>int</em>) &#8211; Specify the number to count</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Execution result, can be &#8220;success&#8221; or &#8220;error&#8221;.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.do">
+<code class="descname">do</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.do" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a python dictionaty with the description of the action to be performed by the robot. This function is to define simple actions that does not needs the especification of some parameters. Can be used for example for send to the robot to the initial position or to end and interaction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<em>string</em>) &#8211; Simple action to do</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, can be &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.do_gesture">
+<code class="descname">do_gesture</code><span class="sig-paren">(</span><em>gesture_name</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.do_gesture" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a python dictionaty with the description of the gesture to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gesture_name</strong> (<em>string</em>) &#8211; Name of the gesture to be performed</li>
+<li><strong>with_robot</strong> (<em>string</em>) &#8211; Name of the robot that will execute the requested behavior. This name represent the name of the topic to be used.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.imitate">
+<code class="descname">imitate</code><span class="sig-paren">(</span><em>thing2imitate</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.imitate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function create a python dictionaty with the description of the animation and sound to be performed by the robot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thing2imitate</strong> (<em>string</em>) &#8211; Name of the imitation to perform</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.listen">
+<code class="descname">listen</code><span class="sig-paren">(</span><em>type_action</em>, <em>language='en-US'</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.listen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.run_action">
+<code class="descname">run_action</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.run_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that send the request of a robot action execution. This request send a python dictionary with the description of such action.
+:param message: Robot action description.
+:type message: dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>result</strong> &#8211; Execution result, such as &#8220;success&#8221; or &#8220;error&#8221;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Here the an action of text to speech  is specified.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">message</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;action&#39;</span><span class="p">:</span> <span class="s">&#39;say&#39;</span><span class="p">,</span> <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="s">&#39;gesture&#39;</span><span class="p">:</span> <span class="s">&#39;no_gesture&#39;</span><span class="p">,</span> <span class="s">&#39;to_person&#39;</span><span class="p">:</span> <span class="s">&#39;no_person&#39;</span> <span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">run_action</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.say">
+<code class="descname">say</code><span class="sig-paren">(</span><em>text</em>, <em>gesture</em>, <em>to_person</em>, <em>language</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.say" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot text to speech action definition. This function create the python dictionary to be send to the execution engines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>string</em>) &#8211; Text to be said for the robot.</li>
+<li><strong>gesture</strong> (<em>string</em>) &#8211; Type of gesture that will be performed when the robot speaks.</li>
+<li><strong>to_person</strong> (<em>string</em>) &#8211; Specify an action of gaze to an speficic person. TODO: define the persons.</li>
+<li><strong>language</strong> (<em>string</em>) &#8211; Set the languge that the robot can speak</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> &#8211; Execution result, can be &#8220;success&#8221; or &#8220;error&#8221;.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.setRobots">
+<code class="descname">setRobots</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.setRobots" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.setVoice">
+<code class="descname">setVoice</code><span class="sig-paren">(</span><em>speed</em>, <em>volum</em>, <em>pitch</em>, <em>doubleVoice</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.setVoice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.wait_kill">
+<code class="descname">wait_kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen for kill signal of the program</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.wait_response">
+<code class="descname">wait_response</code><span class="sig-paren">(</span><em>robots</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.wait_response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot.robot.walk_to">
+<code class="descname">walk_to</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#robot.robot.walk_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-robot_behaviors">
+<span id="robot-behaviors"></span><h2>robot_behaviors<a class="headerlink" href="#module-robot_behaviors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="robot_behaviors.robot_behaviors">
+<em class="property">class </em><code class="descclassname">robot_behaviors.</code><code class="descname">robot_behaviors</code><span class="sig-paren">(</span><em>type_behavior</em><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class used to execute the robot behaviors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type_behavior</strong> (<em>string</em>) &#8211; Type of behavior, in this momento only &#8220;reactive&#8221;</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>perception_description <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
+<dd>Description of the perceptual module to react.</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>It is necessary to specify the port, ip and topic of the perceptual module to react. This must be done using a python dictionary as the example bellow:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># React to arm gestures</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">perceptual_description</span> <span class="o">=</span> <span class="n">perception</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;ip&#39;</span><span class="p">:</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s">&#39;port&#39;</span><span class="p">:</span> <span class="s">&#39;5002&#39;</span><span class="p">,</span> <span class="s">&#39;topic&#39;</span><span class="p">:</span> <span class="s">&#39;/arm_gesture&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">behavior</span> <span class="o">=</span> <span class="n">robot_behaviors</span><span class="p">(</span><span class="s">&quot;reactive&quot;</span><span class="p">,</span> <span class="n">perceptual_description</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="robot_behaviors.robot_behaviors.end_listening">
+<code class="descname">end_listening</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.end_listening" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot_behaviors.robot_behaviors.increase_counter">
+<code class="descname">increase_counter</code><span class="sig-paren">(</span><em>human_action</em>, <em>count_actions</em><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.increase_counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="robot_behaviors.robot_behaviors.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the behavior. This is done in two threads, the first one reads the perceptual information. The second one is used to react to the human actions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="robot_behaviors.robot_behaviors.update_human_state">
+<code class="descname">update_human_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#robot_behaviors.robot_behaviors.update_human_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the data from the socket and update the human state</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-launcher">
+<span id="launcher"></span><h2>launcher<a class="headerlink" href="#module-launcher" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="launcher.launcher">
+<em class="property">class </em><code class="descclassname">launcher.</code><code class="descname">launcher</code><a class="headerlink" href="#launcher.launcher" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="launcher.launcher.launch">
+<code class="descname">launch</code><span class="sig-paren">(</span><em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#launcher.launcher.launch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="launcher.launcher.nep_launch">
+<code class="descname">nep_launch</code><span class="sig-paren">(</span><em>node_type='action'</em>, <em>node_name='nao_action_engine'</em>, <em>param1='Akari'</em>, <em>param2='192.168.11.2'</em><span class="sig-paren">)</span><a class="headerlink" href="#launcher.launcher.nep_launch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launch a node. We need to specify the type of node and the node name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node_type</strong> (<em>string</em>) &#8211; Type of node. Example: sensing, perception, action.</li>
+<li><strong>node_name</strong> (<em>string</em>) &#8211; name of the node to open</li>
+<li><strong>param1</strong> (<em>string</em>) &#8211; first parameter for launch the node</li>
+<li><strong>param2</strong> (<em>string</em>) &#8211; second parameter for launch the node</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>node_name</strong> &#8211; Name of the node without .py</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="launcher.launcher.return_initial_path">
+<code class="descname">return_initial_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#launcher.launcher.return_initial_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Luis Enrique Coronado Zuniga.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+   
+
+</body>
+</html>
