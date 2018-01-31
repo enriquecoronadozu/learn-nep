@@ -8,12 +8,23 @@
   </url>
   
   <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
+    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://enriquecoronadozu.github.io/learn-nep/</loc>
     <lastmod>2016-03-08T21:07:13+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://enriquecoronadozu.github.io/learn-nep/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
+    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
     <priority>0</priority>
   </url>
   

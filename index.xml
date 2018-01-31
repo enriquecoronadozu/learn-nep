@@ -23,13 +23,24 @@ Component-based software Robot software development tends to be a complex task. 
     </item>
     
     <item>
+      <title>Compatibility</title>
+      <link>https://enriquecoronadozu.github.io/learn-nep/compatibility/</link>
+      <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
+      
+      <guid>https://enriquecoronadozu.github.io/learn-nep/compatibility/</guid>
+      <description>Communicate NEP with C It is possible to communicate C# applications (using NetMQ) and python nodes written with NEP (using ZeroMQ). To install NetMQ in a C# project we need to open the Package Manager Console (Tools/NuGet Package Manager/Package Manager Console) and write:
+Install-Package AsyncIO -Version 0.1.26 Install-Package NetMQ -Version 4.0.0.1 Install-Package Newtonsoft.Json  About NetMQ version
+Tested only in NetMQ version 4.0.0.1, other versions can be non compatible with this tutorial</description>
+    </item>
+    
+    <item>
       <title>NEP documentation</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/</link>
       <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/</guid>
-      <description>What is NEP? Node primitives (NEP) is an open source programming platform which allows the creation and design of social interactions with robots.
- Works in Linux, Windows and OSX. Enables end-user and hard-code programming. Use ZeroMQ, nanomsg, normal sockets or ROS for inter-process comunication. Easy to install and use. Mostly written in Python.  The core API of NEP is very lightweight (less that 3Mb). The main requirement is to have a Python distribution installed.</description>
+      <description>What is NEP? Node primitives (NEP) is an open robot programming platform that allows the creation and design of social interactions with robots. It is composed of the NEP programming framwework and the RIZE (Robot Interface from Zero Experience) end-user programming interface. The NEP framework presents the next main features:
+ Works in Linux, Windows and OSX Designed to be easy to get started Easy installation in Windows Designed to enable end-user programming Abtract the transportation layer in order to be middleware independent Uses high performence inter-process comunication libraries, such as ZeroMQ and nanomsg Enable communication with some of the most used middlewares in robotics such as ROS (only Ubuntu) and YARP The main requirement is to have a Python distribution installed.</description>
     </item>
     
   </channel>
