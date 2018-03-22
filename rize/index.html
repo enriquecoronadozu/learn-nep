@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>NEP</title>
+    <title>RIZE - NEP</title>
     <meta name="generator" content="Hugo 0.31.1" />
 
     
     <meta name="description" content="NEP documentation">
     
-    <link rel="canonical" href="https://enriquecoronadozu.github.io/learn-nep/">
+    <link rel="canonical" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
     
     <meta name="author" content="Enrique Coronado">
     
 
-    <meta property="og:url" content="https://enriquecoronadozu.github.io/learn-nep/">
+    <meta property="og:url" content="https://enriquecoronadozu.github.io/learn-nep/rize/">
     <meta property="og:title" content="NEP">
     <meta property="og:image" content="https://enriquecoronadozu.github.io/learn-nep/images/logo2.png">
     <meta name="apple-mobile-web-app-title" content="NEP">
@@ -69,9 +69,6 @@
     <script src="https://enriquecoronadozu.github.io/learn-nep/javascripts/modernizr.js"></script>
 
     
-    <link href="https://enriquecoronadozu.github.io/learn-nep/index.xml" rel="alternate" type="application/rss+xml" title="NEP" />
-    <link href="https://enriquecoronadozu.github.io/learn-nep/index.xml" rel="feed" type="application/rss+xml" title="NEP" />
-    
 
   </head>
   <body class="palette-primary-purple palette-accent-teal">
@@ -100,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        NEP
+        RIZE
       </div>
     </div>
 
@@ -237,11 +234,14 @@
 
 
 
-<a  title="RIZE" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
+<a class="current" title="RIZE" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
 	
 	RIZE
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
   
@@ -302,158 +302,13 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
-				<h1>Get started with NEP </h1>
+			<h1>RIZE </h1>
 
-				
-
-<p>Node primitives (NEP) is a front-end robot programming framework for Robot-Human Interaction
-<div class="admonition note">
-<p class="admonition-title">We are still working in this documentation page</p>
-<p>Last update 22/03/2018</p>
-</div></p>
-
-<h2 id="main-features-of-nep">Main features of NEP?</h2>
-
-<p>NEP have been designed to be usable and interoperable.</p>
-
-<p><strong>Usability features</strong>:</p>
-
-<ul>
-<li>Easy to install</li>
-<li>Use of a human-centered API</li>
-</ul>
-
-<p><strong>Interoperability features</strong>:</p>
-
-<ul>
-<li>Cross-platform (Windows, MacOS and Linux)</li>
-<li>Use of high performance (ZeroMQand nanomsg) and widely used (ROS) middlewares as back-end</li>
-<li>Use of JSON format for robot behavior specification</li>
-</ul>
-
-<p><strong>Other features</strong>:</p>
-
-<ul>
-<li>Open Source</li>
-<li>Mainly written in python</li>
-<li>Component-based</li>
-</ul>
-
-<h2 id="what-you-can-do-with-nep">What you can do with NEP?</h2>
-
-<ul>
-<li>Creates cross-platform robot components</li>
-<li>Use client-server and publish-subscribe patterns to communicate these components</li>
-<li>Use JSON format to specify complex robot behaviors based in the concatenation of primitive actions</li>
-</ul>
-
-<h2 id="installation-in-windows">Installation in Windows</h2>
-
-<p>Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the <em>Windows x86 MSI Installer</em> from offical Python page.</p>
-
-<p><a href="https://www.python.org/downloads/release/python-2714/">https://www.python.org/downloads/release/python-2714/</a></p>
-
-<p>Even when NEP can work with the <em>Windows x86-64 MSI installer</em> and other Python distributions such as <em>Anaconda</em>, the recommended version has better support for some robots, such as NAO and Pepper.</p>
-
-<h3 id="option-1-nep-from-installer">Option 1: NEP from installer</h3>
-
-<p><a href="https://bitbucket.org/enriquecoronadozu/nep/downloads/nep_experimental_version.exe">Click here to download experimental version</a></p>
-
-<p>Follow the installation wizard (you need a intenet connection due that it will dowload some python packages). A black window will appears installing all the needed python packages (using pip) and building the NEP library. Please don&rsquo;t close the black window until it close automatically.</p>
-
-<h3 id="option-2-nep-from-github">Option 2: NEP From Github</h3>
-
-<p>Clone or download the most recent version of NEP from:</p>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<p>Then run the <code>install.bat</code> file (with double click).</p>
-
-<h2 id="installation-in-ubuntu">Installation in Ubuntu</h2>
-
-<ul>
-<li>Clone or download the most recent version of the NEP from:</li>
-</ul>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code>.</p></li>
-
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems.</p></li>
-</ul>
-
-<h2 id="installation-in-mac">Installation in Mac</h2>
-
-<ul>
-<li>If you will use a NAO or Pepper robot, you need to install and use the newest version of Python 2.7 from:</li>
-</ul>
-
-<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
-
-<div class="admonition warning">
-<p class="admonition-title">Python distributions and NaoSDK</p>
-<p>In Mac the NAO and Pepper SDK do not work with the default Python installation in MacOSX or with Anaconda</p>
+			<div class="admonition note">
+<p class="admonition-title">About send/listen strings or info</p>
+<p>It is recomended to use in almost all the cases the <code>listen_info</code> function, in the subscriber side, along with <code>send_info</code>, in the publisher side.</p>
 </div>
 
-<ul>
-<li>Download the most recent version of the NEP from:</li>
-</ul>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code></p></li>
-
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems</p></li>
-</ul>
-
-<h2 id="test-a-simple-publish-subscribe-application">Test a simple publish-subscribe application</h2>
-
-<p>In order to test that NEP framework was suceffully installed we will create a simple publisher-subcriber application. For this we need to create 2 python scripts.</p>
-
-<p>The first one will be a node with a publisher. This script can be denoted as <code>pub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-import time
-
-node = nep.node(&quot;pub&quot;)
-conf = node.conf_pub(network = &quot;direct&quot;)
-pub = node.new_pub(&quot;test&quot;, conf)
-while True:
-    msg = &quot;hello world&quot;
-    pub.send_string(msg)
-    time.sleep(1)
-</code></pre>
-
-<p>The second one will be a node with a subscriber. This script can be denoted as  <code>sub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-
-node = nep.node(&quot;sub&quot;)
-conf = node.conf_sub(network = &quot;direct&quot;)
-sub = node.new_sub(&quot;test&quot;, conf)
-while True:
-    s, msg = sub.listen_string()
-    if s:
-        print msg
-</code></pre>
-
-<p>Then, execute both scripts in different terminal/console windows. The message of <code>hello world</code> need to appears in the console of the subscriber node.</p>
-
-<div class="admonition note">
-<p class="admonition-title">About tutorials and examples</p>
-<p>The example before works in default port in local network. In order to create more complex robot applications, we need to use a more convenient network architecture. Please see the <strong>Basic tutorials</strong> page to learn more about distributed systems and to see more useful examples for robot programming.</p>
-</div>
-
-<h2 id="common-problems">Common problems</h2>
-
-<h3 id="problem-running-the-install-sh-script">Problem running the install.sh script?</h3>
-
-<p>Use the  <code>chmod +x install.sh</code> commands to allows the execution of the script and then run the script using <code>./install.sh</code></p>
-
-			
 
 			<aside class="copyright" role="note">
 				
@@ -468,23 +323,37 @@ while True:
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
+      <a href="https://enriquecoronadozu.github.io/learn-nep/behavior/" title="RIZE">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              RIZE
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
-  
-  
   <div class="next">
-      <a href="https://enriquecoronadozu.github.io/learn-nep/tags/" title="Tags">
+  
+      <a href="https://enriquecoronadozu.github.io/learn-nep/" title="Get started with NEP">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Tags
+              Get started with NEP
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
@@ -492,8 +361,11 @@ while True:
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 

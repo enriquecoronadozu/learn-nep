@@ -36,15 +36,39 @@ Tested only in NetMQ version 4.</description>
     </item>
     
     <item>
-      <title>What is NEP (Node Primitives)?</title>
+      <title>RIZE</title>
+      <link>https://enriquecoronadozu.github.io/learn-nep/behavior/</link>
+      <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
+      
+      <guid>https://enriquecoronadozu.github.io/learn-nep/behavior/</guid>
+      <description>Basic concepts There are some basic concepts that we need to know in order to create distribuited applications with robot. These concepts are described bellow. If you already have experience with frameworks such as ROS, then you can skip to the next section.
+Component-based software Robot software development tends to be a complex task. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures.</description>
+    </item>
+    
+    <item>
+      <title>RIZE</title>
+      <link>https://enriquecoronadozu.github.io/learn-nep/rize/</link>
+      <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
+      
+      <guid>https://enriquecoronadozu.github.io/learn-nep/rize/</guid>
+      <description>About send/listen strings or info
+It is recomended to use in almost all the cases the listen_info function, in the subscriber side, along with send_info, in the publisher side.
+ </description>
+    </item>
+    
+    <item>
+      <title>Get started with NEP</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/</link>
       <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/</guid>
-      <description>A cross-platform robot programming framework for Robot-Human interaction.
-We are still working in this documentation page
-Last update 29/01/2018
- Main features of NEP?  Easy to install Open source Full Windows, Linux and MacOSX support Compatible with ROS (Robot Operating System)  What you can do with NEP?  Creates robot components using client-server and publish-subscribe communication patterns. Design complex Human-Robot interaction applications Communicate components written in different programming languages such as Python, C++ C#, Matlab, etc.</description>
+      <description>Node primitives (NEP) is a front-end robot programming framework for Robot-Human Interaction We are still working in this documentation page
+Last update 22/03/2018
+
+Main features of NEP? NEP have been designed to be usable and interoperable.
+Usability features:
+ Easy to install Use of a human-centered API  Interoperability features:
+ Cross-platform (Windows, MacOS and Linux) Use of high performance (ZeroMQand nanomsg) and widely used (ROS) middlewares as back-end Use of JSON format for robot behavior specification  Other features:</description>
     </item>
     
   </channel>
