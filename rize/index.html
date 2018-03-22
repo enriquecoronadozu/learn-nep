@@ -304,10 +304,79 @@
 		<div class="wrapper">
 			<h1>RIZE </h1>
 
-			<div class="admonition note">
-<p class="admonition-title">About send/listen strings or info</p>
-<p>It is recomended to use in almost all the cases the <code>listen_info</code> function, in the subscriber side, along with <code>send_info</code>, in the publisher side.</p>
+			
+
+<div class="admonition note">
+<p class="admonition-title">We are still working in this documentation page</p>
+<p>Last update 22/03/2018</p>
 </div>
+
+<p>RIZE (Robot Interface from Zero Experience) is Google Blockly and web-based programming interface. Its mainly oriented to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.</p>
+
+<p>The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using automatic code generation tools.</p>
+
+<h2 id="code-generation-from-the-end-user-point-of-view">Code generation from the end-user point of view</h2>
+
+<p>Many end-users requires to program robots without learning a programming language or write a command line. RIZE provides an easy to get started method (block-based programming) to enable end-user to develop thier own applications.</p>
+
+<p>Generally, a Human-Robot Interaction application follows the information processing cognitive model. This model basically separates the robot capabilities in the following processors:</p>
+
+<ul>
+<li>Percpetion</li>
+<li>Cognition</li>
+<li>Action</li>
+</ul>
+
+<p>In RIZE <strong>perception</strong> is simulated using a set of sensory and human behavior understanding nodes. #TODO: this need more explanation</p>
+
+<p><strong>Cognition</strong> is posible in RIZE in the decision making layer. This decision making can be:</p>
+
+<ul>
+<li>Scripted: A set of pre-defined behaviors are executed in a imperative and sequential way. #TODO: quit? this will be replaced</li>
+<li>Rule based: A set of IF-ELSE rules guides the execution of the program in a recative way #TODO: quit? this will be replaced</li>
+<li>#TODO: explain the new desicion making method developed</li>
+</ul>
+
+<p>An <strong>action</strong> processor is represented as a node that waits for requests of execution of some robot behavior. These nodes are generally written using the SDK and drivers of some specific robot. Robot behaviors are specified  using JSON format (see Behavior specification tutorial).</p>
+
+<p>Nodes needed in a HRI system can be launched (for percpetion and action) or developed (for cognition) using 3 main interfaces:</p>
+
+<h3 id="robot-connection">Robot connection</h3>
+
+<p>In this interface users can connect a new robot. For each robot the users need to fill the following:</p>
+
+<ul>
+<li>Robot type</li>
+<li>Robot name: # For the moment not used</li>
+<li>Robot IP # Ask me if you have problem with filling this field (if other set of number such as 127.0.0&hellip; is required), for the moment I only put the options that are present in the GVlab</li>
+</ul>
+
+<p>The IP is defined in two parts:</p>
+
+<ul>
+<li>IP (start): commun IP adress</li>
+<li>IP (last): last number of the IP adress which generally changes when the netwrok fails or is restarted.</li>
+</ul>
+
+<p>Example:</p>
+
+<p>For a IP for nao robot of 192.168.0.11, you need to select 192.168.0 in the IP (start) dropdown input and write 11 in the IP (last) textbox input.</p>
+
+<p><strong>Node launchers</strong></p>
+
+<p>This interface lauch the senosy and human-behavior undesrtanding nodes &hellip;</p>
+
+<p><strong>Robot programming</strong></p>
+
+<p>The main RIZE interface for programming consist of a  <strong>Toolbox</strong> (1) in which the user selects the programming blocks to use and a <strong>Workspace</strong> (2) where the user can drag and drop these blocks to generate a program. RIZE also provides some buttons in the <strong>Main menu</strong> (3) that supports some usable features such as save, load and recover block-based programs, see the generated code and see block documentation.</p>
+
+<p><strong>Program menu</strong> (5) enable to undo and redo a version of the program as well as run, stop, restart the programs.</p>
+
+<p>The main idea of RIZE is to use a block-based environment, which are considered as easier to get started and more engaging for novice programming learners   to enable interaction designers to launch the desired components (without knowing how to use using complex XML-based launchers or command line tools) and generate their own applications.</p>
+
+<p>In RIZE, the code needed to define the behaviors using is automatic generated. This definition is performed by the end-user as a set of concatenated primitives. Robot actions can be defined using the block presented in figure 3. An action block can takes a simple primitive block or a list of primitives to execute parallel tasks. It can also take a list of robots to perform the defined action in multi-robots systems (in the future this will be defined by the robot name instead the robot type).</p>
+
+<h2 id="code-generation-from-the-developer-point-of-view">Code generation from the developer point of view</h2>
 
 
 			<aside class="copyright" role="note">

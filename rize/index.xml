@@ -18,9 +18,10 @@
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/rize/</guid>
-      <description>About send/listen strings or info
-It is recomended to use in almost all the cases the listen_info function, in the subscriber side, along with send_info, in the publisher side.
- </description>
+      <description>We are still working in this documentation page
+Last update 22/03/2018
+ RIZE (Robot Interface from Zero Experience) is Google Blockly and web-based programming interface. Its mainly oriented to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.
+The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using automatic code generation tools.</description>
     </item>
     
   </channel>
