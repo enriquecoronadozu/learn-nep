@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/install/</loc>
+    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials/</loc>
     <lastmod>2017-03-09T00:11:02+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/behavior/</loc>
     <lastmod>2017-03-09T00:11:02+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/behavior/</loc>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</loc>
+    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
     <lastmod>2017-03-09T00:11:02+01:00</lastmod>
   </url>
   
@@ -45,8 +55,14 @@
   </url>
   
   <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/install/</loc>
+    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://enriquecoronadozu.github.io/learn-nep/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
+    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -63,6 +79,12 @@
   
   <url>
     <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials/</loc>
+    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</loc>
     <lastmod>2017-03-09T00:11:02+01:00</lastmod>
     <priority>0</priority>
   </url>

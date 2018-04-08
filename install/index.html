@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Basic theory - NEP</title>
+    <title>Install NEP/RIZE - NEP</title>
     <meta name="generator" content="Hugo 0.31.1" />
 
     
     <meta name="description" content="NEP documentation">
     
-    <link rel="canonical" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+    <link rel="canonical" href="https://enriquecoronadozu.github.io/learn-nep/install/">
     
     <meta name="author" content="Enrique Coronado">
     
 
-    <meta property="og:url" content="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+    <meta property="og:url" content="https://enriquecoronadozu.github.io/learn-nep/install/">
     <meta property="og:title" content="NEP">
     <meta property="og:image" content="https://enriquecoronadozu.github.io/learn-nep/images/logo2.png">
     <meta name="apple-mobile-web-app-title" content="NEP">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Basic theory
+        Install NEP/RIZE
       </div>
     </div>
 
@@ -198,11 +198,14 @@
 
 
 
-<a  title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
+<a class="current" title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
 	Install NEP/RIZE
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
   
@@ -216,14 +219,11 @@
 
 
 
-<a class="current" title="Basic theory" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+<a  title="Basic theory" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
 	
 	Basic theory
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -338,69 +338,105 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Basic theory </h1>
+			<h1>Install NEP/RIZE </h1>
 
 			
 
-<ul>
-<li>This tutorial briefly explains how distributed applications with robots are created.</li>
-<li>This tutorial is oriented for newcomers engineering students in software architectures, robot middleware and distributed systems.</li>
-<li>If you already have a lot of experience with frameworks such as ROS, then you can skip this tutorial.</li>
-</ul>
+<h2 id="installation-in-windows">Installation in Windows</h2>
 
-<h2 id="introduction">Introduction</h2>
-
-<p>Robot software development tends to be a complex task. The use of different types of robot generally requires to deal with different sensor devices, actuators and software, each of them working at the same time with different frequency and accessible from different programming languages or executable code. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures.</p>
-
-<h3 id="monolitic-vs-modular">Monolitic vs Modular</h3>
-
-<p>We can denote an application as <strong>monolithic</strong> when only one process (node) performs all the robot functionalities. For example, a MATLAB single script that performs sensing, perceptual, cognitive and actuation tasks. These type of programs are regularly done using several functions calls to some libraries.</p>
-
-<p>We can denote an application as <strong>modular</strong> when the robot functionalities are divided in atomic and interchangeable processes. For example, an application that have:</p>
+<p>In order to start using NEP in Windows you need basically to donwload and install:</p>
 
 <ul>
-<li>A C# process that adquire data from the Kinect sensor</li>
-<li>A Python script that use the data obtained from kinect to perform a deep learning perceptual algorithm.</li>
-<li>An HTML and Javascript client that is used to supervise the robot status in a web-browser</li>
-<li>A C++ process that execute the low-level control algorithms and send the signal to move the robot actuators.</li>
+<li>Python 2.7 for x86</li>
+<li>The latest version of NEP</li>
 </ul>
 
-<p>The idea of separates a robot application in modular and simple nodes has the main objective to improve the reusability, maintainability and performance of the code. This approach implies to start thinking in a <em>&ldquo;divide and conquer&rdquo;</em> way.</p>
+<h3 id="installing-python">Installing Python</h3>
 
-<h2 id="inter-process-comunication">Inter-process comunication</h2>
+<p>Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the <strong><em>Windows x86 MSI Installer</em></strong> from offical Python page.</p>
 
-<p>In complex robotic system, several nodes must be able to communicate with others that runs at the same time. The way in which nodes (or process) communicates is called inter-process communication. Classical forms of inter-process communication are signals, pipes, shared memory and sockets. However, we will only discuss in this tutorial about sockets due that are the more general communication approach and the standard for network programming.</p>
+<p><a href="https://www.python.org/downloads/release/python-2714/">Click here to redirect to the official Python webpage</a></p>
 
-<h3 id="sockets-and-robot-middlewares">Sockets and robot middlewares</h3>
+<div class="admonition note">
+<p class="admonition-title">Very important</p>
+<p>During the Python installation, include the Python directory path in the <em>PATH environment variable</em>. For this,
+select the <strong>Will be installed on local hard drive</strong> option, and then click Next (See the figure bellow).</p>
+</div>
 
-<p>Sockets are commonly used when communication between two process on the same or different machines is needed. A socket is defined using a IP (Internet Protocol) address, a port that listen and a protocol.
-En example of socket definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/python.png" alt="Material Screenshot" /></p>
 
-<p>A typical solution adopted to create distributed robotic systems based in socket communication is to use a messaging middleware. The NEP framework uses ZeroMQ and nanomsg technologies to allows inter-process comunication functionalities for Windows, Linux and MacOS. The NEP library can also be used to create ROS nodes which can publish messages to a ROS-based network. The NEP approach is to keep the code independent of the  middleware layer in order to easily adapt to future technologies.</p>
+<p>Even when NEP can work with other Python distributions such as <em>Anaconda</em>, the official version from the Python webpage has better support for some robots, such as NAO and Pepper.</p>
 
-<h2 id="comunication-patterns">Comunication patterns</h2>
-
-<p>Messaging patterns are generally used to describes the flow of communication between process in distributed systems. Two widely used messaging patterns in robotics are <strong>request/reply</strong> and <strong>publish/subscribe</strong> models.</p>
-
-<h3 id="client-server">Client-Server</h3>
-
-<p>In the <em>request/reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request.  If the response never comes a deadlock can occur. This pattern is godd for the cases where sincronization between two task is needed.</p>
-
-<h3 id="publish-subscribe">Publish-Subscribe</h3>
-
-<p>The <em>publish/subscribe</em> model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers, exists. Unlike typical request/reply models, the communication in a publish/subscribe model is made in an asynchronous way. A popular publish/subscribe scheme is based on the notion of <strong>topics</strong>. In this scheme subscribers can use a set of keywords called <strong>topics</strong> to filtered the information sent by publishers.</p>
-
-<h2 id="network-architectures">Network architectures</h2>
-
-<p>Distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. In NEP, we support multiple network architectures which includes direct <em>endpoint descriptions</em>, <em>central services (broker)</em> and a <em>Peer to Peer (P2P) master name server</em>. A description of each approach is shown bellow.</p>
+<h3 id="option-1-nep-from-installer-user">Option 1: NEP from installer (user)</h3>
 
 <ul>
-<li><p>In a <strong>direct</strong> architecture the endpoints are manually set by the user. This apporach can be used to communicates process in diferent computers. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases.</p></li>
-
-<li><p>The use of a <strong>broker</strong> help in the manageability of the system. A broker is a node or static point where all other nodes connect.  This approach reduces the number of endpoint to be configured to only one. However, due that all the communication is passed through the broker, some latency can be presented when the number of messages hit the limit of the broker capacity. This is due that all the messages are passed in the same socket and only referenced by a topic.</p></li>
-
-<li><p>When using a <strong>master name server</strong> or <strong>master node</strong>, all the nodes in the network are implicitly connected to this node to performs registration requests of message topics.  When the master node detects a topic registration request, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the publisher or subscriber instances which have performed the registration request of the topic. In this apporach communication starts when at least one publisher and one subscriber have requested the registration of the same topic. Unlike the broker approach, the messages are passed in diferent sockets, which overcome the problem of latency. This apporach is used in ROS.</p></li>
+<li>Download the latest NEP end-user wizard installer from:</li>
 </ul>
+
+<p><a href="https://bitbucket.org/enriquecoronadozu/nep-installers/downloads/nep_0.3.exe">Click here to download the current experimental version</a></p>
+
+<div class="admonition note">
+<p class="admonition-title">Very important</p>
+<p>During NEP installation it is needed to have the PC connected to internet. This is due that the installer will download and install some essential Python packages</p>
+</div>
+
+<ul>
+<li>Follow the installation wizard.</li>
+<li>A black window will appears to install all the needed python packages (using pip) and to build the NEP library. Please wait until the black window is closed automatically.</li>
+</ul>
+
+<h3 id="option-2-nep-from-github-developer">Option 2: NEP From Github (developer)</h3>
+
+<p>Clone or download the most recent version of NEP from:</p>
+
+<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
+
+<p>Then run the <code>install.bat</code> file (with double click).</p>
+
+<h2 id="installation-in-ubuntu">Installation in Ubuntu</h2>
+
+<ul>
+<li>Clone or download the most recent version of the NEP from:</li>
+</ul>
+
+<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
+
+<ul>
+<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code>.</p></li>
+
+<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems.</p></li>
+</ul>
+
+<h2 id="installation-in-mac">Installation in Mac</h2>
+
+<ul>
+<li>If you will use a NAO or Pepper robot, you need to install and use the newest version of Python 2.7 from the official Python webpage:</li>
+</ul>
+
+<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+
+<div class="admonition warning">
+<p class="admonition-title">Python distributions and NaoSDK</p>
+<p>In Mac the NAO and Pepper SDK do not work with the default Python installation in MacOSX or with Anaconda, please use the Python version from the official python webpage</p>
+</div>
+
+<ul>
+<li>Download the most recent version of NEP from:</li>
+</ul>
+
+<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
+
+<ul>
+<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code></p></li>
+
+<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems</p></li>
+</ul>
+
+<h2 id="common-installation-problems">Common installation problems</h2>
+
+<h3 id="problem-running-the-install-sh-script-macos-and-ubuntu">Problem running the install.sh script (MacOS and Ubuntu)?</h3>
+
+<p>Use the  <code>chmod +x install.sh</code> commands to allows the execution of the script and then run the script using <code>./install.sh</code></p>
 
 
 			<aside class="copyright" role="note">
@@ -419,34 +455,18 @@ En example of socket definition is <code>tcp://127.0.0.1:5000</code>, where <cod
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/install/" title="Install NEP/RIZE">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              Install NEP/RIZE
-            </div>
-          </div>
-        </div>
-      </a>
-  
   </div>
 
   <div class="next">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/behavior/" title="Behavior specification">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/tutorials/" title="Basic theory">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Behavior specification
+              Basic theory
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -20,8 +20,8 @@
       <guid>https://enriquecoronadozu.github.io/learn-nep/rize/</guid>
       <description>We are still working in this documentation page
 Last update 22/03/2018
- RIZE (Robot Interface from Zero Experience) is Google Blockly and web-based programming interface. Its mainly oriented to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.
-The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using automatic code generation tools.</description>
+ RIZE (Robot Interface from Zero Experience) is Google Blockly, form and web-based programming interface which can be used to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.
+The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using form- and block-based enviroments and automatic code generation tools.</description>
     </item>
     
   </channel>

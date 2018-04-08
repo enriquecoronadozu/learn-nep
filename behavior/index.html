@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>RIZE - NEP</title>
+    <title>Behavior specification - NEP</title>
     <meta name="generator" content="Hugo 0.31.1" />
 
     
@@ -71,7 +71,7 @@
     
 
   </head>
-  <body class="palette-primary-purple palette-accent-teal">
+  <body class="palette-primary-indigo palette-accent-teal">
 
 
 
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        RIZE
+        Behavior specification
       </div>
     </div>
 
@@ -180,9 +180,9 @@
 
 
 
-<a  title="Quick start" href="https://enriquecoronadozu.github.io/learn-nep/">
+<a  title="Home" href="https://enriquecoronadozu.github.io/learn-nep/">
 	
-	Quick start
+	Home
 </a>
 
 
@@ -198,9 +198,9 @@
 
 
 
-<a  title="Basic tutorials" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+<a  title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
-	Basic tutorials
+	Install NEP/RIZE
 </a>
 
 
@@ -216,9 +216,27 @@
 
 
 
-<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+<a  title="Basic theory" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
 	
-	Compatibility
+	Basic theory
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Communiction patterns" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
+	
+	Communiction patterns
 </a>
 
 
@@ -266,6 +284,24 @@
 </li>
 
 
+
+<li>
+  
+    
+
+
+
+<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+	
+	Compatibility
+</a>
+
+
+
+  
+</li>
+
+
         </ul>
         
 
@@ -302,249 +338,9 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>RIZE </h1>
+			<h1>Behavior specification </h1>
 
 			
-
-<h2 id="basic-concepts">Basic concepts</h2>
-
-<p>There are some basic concepts that we need to know in order to create distribuited applications with robot. These concepts are described bellow. If you already have experience with frameworks such as ROS, then you can skip to the next section.</p>
-
-<h3 id="component-based-software">Component-based software</h3>
-
-<p>Robot software development tends to be a complex task. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures. A powerful approach is the use of component-based solutions, which addresses the problem of robot software complexity using a set of reusable and maintainable software components or blocks that implements robot the functionalities.</p>
-
-<h3 id="node">Node</h3>
-
-<p>A basic element in a component based-solution is a <strong>node</strong> (or isolated process).  In NEP we consider a node as a basic unit of processing that is in charge of a simple and modular robot functionality. Example of simple tasks are, acquire data from a sensor, perform motion control or recognize a certain gesture.</p>
-
-<h3 id="monolitic-vs-modular">Monolitic vs Modular</h3>
-
-<p>We can denote an application as <strong>monolithic</strong> when only one process performs all the robot functionalities. For example, a MATLAB single script that performs sensing, perceptual, cognitive and actuation tasks. These tasks regularly are done doing several functions calls to some libraries.</p>
-
-<p>We can denote an application as <strong>modular</strong> when the robot functionalities are divided in atomic and interchangeable nodes (process). For example, an application that have:</p>
-
-<ul>
-<li>A C# process that adquire data from the Kinect sensor</li>
-<li>A Python script that use the data obtained from kinect to perform a deep learning perceptual algorithm.</li>
-<li>An HTML and Javascript client that is used to supervise the robot status in a web-browser</li>
-<li>A C++ process that execute the low-level control algorithms and send the signal to move the robot actuators.</li>
-</ul>
-
-<p>The idea of separates a robot application in modular and simple nodes has the main objective to improve the reusability, maintainability and performance of the code. This approach implies to start thinking in a <em>&ldquo;divide and conquer&rdquo;</em> way.</p>
-
-<h3 id="inter-process-comunication">Inter-process comunication</h3>
-
-<p>In complex robotic system, several nodes must be able to communicate with others that runs at the same time. The way in which nodes (or process) communicates is called inter-process communication. Classical forms of inter-process communication are signals, pipes, shared memory and sockets. However, we will only discuss in this tutorial about sockets due that are the more general communication approach and the standard for network programming.</p>
-
-<h3 id="sockets-and-robot-middlewares">Sockets and robot middlewares</h3>
-
-<p>Sockets are commonly used when communication between two process on the same or different machines is needed. A socket is defined using a IP (Internet Protocol) address, a port that listen and a protocol.
-En example of socket definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
-
-<p>A typical solution adopted to create distributed robotic systems based in socket communication is to use a messaging middleware. The NEP framework uses ZeroMQ and nanomsg technologies to allows inter-process comunication functionalities for Windows, Linux and MacOS. The NEP library can also be used to create ROS nodes which can publish messages to a ROS-based network. Our approach is to keep the code independent of the  middleware layer in order to easily adapt to future technologies.</p>
-
-<h3 id="comunication-patterns">Comunication patterns</h3>
-
-<p>Messaging patterns are generally used to describes the flow of communication between process in distributed systems. Two widely used messaging patterns in robotics are <strong>request/reply</strong> and <strong>publish/subscribe</strong> models. One the one hand, in a request/reply pattern, also denoted as <strong>client/server</strong>,  a process sends a request for some data and then waits for the response to this request.  if the response never comes a deadlock can occur. On the other hand, the publish/subscribe model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers, exists. Unlike typical request/reply models, the communication in a publish/subscribe model is made in an asynchronous way. A popular publish/subscribe scheme is based on the notion of <strong>topics</strong>. In this scheme subscribers can use a set of keywords called <strong>topics</strong> to filtered the information sent by publishers.</p>
-
-<h3 id="network-architectures">Network architectures</h3>
-
-<p>Distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. In NEP, we support multiple network
-architectures which includes direct endpoint descriptions, central services (broker) and a Peer to Peer (P2P) master name server. A description of each approach is shown bellow.</p>
-
-<p>which is
-a node or static point where all other nodes connect. This approach reduces the number of
-endpoint to be configured to only one. However, brokers are single point of failure.</p>
-
-<ul>
-<li><p>In a <strong>direct</strong> architecture the endpoints are manually set by the user. This apporach can be used to communicates to process in diferent computers. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due to that, if the number of nodes increases, then manageability of the system gets worse.</p></li>
-
-<li><p>The use of a <strong>broker</strong> help in the manageability of the system. A broker is a node or static point where all other nodes connect.  This approach reduces the number of endpoint to be configured to only one. However, due that all the communication is passed through the broker, some latency can be presented when the number of messages hit the limit of the broker capacity. This is due that all the messages are passed in the same socket and only referenced by a topic.</p></li>
-
-<li><p>When using a <strong>master name server</strong> or <strong>master node</strong>, all the nodes in the network are implicitly connected to this node to performs registration requests of message topics.  When the master node detects a topic registration request, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the publisher or subscriber instances which have performed the registration request of the topic. In this apporach communication starts when at least one publisher and one subscriber have requested the registration of the same topic. Unlike the broker approach, the messages are passed in diferent sockets, which overcome the problem of latency.</p></li>
-</ul>
-
-<p>The master name server approach is the most used in robotics to build distributed applications.</p>
-
-<h2 id="client-server">Client-server</h2>
-
-<p>In this section an example of how to create a simple client-server application is shown.</p>
-
-<h3 id="creates-a-client">Creates a client</h3>
-
-<p>The next Python script shown a simple example of a client node.</p>
-
-<pre><code class="language-python">import nep
-import time
-
-import nep  # Import nep library
-client = nep.client('127.0.0.1', '5000') # Create a new client instance
-
-while True:
-    msg = &quot;client request&quot;
-    client.send_info(msg)   # Send request
-    print client.listen_info() # Wait for server response
-    time.sleep(1)
-</code></pre>
-
-<p>The client class of the NEP framework allows to create ZeroMQ and normal sockets-based client instances. For this, the IP address and the port to communicate must to be defined. The functions <code>send_info</code> and <code>listen_info</code>can be used to send a request to the server and receive the server response respectively.</p>
-
-<p>By default a ZeroMQ client is defined using the NEP client class. In order to communicate with a device that use a normal socket, the optional parameter <code>transport</code> can be defined as <code>&quot;normal&quot;</code> in the constructor of a client object. For example:</p>
-
-<pre><code class="language-python">client = nep.client('127.0.0.1', '5000', transport = &quot;normal&quot;) #Create a new client instance
-</code></pre>
-
-<h3 id="creates-a-server">Creates a server</h3>
-
-<p>Now the next Python script shows the server node.</p>
-
-<pre><code class="language-python">import nep
-import time
-
-import nep  # Import nep library
-server = nep.server('127.0.0.1', '5000') #Create a new client instance
-
-while True:
-    msg = &quot;server response&quot;
-    request = server.listen_info() # Wait for client request
-    print request 
-    server.send_info(msg) # Send server response
-
-
-</code></pre>
-
-<p>The server class of the NEP framework allows to create ZeroMQ and normal sockets-based server instances. We nned to define the same IP address and  port
-that in the client node to communicate. The functions <code>listen_info</code> and <code>send_info</code>can be used to read the request the request of the client and send the response of the server respectively.</p>
-
-<p>By default a ZeroMQ server is defined using the NEP server class. In order to communicate with a device that use a normal socket, the optional parameter <code>transport</code> can be defined as <code>&quot;normal&quot;</code> in the constructor of a server object. For example:</p>
-
-<pre><code class="language-python">server = nep.server('127.0.0.1', '5000', transport = &quot;normal&quot;) #Create a new client instance
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">About ZeroMQ and normal sockets</p>
-<p>It is nor possible to communicate a  ZeroMQ socket and a normal socket. Therefore you need to be sure that both client and server has the same trasport layer (ZeroMQ or normal socket).</p>
-</div>
-
-<h2 id="publish-subscribe">Publish-subscribe</h2>
-
-<p>This section explains how to communicates several nodes using the publish-subscribe pattern. First, the code od a simple publish and subscribe Python scripts are presented. Then, the code of these script is explained.</p>
-
-<h3 id="a-simple-publish-subscribe-example">A simple publish-subscribe example</h3>
-
-<p>The next Python script can be used to create a new publisher instance.</p>
-
-<pre><code class="language-python">import nep
-import time
-
-node = nep.node(&quot;publisher_node&quot;) # Create a new node
-conf = node.conf_pub() # Select the configuration of the publisher
-pub = node.new_pub(&quot;test&quot;, conf) # Set the topic and the configuration of the publisher
-
-# Publish a message each second
-while True: 
-    msg = &quot;hello world&quot;
-    pub.send_string(msg) 
-    time.sleep(1)
-
-</code></pre>
-
-<p>The next Python script can be used to create a new subscribe instance.</p>
-
-<pre><code class="language-python">import nep
-
-node = nep.node(&quot;subscriber_node&quot;) # Create a new node
-conf = node.conf_sub() # Select the configuration of the subscriber
-sub = node.new_sub(&quot;test&quot;, conf) # Set the topic and the configuration of the subscriber
-
-# Read the information published in the topic registered
-while True:
-    s, msg = sub.listen_string()
-    if s:
-        print msg
-</code></pre>
-
-<h3 id="code-explanation">Code explanation</h3>
-
-<p>In order to perform the communication between of two or more nodes using the publisher-subscriber pattern we need to import the nep library and create a new instance of the <code>node</code> class.  The constructor of the <code>node</code> class can accept two parameters. The first one defines the name of the node, This name must to be diferent for each node in the network.   In the above example we define the name of the nodes as <code>publisher_node</code> and <code>subscriber_node</code> for the publisher and subscriber instance respectvelly. The second parameter is optional and defines the trasporting layer of the node. This parameter can be used to create a ROS node. An example of the definition of a ROS publisher is shown bellow.</p>
-
-<pre><code class="language-python">node = nep.node(&quot;publisher_node&quot; , transport = &quot;ROS&quot;)
-</code></pre>
-
-<h3 id="define-the-publish-and-subscriber-configuration">Define the publish and subscriber configuration</h3>
-
-<p>The NEP library suports direct endpoints conections (only ZeroMQ and nanomsg) and P2P master service conections (in ZeroMQ, nanomsg and ROS). The <code>pub_conf</code> <code>sub_conf</code> methodd in the  <code>node</code> class allow to define the configuration of the network to be used in the publisher and subscriber respectively.</p>
-
-<p>In order to define a direct endpoints conection we can use the next line for the purblisher:</p>
-
-<pre><code class="language-python">conf = node.conf_sub(network = &quot;direct&quot;, ip = &quot;192.168.0.100&quot;, port = &quot;9090&quot;)
-</code></pre>
-
-<p>An the subscriber must be set as below:</p>
-
-<pre><code class="language-python">conf = node.conf_pub(network = &quot;direct&quot;, ip = &quot;192.168.0.100&quot;, port = &quot;9090&quot;)
-</code></pre>
-
-<p>The use of a direct network can enable the comunication with other pc, which can have a diferent operating systems via wifi or ethernet network. We need to remember that in a direct network the endpoint to connect (ip and port) must be specified. In the example an ip of <code>&quot;192.168.0.100&quot;</code> and a port of value <code>9090</code> is set.</p>
-
-<p>As mentioned in the <em>Basic concepts</em> section the most used architecture for robotics use a master name service in a P2P network. Due that this option is the default one, we can simply set the configuration of the subscriber as:</p>
-
-<pre><code class="language-python">conf = node.conf_sub()
-</code></pre>
-
-<p>and for the publishers as:</p>
-
-<pre><code class="language-python">conf = node.conf_pub()
-</code></pre>
-
-<p>In this way a <strong>ZeroMQ</strong> publisher/subscriber will be created. In order to use  <strong>nanomsg</strong> we can use the parameter transport as shown bellow for the publisher.</p>
-
-<pre><code class="language-python">conf = node.conf_pub(transport = &quot;NN&quot;)
-</code></pre>
-
-<p>The same apporach can be applied in the subscriber configuration.</p>
-
-<p>To define a <strong>ROS</strong> publisher we can use:</p>
-
-<pre><code class="language-python">conf = node.conf_pub(transport = &quot;ROS&quot;)
-</code></pre>
-
-<h3 id="create-a-new-publisher-subscriber-instance">Create a new publisher-subscriber instance</h3>
-
-<p>After defining the configuration of the network we need to create a publisher/subscriber instance using the <code>new_pub</code> and <code>new_sub</code> methods of the <code>node</code> class. The next line creates a new publisher instance that will send messages in the topic <code>test</code>.</p>
-
-<pre><code class="language-python">pub = node.new_pub(&quot;test&quot;, conf)
-</code></pre>
-
-<p>The next line shows how to create a subscriber instance which will listen the messages pblished in the topic <code>test</code>.</p>
-
-<pre><code class="language-python">sub = node.new_pub(&quot;test&quot;, conf)
-</code></pre>
-
-<p>The second parameter in the <code>new_pub</code> and <code>new_sub</code> methods sets the configuration of the network.</p>
-
-<h3 id="start-sending-information">Start sending information</h3>
-
-<p>In order to send information to the network we can use the methods <code>send_string</code> or <code>send_info</code>.</p>
-
-<p>When using the <code>send_string</code> method we can send the information of the publisher as simple strings.</p>
-
-<p>The function `<code>send_info</code> can be used to send complex messages in JSON format (python dictionaries) and ROS geometric messages such as Point, Pose, Quaternion, etc.</p>
-
-<h3 id="start-listening-information">Start listening information</h3>
-
-<p>In order to get the information that a publisher instance send to the newtwork we can use the functions <code>listen_string</code> or <code>listen_info</code>.</p>
-
-<p>When using the <code>listen_string</code> we can receive the information of the publisher as simple strings. This function along with the <code>send_string</code> in the publisher side can be used to comunicate two nodes using simple messages in initial tests.</p>
-
-<p>The function `<code>listen_info</code> can be used to read complex messages in JSON format (python dictionaries).</p>
-
-<div class="admonition note">
-<p class="admonition-title">About send/listen strings or info</p>
-<p>It is recomended to use in almost all the cases the <code>listen_info</code> function, in the subscriber side, along with <code>send_info</code>, in the publisher side.</p>
-</div>
-
 
 			<aside class="copyright" role="note">
 				
@@ -562,7 +358,7 @@ while True:
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/compatibility/" title="Programming languages">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/tutorials/" title="Basic theory">
         <span class="direction">
           Previous
         </span>
@@ -572,7 +368,7 @@ while True:
           </div>
           <div class="stretch">
             <div class="title">
-              Programming languages
+              Basic theory
             </div>
           </div>
         </div>
@@ -582,14 +378,14 @@ while True:
 
   <div class="next">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/rize/" title="RIZE">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/" title="Communication patterns">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              RIZE
+              Communication patterns
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

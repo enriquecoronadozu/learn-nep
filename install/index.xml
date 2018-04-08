@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installs on NEP</title>
+    <link>https://enriquecoronadozu.github.io/learn-nep/install/</link>
+    <description>Recent content in Installs on NEP</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
+    <lastBuildDate>Fri, 09 Mar 2018 00:11:02 +0100</lastBuildDate>
+    
+	<atom:link href="https://enriquecoronadozu.github.io/learn-nep/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install NEP/RIZE</title>
+      <link>https://enriquecoronadozu.github.io/learn-nep/install/</link>
+      <pubDate>Fri, 09 Mar 2018 00:11:02 +0100</pubDate>
+      
+      <guid>https://enriquecoronadozu.github.io/learn-nep/install/</guid>
+      <description>Installation in Windows In order to start using NEP in Windows you need basically to donwload and install:
+ Python 2.7 for x86 The latest version of NEP  Installing Python Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the Windows x86 MSI Installer from offical Python page.
+Click here to redirect to the official Python webpage
+Very important</description>
+    </item>
+    
+  </channel>
+</rss>

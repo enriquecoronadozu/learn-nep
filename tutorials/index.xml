@@ -13,13 +13,12 @@
     
     
     <item>
-      <title>Basic tutorials</title>
+      <title>Basic theory</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/tutorials/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/tutorials/</guid>
-      <description>Basic concepts There are some basic concepts that we need to know in order to create distribuited applications with robot. These concepts are described bellow. If you already have experience with frameworks such as ROS, then you can skip to the next section.
-Component-based software Robot software development tends to be a complex task. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures.</description>
+      <description>This tutorial briefly explains how distributed applications with robots are created. This tutorial is oriented for newcomers engineering students in software architectures, robot middleware and distributed systems. If you already have a lot of experience with frameworks such as ROS, then you can skip this tutorial.  Introduction Robot software development tends to be a complex task. The use of different types of robot generally requires to deal with different sensor devices, actuators and software, each of them working at the same time with different frequency and accessible from different programming languages or executable code.</description>
     </item>
     
   </channel>

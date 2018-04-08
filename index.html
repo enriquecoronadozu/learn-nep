@@ -74,7 +74,7 @@
     
 
   </head>
-  <body class="palette-primary-purple palette-accent-teal">
+  <body class="palette-primary-indigo palette-accent-teal">
 
 
 
@@ -183,9 +183,9 @@
 
 
 
-<a  title="Quick start" href="https://enriquecoronadozu.github.io/learn-nep/">
+<a  title="Home" href="https://enriquecoronadozu.github.io/learn-nep/">
 	
-	Quick start
+	Home
 </a>
 
 
@@ -201,9 +201,9 @@
 
 
 
-<a  title="Basic tutorials" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+<a  title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
-	Basic tutorials
+	Install NEP/RIZE
 </a>
 
 
@@ -219,9 +219,27 @@
 
 
 
-<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+<a  title="Basic theory" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
 	
-	Compatibility
+	Basic theory
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Communiction patterns" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
+	
+	Communiction patterns
 </a>
 
 
@@ -258,6 +276,24 @@
 <a  title="Behavior specification" href="https://enriquecoronadozu.github.io/learn-nep/behavior/">
 	
 	Behavior specification
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+	
+	Compatibility
 </a>
 
 
@@ -303,155 +339,46 @@
 	<article class="article">
 		<div class="wrapper">
 			
-				<h1>Get started with NEP </h1>
+				<h1>What is NEP/RIZE? </h1>
 
 				
 
-<p>Node primitives (NEP) is a front-end robot programming framework for Robot-Human Interaction
-<div class="admonition note">
-<p class="admonition-title">We are still working in this documentation page</p>
-<p>Last update 22/03/2018</p>
-</div></p>
+<p><strong>NEP</strong> (<strong>N</strong>od<strong>e</strong> <strong>P</strong>rimitives) is a <strong><em>open</em></strong>, <strong><em>front-end</em></strong> and <strong><em>cross-platform</em></strong> robot programming framework for Robot-Human Interaction.</p>
 
-<h2 id="main-features-of-nep">Main features of NEP?</h2>
+<p><strong>RIZE</strong> (<strong>R</strong>obot <strong>I</strong>nterface from <strong>Z</strong>ero <strong>E</strong>xperience) is a <strong><em>easy-to-use</em></strong> robot programming and component launching interface for end-user development.</p>
 
-<p>NEP have been designed to be usable and interoperable.</p>
+<h2 id="what-developers-can-do-with-nep">What developers can do with NEP?</h2>
 
-<p><strong>Usability features</strong>:</p>
+<ul>
+<li>Create cross-platform robot components</li>
+<li>Use different patterns, such as client-server and publish-subscribe patterns, to communicate the robot components</li>
+<li>Use JSON format to specify complex robot behaviors</li>
+</ul>
+
+<h2 id="what-users-can-do-with-rize">What users can do with RIZE?</h2>
+
+<ul>
+<li>Uses blocks to program robots and launch their components (robot sensors and perceptions)</li>
+<li>Connect and use different type of robots (such as NAO, Pepper, and ROS compatible robots)</li>
+<li>Run, restart or stop the robot behaviors</li>
+</ul>
+
+<h2 id="main-features-of-nep">Main features of NEP</h2>
 
 <ul>
 <li>Easy to install</li>
-<li>Use of a human-centered API</li>
-</ul>
-
-<p><strong>Interoperability features</strong>:</p>
-
-<ul>
 <li>Cross-platform (Windows, MacOS and Linux)</li>
-<li>Use of high performance (ZeroMQand nanomsg) and widely used (ROS) middlewares as back-end</li>
-<li>Use of JSON format for robot behavior specification</li>
+<li>Use of high performance (ZeroMQand nanomsg) and widely used (ROS) middlewares and TCP/IP sockets as back-end</li>
+<li>Mainly written in Python</li>
 </ul>
 
-<p><strong>Other features</strong>:</p>
+<h2 id="main-features-of-rize">Main features of RIZE</h2>
 
 <ul>
-<li>Open Source</li>
-<li>Mainly written in python</li>
-<li>Component-based</li>
+<li>Can be opened from web browsers, such as Chrome and Firefox (Intenet Explorer is not supported).</li>
+<li>Can work with heterogeneous and multi-robot systems.</li>
+<li>Designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.</li>
 </ul>
-
-<h2 id="what-you-can-do-with-nep">What you can do with NEP?</h2>
-
-<ul>
-<li>Creates cross-platform robot components</li>
-<li>Use client-server and publish-subscribe patterns to communicate these components</li>
-<li>Use JSON format to specify complex robot behaviors based in the concatenation of primitive actions</li>
-</ul>
-
-<h2 id="installation-in-windows">Installation in Windows</h2>
-
-<p>Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the <em>Windows x86 MSI Installer</em> from offical Python page.</p>
-
-<p><a href="https://www.python.org/downloads/release/python-2714/">https://www.python.org/downloads/release/python-2714/</a></p>
-
-<p>Even when NEP can work with the <em>Windows x86-64 MSI installer</em> and other Python distributions such as <em>Anaconda</em>, the recommended version has better support for some robots, such as NAO and Pepper.</p>
-
-<h3 id="option-1-nep-from-installer">Option 1: NEP from installer</h3>
-
-<p><a href="https://bitbucket.org/enriquecoronadozu/nep-installers/downloads/nep_0.3.exe">Click here to download experimental version</a></p>
-
-<p>Follow the installation wizard (you need a intenet connection due that it will dowload some python packages). A black window will appears installing all the needed python packages (using pip) and building the NEP library. Please don&rsquo;t close the black window until it close automatically.</p>
-
-<h3 id="option-2-nep-from-github">Option 2: NEP From Github</h3>
-
-<p>Clone or download the most recent version of NEP from:</p>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<p>Then run the <code>install.bat</code> file (with double click).</p>
-
-<h2 id="installation-in-ubuntu">Installation in Ubuntu</h2>
-
-<ul>
-<li>Clone or download the most recent version of the NEP from:</li>
-</ul>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code>.</p></li>
-
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems.</p></li>
-</ul>
-
-<h2 id="installation-in-mac">Installation in Mac</h2>
-
-<ul>
-<li>If you will use a NAO or Pepper robot, you need to install and use the newest version of Python 2.7 from:</li>
-</ul>
-
-<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
-
-<div class="admonition warning">
-<p class="admonition-title">Python distributions and NaoSDK</p>
-<p>In Mac the NAO and Pepper SDK do not work with the default Python installation in MacOSX or with Anaconda</p>
-</div>
-
-<ul>
-<li>Download the most recent version of the NEP from:</li>
-</ul>
-
-<p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
-
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code></p></li>
-
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems</p></li>
-</ul>
-
-<h2 id="test-a-simple-publish-subscribe-application">Test a simple publish-subscribe application</h2>
-
-<p>In order to test that NEP framework was suceffully installed we will create a simple publisher-subcriber application. For this we need to create 2 python scripts.</p>
-
-<p>The first one will be a node with a publisher. This script can be denoted as <code>pub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-import time
-
-node = nep.node(&quot;pub&quot;)
-conf = node.conf_pub(network = &quot;direct&quot;)
-pub = node.new_pub(&quot;test&quot;, conf)
-while True:
-    msg = &quot;hello world&quot;
-    pub.send_string(msg)
-    time.sleep(1)
-</code></pre>
-
-<p>The second one will be a node with a subscriber. This script can be denoted as  <code>sub.py</code>. This script must to have the next code:</p>
-
-<pre><code class="language-python">import nep
-
-node = nep.node(&quot;sub&quot;)
-conf = node.conf_sub(network = &quot;direct&quot;)
-sub = node.new_sub(&quot;test&quot;, conf)
-while True:
-    s, msg = sub.listen_string()
-    if s:
-        print msg
-</code></pre>
-
-<p>Then, execute both scripts in different terminal/console windows. The message of <code>hello world</code> need to appears in the console of the subscriber node.</p>
-
-<div class="admonition note">
-<p class="admonition-title">About tutorials and examples</p>
-<p>The example before works in default port in local network. In order to create more complex robot applications, we need to use a more convenient network architecture. Please see the <strong>Basic tutorials</strong> page to learn more about distributed systems and to see more useful examples for robot programming.</p>
-</div>
-
-<h2 id="common-problems">Common problems</h2>
-
-<h3 id="problem-running-the-install-sh-script">Problem running the install.sh script?</h3>
-
-<p>Use the  <code>chmod +x install.sh</code> commands to allows the execution of the script and then run the script using <code>./install.sh</code></p>
 
 			
 

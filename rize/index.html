@@ -71,7 +71,7 @@
     
 
   </head>
-  <body class="palette-primary-purple palette-accent-teal">
+  <body class="palette-primary-indigo palette-accent-teal">
 
 
 
@@ -180,9 +180,9 @@
 
 
 
-<a  title="Quick start" href="https://enriquecoronadozu.github.io/learn-nep/">
+<a  title="Home" href="https://enriquecoronadozu.github.io/learn-nep/">
 	
-	Quick start
+	Home
 </a>
 
 
@@ -198,9 +198,9 @@
 
 
 
-<a  title="Basic tutorials" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
+<a  title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
-	Basic tutorials
+	Install NEP/RIZE
 </a>
 
 
@@ -216,9 +216,27 @@
 
 
 
-<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+<a  title="Basic theory" href="https://enriquecoronadozu.github.io/learn-nep/tutorials/">
 	
-	Compatibility
+	Basic theory
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Communiction patterns" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
+	
+	Communiction patterns
 </a>
 
 
@@ -258,6 +276,24 @@
 <a  title="Behavior specification" href="https://enriquecoronadozu.github.io/learn-nep/behavior/">
 	
 	Behavior specification
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Compatibility" href="https://enriquecoronadozu.github.io/learn-nep/compatibility/">
+	
+	Compatibility
 </a>
 
 
@@ -311,9 +347,30 @@
 <p>Last update 22/03/2018</p>
 </div>
 
-<p>RIZE (Robot Interface from Zero Experience) is Google Blockly and web-based programming interface. Its mainly oriented to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.</p>
+<p>RIZE (Robot Interface from Zero Experience) is Google Blockly, form and web-based programming interface which can be used to work with heterogeneous and multi-robot systems. RIZE was designed to enable an easy addition of new robots, sensory devices and human behavior understanding algorithms.</p>
 
-<p>The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using automatic code generation tools.</p>
+<p>The main idea of RIZE is reduce the effort that requires robot development for both end-users and expert programmers using form- and block-based enviroments and automatic code generation tools.</p>
+
+<h2 id="robot-connection">Robot connection</h2>
+
+<p>In this interface users can connect a new robot. For each robot the users need to fill the following:</p>
+
+<ul>
+<li>Robot type</li>
+<li>Robot name: # For the moment not used</li>
+<li>Robot IP # Ask me if you have problem with filling this field (if other set of number such as 127.0.0&hellip; is required), for the moment I only put the options that are present in the GVlab</li>
+</ul>
+
+<p>The IP is defined in two parts:</p>
+
+<ul>
+<li>IP (start): commun IP adress</li>
+<li>IP (last): last number of the IP adress which generally changes when the netwrok fails or is restarted.</li>
+</ul>
+
+<p>Example:</p>
+
+<p>For a IP for nao robot of 192.168.0.11, you need to select 192.168.0 in the IP (start) dropdown input and write 11 in the IP (last) textbox input.</p>
 
 <h2 id="code-generation-from-the-end-user-point-of-view">Code generation from the end-user point of view</h2>
 
@@ -340,27 +397,6 @@
 <p>An <strong>action</strong> processor is represented as a node that waits for requests of execution of some robot behavior. These nodes are generally written using the SDK and drivers of some specific robot. Robot behaviors are specified  using JSON format (see Behavior specification tutorial).</p>
 
 <p>Nodes needed in a HRI system can be launched (for percpetion and action) or developed (for cognition) using 3 main interfaces:</p>
-
-<h3 id="robot-connection">Robot connection</h3>
-
-<p>In this interface users can connect a new robot. For each robot the users need to fill the following:</p>
-
-<ul>
-<li>Robot type</li>
-<li>Robot name: # For the moment not used</li>
-<li>Robot IP # Ask me if you have problem with filling this field (if other set of number such as 127.0.0&hellip; is required), for the moment I only put the options that are present in the GVlab</li>
-</ul>
-
-<p>The IP is defined in two parts:</p>
-
-<ul>
-<li>IP (start): commun IP adress</li>
-<li>IP (last): last number of the IP adress which generally changes when the netwrok fails or is restarted.</li>
-</ul>
-
-<p>Example:</p>
-
-<p>For a IP for nao robot of 192.168.0.11, you need to select 192.168.0 in the IP (start) dropdown input and write 11 in the IP (last) textbox input.</p>
 
 <p><strong>Node launchers</strong></p>
 
@@ -395,7 +431,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/behavior/" title="RIZE">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/compatibility/" title="Programming languages">
         <span class="direction">
           Previous
         </span>
@@ -405,7 +441,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              RIZE
+              Programming languages
             </div>
           </div>
         </div>
@@ -415,14 +451,14 @@
 
   <div class="next">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/" title="Get started with NEP">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/" title="What is NEP/RIZE?">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Get started with NEP
+              What is NEP/RIZE?
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
