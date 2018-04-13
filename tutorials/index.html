@@ -350,33 +350,32 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Robot software development tends to be a complex task. The use of different types of robot generally requires to deal with different sensor devices, actuators and software, each of them working at the same time with different frequency and accessible from different programming languages or executable code. One way to manage this complexity is using well-conceived guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these architectures.</p>
+<p>Robot software development tends to be a complex task. The use of different types of robots and applications generally requires to deal with different algorithms, devices and actuators, each of them working in separated process that are executed at the same time. These processes generally works in different frequencies and can be written in different programming languages. One way to manage the complexity that involves robot programming is the use of some guidelines and design patterns, together with programming tools (such as NEP and ROS) that support these patterns.</p>
 
 <h3 id="monolitic-vs-modular">Monolitic vs Modular</h3>
 
-<p>We can denote an application as <strong>monolithic</strong> when only one process (node) performs all the robot functionalities. For example, a MATLAB single script that performs sensing, perceptual, cognitive and actuation tasks. These type of programs are regularly done using several functions calls to some libraries.</p>
+<p>We can denote an application as <strong>monolithic</strong> when only one process (node) is used to perform and manage all the robot functionalitiesin some application. These type of programs are regularly done in a single script that uses several functions calls to some libraries.</p>
 
-<p>We can denote an application as <strong>modular</strong> when the robot functionalities are divided in atomic and interchangeable processes. For example, an application that have:</p>
+<p>We can denote an application as <strong>modular</strong> when the robot functionalities are divided in atomic and interchangeable processes, nodes or scripts that are executed at the same time. For example, an application that uses:</p>
 
 <ul>
-<li>A C# process that adquire data from the Kinect sensor</li>
-<li>A Python script that use the data obtained from kinect to perform a deep learning perceptual algorithm.</li>
-<li>An HTML and Javascript client that is used to supervise the robot status in a web-browser</li>
+<li>A C# program that adquire data from a Kinect sensor</li>
+<li>A Python script that use the data obtained from kinect to recognize human gestures.</li>
+<li>A Matlab script that perform the robot desition making in base the human destures detected.</li>
 <li>A C++ process that execute the low-level control algorithms and send the signal to move the robot actuators.</li>
 </ul>
 
-<p>The idea of separates a robot application in modular and simple nodes has the main objective to improve the reusability, maintainability and performance of the code. This approach implies to start thinking in a <em>&ldquo;divide and conquer&rdquo;</em> way.</p>
+<p>The idea of separate a robot application in modular and simple nodes has the main objective to improve the reusability, maintainability and performance of robotic systems. This approach implies to start thinking in a <em>&ldquo;divide and conquer&rdquo;</em> way.</p>
 
 <h2 id="inter-process-comunication">Inter-process comunication</h2>
 
-<p>In complex robotic system, several nodes must be able to communicate with others that runs at the same time. The way in which nodes (or process) communicates is called inter-process communication. Classical forms of inter-process communication are signals, pipes, shared memory and sockets. However, we will only discuss in this tutorial about sockets due that are the more general communication approach and the standard for network programming.</p>
+<p>In complex robotic system, several nodes must be able to communicate with others that runs at the same time. The way in which different nodes communicates between them is denoted as inter-process communication. Classical forms of inter-process communication are signals, pipes, shared memory and sockets. However, sockets are the more general communication approach.</p>
 
 <h3 id="sockets-and-robot-middlewares">Sockets and robot middlewares</h3>
 
-<p>Sockets are commonly used when communication between two process on the same or different machines is needed. A socket is defined using a IP (Internet Protocol) address, a port that listen and a protocol.
-En example of socket definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
+<p>Sockets are commonly used when communication between two process on the same or different machines is needed. A socket is defined by a endpoint which is constituted by a protocol, a ip address and a port value. An example of endpoint definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
 
-<p>A typical solution adopted to create distributed robotic systems based in socket communication is to use a messaging middleware. The NEP framework uses ZeroMQ and nanomsg technologies to allows inter-process comunication functionalities for Windows, Linux and MacOS. The NEP library can also be used to create ROS nodes which can publish messages to a ROS-based network. The NEP approach is to keep the code independent of the  middleware layer in order to easily adapt to future technologies.</p>
+<p>A typical solution adopted to create distributed robotic systems based in socket communication is to use a messaging middleware. The NEP framework uses ZeroMQ and nanomsg messaging middleware libraries to allows inter-process comunication functionalities in Windows, Linux and MacOS. The NEP library can also be used to create ROS nodes which can publish messages to a ROS-based network. The approach adopted in NEP is to keep the code independent of the  middleware layer in order to enable an ease switch to future technologies.</p>
 
 <h2 id="comunication-patterns">Comunication patterns</h2>
 
@@ -384,23 +383,37 @@ En example of socket definition is <code>tcp://127.0.0.1:5000</code>, where <cod
 
 <h3 id="client-server">Client-Server</h3>
 
-<p>In the <em>request/reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request.  If the response never comes a deadlock can occur. This pattern is godd for the cases where sincronization between two task is needed.</p>
+<p>In the <em>request/reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request.  If a response never comes a deadlock can occur. This pattern is good for the cases where sincronization between two task is needed.</p>
+
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/cs.png" alt="Material Screenshot" /></p>
 
 <h3 id="publish-subscribe">Publish-Subscribe</h3>
 
 <p>The <em>publish/subscribe</em> model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers, exists. Unlike typical request/reply models, the communication in a publish/subscribe model is made in an asynchronous way. A popular publish/subscribe scheme is based on the notion of <strong>topics</strong>. In this scheme subscribers can use a set of keywords called <strong>topics</strong> to filtered the information sent by publishers.</p>
 
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/ps.png" alt="Material Screenshot" /></p>
+
 <h2 id="network-architectures">Network architectures</h2>
 
-<p>Distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. In NEP, we support multiple network architectures which includes direct <em>endpoint descriptions</em>, <em>central services (broker)</em> and a <em>Peer to Peer (P2P) master name server</em>. A description of each approach is shown bellow.</p>
+<p>Network architectures used to creates distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. NEP supports multiple network architectures which includes <strong>direct endpoint descriptions</strong>, <strong>central services (broker)</strong> and a <strong>Peer to Peer (P2P) master name server</strong>. A description of each approach is shown bellow.</p>
 
 <ul>
-<li><p>In a <strong>direct</strong> architecture the endpoints are manually set by the user. This apporach can be used to communicates process in diferent computers. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases.</p></li>
-
-<li><p>The use of a <strong>broker</strong> help in the manageability of the system. A broker is a node or static point where all other nodes connect.  This approach reduces the number of endpoint to be configured to only one. However, due that all the communication is passed through the broker, some latency can be presented when the number of messages hit the limit of the broker capacity. This is due that all the messages are passed in the same socket and only referenced by a topic.</p></li>
-
-<li><p>When using a <strong>master name server</strong> or <strong>master node</strong>, all the nodes in the network are implicitly connected to this node to performs registration requests of message topics.  When the master node detects a topic registration request, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the publisher or subscriber instances which have performed the registration request of the topic. In this apporach communication starts when at least one publisher and one subscriber have requested the registration of the same topic. Unlike the broker approach, the messages are passed in diferent sockets, which overcome the problem of latency. This apporach is used in ROS.</p></li>
+<li>In a <strong>direct</strong> architecture the endpoints are manually set by the user. This apporach can be used to communicates process in diferent computers. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases.</li>
 </ul>
+
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/direct.png" alt="Material Screenshot" /></p>
+
+<ul>
+<li>The use of a <strong>broker</strong> help in the manageability of the system. A broker is a node or static point where all other nodes connect.  This approach reduces the number of endpoint to be configured to only one. However, due that all the communication is passed through the broker, some latency can be presented when the number of messages hit the limit of the broker capacity. This is due that all the messages are passed in the same socket and only referenced by a topic.</li>
+</ul>
+
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/broker.png" alt="Material Screenshot" /></p>
+
+<ul>
+<li>When using a <strong>master name server</strong> or <strong>master node</strong>, all the nodes in the network are implicitly connected to this node to performs registration requests of message topics.  When the master node detects a topic registration request, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the publisher or subscriber instances which have performed the registration request of the topic. In this apporach communication starts when at least one publisher and one subscriber have requested the registration of the same topic. Unlike the broker approach, the messages are passed in diferent sockets, which overcome the problem of latency. This apporach is used in ROS.</li>
+</ul>
+
+<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/master.png" alt="Material Screenshot" /></p>
 
 
 			<aside class="copyright" role="note">
