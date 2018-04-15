@@ -343,79 +343,89 @@
 			
 
 <ul>
-<li>This tutorial explains how to communicate different nodes using the different communication patterns supported in NEP</li>
+<li>This tutorial explains how to communicate different nodes using the different patterns supported in NEP</li>
 </ul>
 
 <h2 id="client-server">Client-Server</h2>
 
-<p>In the Client-Server pattern a node (Client) sends a request for some data to other node (Server)  and then waits for the response to this request. In this section an example of how to create a simple client-server application is shown.</p>
+<p>In the Client-Server pattern a node (Client) sends a request for some data to other node (Server)  and then waits for the response to this request. An example of how to create a simple client-server application is shown bellow:</p>
 
 <h3 id="creates-a-client">Creates a client</h3>
 
 <p>The next Python script shown a simple example of a client node.</p>
 
-<pre><code class="language-python">import nep # Add NEP library
-import time # Add time library
+<pre><code class="language-python">import nep 
+import time 
 
-client = nep.client('127.0.0.1', '8010') # Create a new client instance
+client = nep.client('127.0.0.1', 8010) # Create a new client instance
 
 while True:
-    msg = {&quot;message&quot;:&quot;hello server&quot;} # Message to send
+    msg = {&quot;message&quot;:&quot;hello server&quot;} # Message to send as request
     client.send_info(msg)   # Send request
     print client.listen_info() # Wait for server response
     time.sleep(1) # Wait one second
 </code></pre>
 
-<p>A new client instance is created with the line:</p>
+<p>In this example a new instance of the client class is created with the line:</p>
 
-<p><code>client = nep.client('127.0.0.1', '8010')</code></p>
+<p><code>client = nep.client('127.0.0.1', 8010)</code></p>
 
-<p>For this, a IP and PORT values must be defined. In this case the IP have the value of <code>127.0.0.1</code> and the PORT have the value of <code>8010</code>.</p>
+<p>For this, the IP and PORT parameters are defined as <code>'127.0.0.1'</code> and <code>8010</code> respectivelly.</p>
 
-<p>The function <code>send_info</code>  can be used to send a request to the server. This request must be as a dictionary. In this case the dictionary <code>{&quot;message&quot;:&quot;hello server&quot;}</code> is defined to be send.</p>
+<p>The function <code>send_info</code>  can be used to send a request to the server. This request must be defined as a python dictionary. In this case the dictionary <code>{&quot;message&quot;:&quot;hello server&quot;}</code> is defined to be send as request.</p>
 
-<p>The function <code>listen_info</code> waits until the server send its response. This function also reads the message of that response.</p>
+<p>The function <code>listen_info</code> waits until the server send its response. This function also reads the message sent in that response.</p>
 
-<p>The client class select by deafult ZeroMQ as transport layer. In order to communicate with a device that use a normal TCP/IP sockets, the optional parameter <code>transport</code> can be defined as <code>&quot;normal&quot;</code> in the constructor of a client object. For example:</p>
+<p>The client class uses ZeroMQ by deafult as transport layer. In order to communicate with a device that uses a normal python TCP/IP sockets, the optional parameter <code>transport</code> can be defined as <code>&quot;normal&quot;</code> in the constructor of a client object. For example:</p>
 
-<pre><code class="language-python">client = nep.client('127.0.0.1', '8010', transport = &quot;normal&quot;) #Create a new client instance
+<pre><code class="language-python">client = nep.client('127.0.0.1', 8010, transport = &quot;normal&quot;) 
 </code></pre>
 
 <h3 id="creates-a-server">Creates a server</h3>
 
 <p>The next Python script shown a simple example of a server node.</p>
 
-<pre><code class="language-python">import nep
-import time
+<pre><code class="language-python">import nep  
+import time 
 
 import nep  # Import nep library
-server = nep.server('127.0.0.1', '5000') #Create a new client instance
+server = nep.server('127.0.0.1', 8010) #Create a new server instance
 
 while True:
-    msg = &quot;server response&quot;
+    msg = msg = {&quot;message&quot;:&quot;hello client&quot;} # Message to send as response
     request = server.listen_info() # Wait for client request
     print request 
     server.send_info(msg) # Send server response
-
-
 </code></pre>
 
-<p>The server class of the NEP framework allows to create ZeroMQ and normal sockets-based server instances. We nned to define the same IP address and  port
-that in the client node to communicate. The functions <code>listen_info</code> and <code>send_info</code>can be used to read the request the request of the client and send the response of the server respectively.</p>
+<p>In this example a new instance of the server class is created with the line:</p>
 
-<p>By default a ZeroMQ server is defined using the NEP server class. In order to communicate with a device that use a normal socket, the optional parameter <code>transport</code> can be defined as <code>&quot;normal&quot;</code> in the constructor of a server object. For example:</p>
+<p><code>server = nep.server('127.0.0.1', 8010)</code></p>
 
-<pre><code class="language-python">server = nep.server('127.0.0.1', '5000', transport = &quot;normal&quot;) #Create a new client instance
+<p>We need to define the same IP and PORT values that those defined in the client node. The functions <code>listen_info</code> and <code>send_info</code>can be used to read a client request and send a response respectively. In this example the response to be sent in defined as <code>{&quot;message&quot;:&quot;hello client&quot;}</code>.</p>
+
+<p>The function <code>send_info</code>  can be used to send a request to the server. This request must be defined as a python dictionary. In this case the dictionary <code>{&quot;message&quot;:&quot;hello server&quot;}</code> is defined to be send.</p>
+
+<p>The function <code>listen_info</code> waits until the server send its response. This function also reads the message sent in that response.</p>
+
+<p>We can also uses normal python sockets defining the optional parameter <code>transport</code> as <code>&quot;normal&quot;</code>, as shown in the next line:</p>
+
+<pre><code class="language-python">server = nep.server('127.0.0.1', 8010, transport = &quot;normal&quot;) #Create a new client instance
 </code></pre>
 
 <div class="admonition note">
-<p class="admonition-title">About ZeroMQ and normal sockets</p>
-<p>It is nor possible to communicate a  ZeroMQ socket and a normal socket. Therefore you need to be sure that both client and server has the same trasport layer (ZeroMQ or normal socket).</p>
+<p class="admonition-title">About normal sockets</p>
+<p>When using normal sockets the messages to send must be strings, instead of dictionaries.</p>
 </div>
 
-<h2 id="publish-subscribe">Publish-subscribe</h2>
+<div class="admonition note">
+<p class="admonition-title">About ZeroMQ and normal sockets</p>
+<p>It is nor possible to communicate a  ZeroMQ socket and a normal socket. Therefore you need to be sure that both client and server has the same trasport layer (ZeroMQ or normal sockets).</p>
+</div>
 
-<p>This section explains how to communicates several nodes using the publish-subscribe pattern. First, the code od a simple publish and subscribe Python scripts are presented. Then, the code of these script is explained.</p>
+<h2 id="publish-subscribe">Publish-Subscribe</h2>
+
+<p>In a Publish-Subscribe pattern, a producer of messages (publisher) send messages without knowing if any receiver (subscriber) exists. An example of how to create a simple publish-subscriber application is shown bellow:</p>
 
 <h3 id="a-simple-publish-subscribe-example">A simple publish-subscribe example</h3>
 
@@ -424,25 +434,24 @@ that in the client node to communicate. The functions <code>listen_info</code> a
 <pre><code class="language-python">import nep
 import time
 
-node = nep.node(&quot;publisher_node&quot;) # Create a new node
-conf = node.conf_pub() # Select the configuration of the publisher
-pub = node.new_pub(&quot;test&quot;, conf) # Set the topic and the configuration of the publisher
+node = nep.node(&quot;publisher_node&quot;) # Create a new node instance
+conf = node.conf_pub(transport = &quot;ZMQ&quot;, mode = &quot;many2many&quot;) # Select a ZMQ trasport, P2P network and one2many publisher
+pub = node.new_pub(&quot;test&quot;, conf) # Set the topic and the configuration of the publisher 
 
 # Publish a message each second
 while True: 
     msg = &quot;hello world&quot;
     pub.send_string(msg) 
     time.sleep(1)
-
 </code></pre>
 
 <p>The next Python script can be used to create a new subscribe instance.</p>
 
 <pre><code class="language-python">import nep
 
-node = nep.node(&quot;subscriber_node&quot;) # Create a new node
-conf = node.conf_sub() # Select the configuration of the subscriber
-sub = node.new_sub(&quot;test&quot;, conf) # Set the topic and the configuration of the subscriber
+node = nep.node(&quot;subscriber_node&quot;) # Create a new node instance
+conf = node.conf_sub(transport =&quot;ZMQ&quot;, mode = &quot;many2many&quot;) # Select a ZMQ trasport, P2P network and one2many subscriber
+sub = node.new_sub(&quot;many2one_test&quot;, conf) # Set the topic and the configuration of the subscriber
 
 # Read the information published in the topic registered
 while True:
@@ -451,18 +460,18 @@ while True:
         print msg
 </code></pre>
 
-<h3 id="code-explanation">Code explanation</h3>
+<h3 id="create-a-new-node">Create a new node</h3>
 
-<p>In order to perform the communication between of two or more nodes using the publisher-subscriber pattern we need to import the nep library and create a new instance of the <code>node</code> class.  The constructor of the <code>node</code> class can accept two parameters. The first one defines the name of the node, This name must to be diferent for each node in the network.   In the above example we define the name of the nodes as <code>publisher_node</code> and <code>subscriber_node</code> for the publisher and subscriber instance respectvelly. The second parameter is optional and defines the trasporting layer of the node. This parameter can be used to create a ROS node. An example of the definition of a ROS publisher is shown bellow.</p>
+<p>In order to perform the communication between of two or more nodes using the Publish-Subscribe pattern, we need to import the nep library and create a new instance of the <code>node</code> class.  The constructor takes one main parameter and an optional parameter. The main parameter defines the name of the node, This name must to be diferent for each node in the network.   In the above examples we define the name of the nodes as <code>publisher_node</code> and <code>subscriber_node</code> for the publisher and subscriber respectivelly. The optional parameter, which default value is <code>False</code>, can be used to specify that a ROS node must to be created when in set with a <code>True</code> value. An example is show bellow:</p>
 
-<pre><code class="language-python">node = nep.node(&quot;publisher_node&quot; , transport = &quot;ROS&quot;)
+<pre><code class="language-python">node = nep.node(&quot;publisher_node&quot; , useROS = True)
 </code></pre>
 
-<h3 id="define-the-publish-and-subscriber-configuration">Define the publish and subscriber configuration</h3>
+<h3 id="define-the-publisher-and-subscriber-configuration">Define the publisher and subscriber configuration</h3>
 
-<p>The NEP library suports direct endpoints conections (only ZeroMQ and nanomsg) and P2P master service conections (in ZeroMQ, nanomsg and ROS). The <code>pub_conf</code> <code>sub_conf</code> methodd in the  <code>node</code> class allow to define the configuration of the network to be used in the publisher and subscriber respectively.</p>
+<p>The NEP library suports direct endpoints conections (only ZeroMQ and nanomsg) and P2P master service conections (in ZeroMQ, nanomsg and ROS). The <code>pub_conf</code> <code>sub_conf</code> methods in the  <code>node</code> class allow to define the configuration of the network to be used in the publisher and subscriber respectively.</p>
 
-<p>In order to define a direct endpoints conection we can use the next line for the purblisher:</p>
+<p>In order to define a direct endpoints conection we can use the next line for the publisher:</p>
 
 <pre><code class="language-python">conf = node.conf_sub(network = &quot;direct&quot;, ip = &quot;192.168.0.100&quot;, port = &quot;9090&quot;)
 </code></pre>
@@ -472,64 +481,56 @@ while True:
 <pre><code class="language-python">conf = node.conf_pub(network = &quot;direct&quot;, ip = &quot;192.168.0.100&quot;, port = &quot;9090&quot;)
 </code></pre>
 
-<p>The use of a direct network can enable the comunication with other pc, which can have a diferent operating systems via wifi or ethernet network. We need to remember that in a direct network the endpoint to connect (ip and port) must be specified. In the example an ip of <code>&quot;192.168.0.100&quot;</code> and a port of value <code>9090</code> is set.</p>
+<p>The use of a direct network can enable the comunication with other pc, which can have a diferent operating systems via wifi or ethernet network. In a direct network the endpoint to connect (ip and port) must be specified. In the lines above, an ip of <code>&quot;192.168.0.100&quot;</code> and a port of value <code>9090</code> are set.</p>
 
-<p>As mentioned in the <em>Basic concepts</em> section the most used architecture for robotics use a master name service in a P2P network. Due that this option is the default one, we can simply set the configuration of the subscriber as:</p>
+<p>Most robotics architectures use a master name service in a P2P network. Due that, a <code>&quot;P2P&quot;</code> network configuration is set as default. In ZeroMQ 3 publish-subscribe modes can be set. These types can <strong>one2many</strong>, <strong>many2one</strong> and <strong>many2many</strong>. The next line shows an example of how a <strong>many2many</strong> publisher can be defined:</p>
 
-<pre><code class="language-python">conf = node.conf_sub()
-</code></pre>
+<p>conf = node.conf_pub(transport = &ldquo;ZMQ&rdquo;, mode = &ldquo;many2many&rdquo;) # Select the configuration of the publisher</p>
 
-<p>and for the publishers as:</p>
+<p>The next line shows an example of how a <strong>many2many</strong> subscriber can be defined:</p>
 
-<pre><code class="language-python">conf = node.conf_pub()
-</code></pre>
+<p>conf = node.conf_sub(transport =&ldquo;ZMQ&rdquo;, mode = &ldquo;many2many&rdquo;) # Select the configuration of the subscriber</p>
 
-<p>In this way a <strong>ZeroMQ</strong> publisher/subscriber will be created. In order to use  <strong>nanomsg</strong> we can use the parameter transport as shown bellow for the publisher.</p>
+<p>We can use the transport parameter to use <strong>nanomsg</strong>  or <strong>ROS</strong> instead <strong>ZeroMQ</strong>. The next line shows how a <strong>nanomsg</strong> publisher is defined.</p>
 
 <pre><code class="language-python">conf = node.conf_pub(transport = &quot;NN&quot;)
 </code></pre>
 
-<p>The same apporach can be applied in the subscriber configuration.</p>
+<h3 id="create-instances-for-publishers-and-subcribers">Create instances for publishers and subcribers</h3>
 
-<p>To define a <strong>ROS</strong> publisher we can use:</p>
+<p>After defining the configuration of the network we can use the <code>new_pub()</code> and <code>new_sub()</code> methods  to create a new  publisher and subscriber instances respectivelly. This functions takes two main parameters. The first parameter is the topic in which information will be sent. The second parameter is used to set the configuration of the publisher/subscriber instance. An example of definition of a new publisher is show in the next line:</p>
 
-<pre><code class="language-python">conf = node.conf_pub(transport = &quot;ROS&quot;)
+<pre><code class="language-python">conf = node.conf_pub(transport = &quot;ZMQ&quot;, mode = &quot;many2many&quot;)
+pub = node.new_pub(&quot;test&quot;, conf)
 </code></pre>
 
-<h3 id="create-a-new-publisher-subscriber-instance">Create a new publisher-subscriber instance</h3>
+<p>This publisher will be publish data in the <code>&quot;test&quot;</code> topic, using ZeroMQ in a <em>many2many</em> and <em>P2P</em> network. A subscriber able to read the data send by this publisher can be defined as:</p>
 
-<p>After defining the configuration of the network we need to create a publisher/subscriber instance using the <code>new_pub</code> and <code>new_sub</code> methods of the <code>node</code> class. The next line creates a new publisher instance that will send messages in the topic <code>test</code>.</p>
-
-<pre><code class="language-python">pub = node.new_pub(&quot;test&quot;, conf)
+<pre><code class="language-python">conf = node.conf_sub(transport =&quot;ZMQ&quot;, mode = &quot;many2many&quot;)
+sub = node.new_pub(&quot;test&quot;, conf)
 </code></pre>
-
-<p>The next line shows how to create a subscriber instance which will listen the messages pblished in the topic <code>test</code>.</p>
-
-<pre><code class="language-python">sub = node.new_pub(&quot;test&quot;, conf)
-</code></pre>
-
-<p>The second parameter in the <code>new_pub</code> and <code>new_sub</code> methods sets the configuration of the network.</p>
 
 <h3 id="start-sending-information">Start sending information</h3>
 
-<p>In order to send information to the network we can use the methods <code>send_string</code> or <code>send_info</code>.</p>
+<p>In order to send information to the network we can use the methods <code>send_string()</code> or <code>send_info()</code>.</p>
 
-<p>When using the <code>send_string</code> method we can send the information of the publisher as simple strings.</p>
+<p>When using the <code>send_string()</code> method we can send the information as strings. An example is show bellow:</p>
 
-<p>The function `<code>send_info</code> can be used to send complex messages in JSON format (python dictionaries) and ROS geometric messages such as Point, Pose, Quaternion, etc.</p>
+<pre><code class="language-python">msg = &quot;hello world&quot;
+pub.send_string(msg) 
+</code></pre>
+
+<p>The function `<code>send_info()</code> can be used to send complex messages in JSON format (python dictionaries) using ZeroMQ and nanomsg or ROS geometric messages such as Point, Pose, Quaternion, etc. An example of sending a ZeroMQ message is shown bellow:</p>
+
+<pre><code class="language-python">msg = {&quot;message&quot;:&quot;hello world&quot;}
+pub.send_string(msg) 
+</code></pre>
 
 <h3 id="start-listening-information">Start listening information</h3>
 
-<p>In order to get the information that a publisher instance send to the newtwork we can use the functions <code>listen_string</code> or <code>listen_info</code>.</p>
+<p>In order to get the information that a publisher instance send to the newtwork we can use the<code>listen_string()</code> and <code>listen_info()</code> functions. On the one hand, the <code>listen_string()</code> function in a subscriber instance is used to read data sent by a publisher with the <code>send_string()</code> function. The information send and read by these function must be strings. On the other hand, the <code>listen_info()</code> function in a subscriber instance is used to read data sent by a publisher with the <code>send_info()</code> function. In this case the information send and read must be dictionaries.</p>
 
-<p>When using the <code>listen_string</code> we can receive the information of the publisher as simple strings. This function along with the <code>send_string</code> in the publisher side can be used to comunicate two nodes using simple messages in initial tests.</p>
-
-<p>The function `<code>listen_info</code> can be used to read complex messages in JSON format (python dictionaries).</p>
-
-<div class="admonition note">
-<p class="admonition-title">About send/listen strings or info</p>
-<p>It is recomended to use in almost all the cases the <code>listen_info</code> function, in the subscriber side, along with <code>send_info</code>, in the publisher side.</p>
-</div>
+<h2 id="using-ros-publishers">Using ROS publishers</h2>
 
 
 			<aside class="copyright" role="note">

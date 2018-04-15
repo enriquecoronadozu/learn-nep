@@ -30,7 +30,7 @@ Very important</description>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/tutorials/</guid>
-      <description>This tutorial briefly explains how distributed applications with robots are created. This tutorial is oriented for newcomers engineering students in software architectures, robot middleware and distributed systems. If you already have a lot of experience with frameworks such as ROS, then you can skip this tutorial.  Introduction Robot software development tends to be a complex task. The use of different types of robot generally requires to deal with different sensor devices, actuators and software, each of them working at the same time with different frequency and accessible from different programming languages or executable code.</description>
+      <description>This tutorial briefly explains how distributed applications with robots are created. This tutorial is oriented for newcomers engineering students in software architectures, robot middleware and distributed systems. If you already have a lot of experience with frameworks such as ROS, then you can skip this tutorial.  Introduction Robot software development tends to be a complex task. The use of different types of robots and applications generally requires to deal with different algorithms, devices and actuators, each of them working in separated process that are executed at the same time.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Very important</description>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</guid>
-      <description>This tutorial explains how to communicate different nodes using the different communication patterns supported in NEP  Client-Server In the Client-Server pattern a node (Client) sends a request for some data to other node (Server) and then waits for the response to this request. In this section an example of how to create a simple client-server application is shown.
+      <description>This tutorial explains how to communicate different nodes using the different patterns supported in NEP  Client-Server In the Client-Server pattern a node (Client) sends a request for some data to other node (Server) and then waits for the response to this request. An example of how to create a simple client-server application is shown bellow:
 Creates a client The next Python script shown a simple example of a client node.</description>
     </item>
     
@@ -83,9 +83,9 @@ The main idea of RIZE is reduce the effort that requires robot development for b
       <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/</guid>
-      <description>NEP (Node Primitives) is a open, front-end and cross-platform robot programming framework for Robot-Human Interaction.
-RIZE (Robot Interface from Zero Experience) is a easy-to-use robot programming and component launching interface for end-user development.
-What developers can do with NEP?  Create cross-platform robot components Use different patterns, such as client-server and publish-subscribe patterns, to communicate the robot components Use JSON format to specify complex robot behaviors  What users can do with RIZE?</description>
+      <description>NEP (Node Primitives) is a front-end, open and cross-platform robot programming framework for Robot-Human Interaction.
+RIZE (Robot Interface from Zero Experience) is a easy-to-use robot programming and component launching interface for End-User Development.
+What developers can do with NEP?  Creates cross-platform robot components Uses different patterns, such as client-server and publish-subscribe, to communicate robot components Uses JSON format to define messages send to components and specify complex robot behaviors  What users can do with RIZE?</description>
     </item>
     
   </channel>
