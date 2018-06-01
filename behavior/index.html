@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Behavior specification - NEP</title>
+    <title>JSON Robot Behavior Specification (JRBS) - NEP</title>
     <meta name="generator" content="Hugo 0.31.1" />
 
     
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Behavior specification
+        JSON Robot Behavior Specification (JRBS)
       </div>
     </div>
 
@@ -198,9 +198,9 @@
 
 
 
-<a  title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
+<a  title="Installation" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
-	Install NEP/RIZE
+	Installation
 </a>
 
 
@@ -234,9 +234,9 @@
 
 
 
-<a  title="Communiction patterns" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
+<a  title="NEP tutorials" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
 	
-	Communiction patterns
+	NEP tutorials
 </a>
 
 
@@ -252,9 +252,9 @@
 
 
 
-<a  title="RIZE" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
+<a  title="RIZE tutorials" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
 	
-	RIZE
+	RIZE tutorials
 </a>
 
 
@@ -338,9 +338,43 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Behavior specification </h1>
+			<h1>JSON Robot Behavior Specification (JRBS) </h1>
 
 			
+
+<div class="admonition note">
+<p class="admonition-title">We are still working in this documentation page</p>
+<p>Last update 16/04/2018</p>
+</div>
+
+<p>High level, close of mapping and modular robot behaviors are be defined in NEP/RIZE using Robot Behavior Specificiation Language based in JSON format. These behaviors can be simple atomic primitives, complex composite actions, conditions and other decision making definitions. The way how behaviors can be specified in this format is shown in this section.</p>
+
+<h2 id="primitives">Primitives</h2>
+
+<p>A simple primitive can be expressed as a python dictionary as shown bellow:</p>
+
+<p><code>p = {&quot;primitive&quot;:&quot;say&quot;, &quot;input&quot;:&quot;hello&quot;, &quot;options&quot;{&quot;velocity&quot;:50}}</code></p>
+
+<p>A primitive is defined in a JSON (python dictionary) format using 3 main fields:</p>
+
+<ul>
+<li><strong>primitive</strong>: this field is used to define the name of the primitive. This field must be defined as a string value.</li>
+<li><strong>input</strong>: this field is used to specify the main input of this primitive. This field can have any type of value.</li>
+<li><strong>options</strong>: this field  is used to specify more advanced configuation parameters that better define the primitive. This field must be defined as a python dictionary.</li>
+</ul>
+
+<h2 id="nodes">Nodes</h2>
+
+<p>In NEP/RIZE complex actions and desicion making elements are defined as Behavior Trees. Main behavior nodes in NEP/RIZE are described bellow.</p>
+
+<h3 id="action">Action</h3>
+
+<p>An action node can be composed of a primiitve or a set of composed primitives ordered in a list.</p>
+
+<h3 id="conditionals">Conditionals</h3>
+
+<h3 id="decorators">Decorators</h3>
+
 
 			<aside class="copyright" role="note">
 				
@@ -378,14 +412,14 @@
 
   <div class="next">
   
-      <a href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/" title="Communication patterns">
+      <a href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/" title="Node Primitives (NEP)">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Communication patterns
+              Node Primitives (NEP)
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

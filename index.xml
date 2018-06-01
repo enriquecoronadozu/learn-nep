@@ -13,15 +13,15 @@
     
     
     <item>
-      <title>Install NEP/RIZE</title>
+      <title></title>
       <link>https://enriquecoronadozu.github.io/learn-nep/install/</link>
       <pubDate>Fri, 09 Mar 2018 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/install/</guid>
-      <description>Installation in Windows In order to start using NEP in Windows you need basically to donwload and install:
- Python 2.7 for x86 The latest version of NEP  Installing Python Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the Windows x86 MSI Installer from offical Python page.
-Click here to redirect to the official Python webpage
-Very important</description>
+      <description>pre { border-left: 20px solid white; border-right: 50px solid white; padding: 14px; background-color: #F5F5F5; }  Installation in Windows 
+In order to start using NEP in Windows you need basically to follow 2 steps:
+ Install Python 2 or 3 (We recommend python 2.7) Install the latest version of NEP  Step 1: Install Python 
+Before installing NEP in Windows you need to install Python 2.7 or 3.</description>
     </item>
     
     <item>
@@ -34,16 +34,19 @@ Very important</description>
     </item>
     
     <item>
-      <title>Behavior specification</title>
+      <title>JSON Robot Behavior Specification (JRBS)</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/behavior/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/behavior/</guid>
-      <description></description>
+      <description>We are still working in this documentation page
+Last update 16/04/2018
+ High level, close of mapping and modular robot behaviors are be defined in NEP/RIZE using Robot Behavior Specificiation Language based in JSON format. These behaviors can be simple atomic primitives, complex composite actions, conditions and other decision making definitions. The way how behaviors can be specified in this format is shown in this section.
+Primitives A simple primitive can be expressed as a python dictionary as shown bellow:</description>
     </item>
     
     <item>
-      <title>Communication patterns</title>
+      <title>Node Primitives (NEP)</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
@@ -66,7 +69,7 @@ Tested only in NetMQ version 4.</description>
     </item>
     
     <item>
-      <title>RIZE</title>
+      <title>Robot Interface from Zero Experience (RIZE)</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/rize/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
@@ -85,7 +88,7 @@ The main idea of RIZE is reduce the effort that requires robot development for b
       <guid>https://enriquecoronadozu.github.io/learn-nep/</guid>
       <description>NEP (Node Primitives) is a front-end, open and cross-platform robot programming framework for Robot-Human Interaction.
 RIZE (Robot Interface from Zero Experience) is a easy-to-use robot programming and component launching interface for End-User Development.
-What developers can do with NEP?  Creates cross-platform robot components Uses different patterns, such as client-server and publish-subscribe, to communicate robot components Uses JSON format to define messages send to components and specify complex robot behaviors  What users can do with RIZE?</description>
+What developers can do with NEP?  Creates cross-platform robot components using ZeroMQ and nanomsg Communicate ROS-based robots from Windows and MacOSX components Uses different patterns, such as client-server and publish-subscribe, to communicate robot components Send messages between components using standart ROS messages, JSON format or simple strings Use different programming languages, such as Python, C#, Java and Matlab.</description>
     </item>
     
   </channel>

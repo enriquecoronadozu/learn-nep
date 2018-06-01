@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Install NEP/RIZE - NEP</title>
+    <title> - NEP</title>
     <meta name="generator" content="Hugo 0.31.1" />
 
     
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Install NEP/RIZE
+        
       </div>
     </div>
 
@@ -198,9 +198,9 @@
 
 
 
-<a class="current" title="Install NEP/RIZE" href="https://enriquecoronadozu.github.io/learn-nep/install/">
+<a class="current" title="Installation" href="https://enriquecoronadozu.github.io/learn-nep/install/">
 	
-	Install NEP/RIZE
+	Installation
 </a>
 
 
@@ -237,9 +237,9 @@
 
 
 
-<a  title="Communiction patterns" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
+<a  title="NEP tutorials" href="https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/">
 	
-	Communiction patterns
+	NEP tutorials
 </a>
 
 
@@ -255,9 +255,9 @@
 
 
 
-<a  title="RIZE" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
+<a  title="RIZE tutorials" href="https://enriquecoronadozu.github.io/learn-nep/rize/">
 	
-	RIZE
+	RIZE tutorials
 </a>
 
 
@@ -338,105 +338,126 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Install NEP/RIZE </h1>
+			<h1> </h1>
 
-			
+			<style>
+ pre {
+  border-left: 20px solid white;
+  border-right: 50px solid white;
+  padding: 14px;
+  background-color: #F5F5F5;
+}
 
-<h2 id="installation-in-windows">Installation in Windows</h2>
 
-<p>In order to start using NEP in Windows you need basically to donwload and install:</p>
+</style>
+
+<p><h2 style ="font-weight: bold; font-size: 2em;" > Installation in Windows </h2></p>
+
+<p>In order to start using NEP in Windows you need basically to follow 2 steps:</p>
 
 <ul>
-<li>Python 2.7 for x86</li>
-<li>The latest version of NEP</li>
+<li><strong>Install Python 2 or 3 (We recommend python 2.7)</strong></li>
+<li><strong>Install the latest version of NEP</strong></li>
 </ul>
 
-<h3 id="installing-python">Installing Python</h3>
+<p><h3 style ="font-weight: bold; font-size: 1.5em;" > Step 1: Install Python </h3></p>
 
-<p>Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the <strong><em>Windows x86 MSI Installer</em></strong> from offical Python page.</p>
-
-<p><a href="https://www.python.org/downloads/release/python-2714/">Click here to redirect to the official Python webpage</a></p>
+<p>Before installing NEP in Windows you need to install Python 2.7 or 3.5 and above. Intructions are described bellow:</p>
 
 <div class="admonition note">
-<p class="admonition-title">Very important</p>
-<p>During the Python installation, include the Python directory path in the <em>PATH environment variable</em>. For this,
-select the <strong>Will be installed on local hard drive</strong> option, and then click Next (See the figure bellow).</p>
+<p class="admonition-title">Read this before installing Python 2.7</p>
+<p>If you will install python 2.7, then you need to be sure to include the Python directory path in the <em>PATH environment variable</em>. For this,
+select the option <strong>Will be installed on local hard drive</strong>. This is done in the Python 2.7 installer, when appears the interface shown in figure 1.</p>
 </div>
 
-<p><img src="https://enriquecoronadozu.github.io/learn-nep/images/python.png" alt="Material Screenshot" /></p>
+<figure>
+  <img src="https://enriquecoronadozu.github.io/learn-nep/images/python.png" / style="margin-left: auto; margin-right: auto; display: block; padding: 10px;" >
+  <figcaption>
+      <h5 align="center" style ="font-weight: bold; font-size: 1em;" >Figure 1.- Be sure to add the Python directory to the environment variables  </h4>
+  </figcaption>
+</figure>
+
+<p>We recomend to use the <strong><em>Windows x86 MSI Installer</em></strong> for Python 2.7 from offical Python page (this Python version has better compatibility with some social robots).</p>
+
+<p><a href="https://www.python.org/downloads/release/python-2715/" style ="font-weight: bold; font-size: 1em;" target="_blank" title="Download" data-action="download"><i class="icon icon-download"></i> Link to Python 2.7 downloads (recommended)</a></p>
+
+<p><a href="https://www.python.org/downloads/release/python-365/" style ="font-weight: bold; font-size: 1em;"  target="_blank" title="Download" data-action="download"><i class="icon icon-download"></i> Link to Python 3.6 downloads</a></p>
 
 <p>Even when NEP can work with other Python distributions such as <em>Anaconda</em>, the official version from the Python webpage has better support for some robots, such as NAO and Pepper.</p>
 
-<h3 id="option-1-nep-from-installer-user">Option 1: NEP from installer (user)</h3>
+<p><h3 style ="font-weight: bold; font-size: 1.5em;" > Step 2: Install NEP </h3></p>
 
-<ul>
-<li>Download the latest NEP end-user wizard installer from:</li>
-</ul>
+<p>Download the latest NEP end-user wizard installer from:</p>
 
-<p><a href="https://bitbucket.org/enriquecoronadozu/nep-installers/downloads/nep_0.3.exe">Click here to download the current experimental version</a></p>
+<p><a href="https://bitbucket.org/enriquecoronadozu/nep-installers/downloads/nep_0.3.exe" style ="font-weight: bold; font-size: 1em;"  target="_blank" title="Download" data-action="download"><i class="icon icon-download"></i> Download NEP 0.3 beta</a></p>
 
 <div class="admonition note">
-<p class="admonition-title">Very important</p>
-<p>During NEP installation it is needed to have the PC connected to internet. This is due that the installer will download and install some essential Python packages</p>
+<p class="admonition-title">Read this before installing NEP</p>
+<p><ul>
+<li>During NEP installation it is needed to have the PC connected to internet. This is due that the installer will download and install some essential Python packages</li>
+<li>A black window will appears as a final step. Please wait until the black window is closed automatically.</li>
+</ul>
+</p>
 </div>
 
-<ul>
-<li>Follow the installation wizard.</li>
-<li>A black window will appears to install all the needed python packages (using pip) and to build the NEP library. Please wait until the black window is closed automatically.</li>
-</ul>
+<p><h3 style ="font-weight: bold; font-size: 1.5em;" > Github (only for developers) </h3></p>
 
-<h3 id="option-2-nep-from-github-developer">Option 2: NEP From Github (developer)</h3>
-
-<p>Clone or download the most recent version of NEP from:</p>
+<p>If you are a developer or you prefer to use Github to install NEP, then clone or download the most recent version of NEP from:</p>
 
 <p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
 
-<p>Then run the <code>install.bat</code> file (with double click).</p>
+<p>Then run the file <code>install.bat</code> file (with double click).</p>
 
-<h2 id="installation-in-ubuntu">Installation in Ubuntu</h2>
+<h2 style ="font-weight: bold; font-size: 2em;" > Installation in Ubuntu </h2>
 
-<ul>
-<li>Clone or download the most recent version of the NEP from:</li>
-</ul>
+<h3 style ="font-weight: bold; font-size: 1.5em;" > Step 1: Dowload from Github </h3>
+
+<p>Clone or download the most recent version of the NEP from:</p>
 
 <p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
 
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code>.</p></li>
+<h3 style ="font-weight: bold; font-size: 1.5em;" > Step 2: Install from console </h3>
 
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems.</p></li>
-</ul>
+<p>Go inside the NEP or NEP-master folder using the linux console and run the file <code>install.sh</code> with the next commands</p>
 
-<h2 id="installation-in-mac">Installation in Mac</h2>
+<pre class="brush: python">
+chmod +x install.sh
+./install.sh
+</pre>
 
-<ul>
-<li>If you will use a NAO or Pepper robot, you need to install and use the newest version of Python 2.7 from the official Python webpage:</li>
-</ul>
+<p>Wait until the installation finished</p>
 
-<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p><h2 style ="font-weight: bold; font-size: 2em;" > Installation in MacOS </h2></p>
+
+<p><h3 style ="font-weight: bold; font-size: 1.5em;" > Step 1: Install Python </h3></p>
+
+<p>Dowload and install the Python <strong>macOS 64-bit/32-bit installer</strong> from the official Python webpage. We recommend the 2.7 version for NAO and Papper robots.</p>
+
+<p><a href="https://www.python.org/downloads/release/python-2715/" style ="font-weight: bold; font-size: 1em;" target="_blank" title="Download" data-action="download"><i class="icon icon-download"></i> Link to Python 2.7 downloads (recommended)</a></p>
+
+<p><a href="https://www.python.org/downloads/release/python-365/" style ="font-weight: bold; font-size: 1em;"  target="_blank" title="Download" data-action="download"><i class="icon icon-download"></i> Link to Python 3.6 downloads</a></p>
 
 <div class="admonition warning">
 <p class="admonition-title">Python distributions and NaoSDK</p>
-<p>In Mac the NAO and Pepper SDK do not work with the default Python installation in MacOSX or with Anaconda, please use the Python version from the official python webpage</p>
+<p>In Mac, the NAO and Pepper SDK only works with Python 2.7. This version must to be dowloaded from the official Python webpage. Anaconda and the default Python installation of MacOSX do not work.</p>
 </div>
 
-<ul>
-<li>Download the most recent version of NEP from:</li>
-</ul>
+<h3 style ="font-weight: bold; font-size: 1.5em;" > Step 2: Dowload from Github </h3>
+
+<p>Clone or download the most recent version of the NEP from:</p>
 
 <p><a href="https://github.com/enriquecoronadozu/NEP">https://github.com/enriquecoronadozu/NEP</a></p>
 
-<ul>
-<li><p>Go insode the NEP or NEP-master folder using the linux console and run the <code>install.sh</code></p></li>
+<h3 style ="font-weight: bold; font-size: 1.5em;" > Step 3: Install from console </h3>
 
-<li><p>See the <strong>common problems</strong> section bellow if you have some installation problems</p></li>
-</ul>
+<p>Go inside the NEP or NEP-master folder using the linux console and run the file <code>install.sh</code> with the next commands</p>
 
-<h2 id="common-installation-problems">Common installation problems</h2>
+<pre class="brush: python">
+chmod +x install.sh
+./install.sh
+</pre>
 
-<h3 id="problem-running-the-install-sh-script-macos-and-ubuntu">Problem running the install.sh script (MacOS and Ubuntu)?</h3>
-
-<p>Use the  <code>chmod +x install.sh</code> commands to allows the execution of the script and then run the script using <code>./install.sh</code></p>
+<p>Wait until the installation finished</p>
 
 
 			<aside class="copyright" role="note">

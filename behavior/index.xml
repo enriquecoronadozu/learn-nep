@@ -13,12 +13,15 @@
     
     
     <item>
-      <title>Behavior specification</title>
+      <title>JSON Robot Behavior Specification (JRBS)</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/behavior/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/behavior/</guid>
-      <description></description>
+      <description>We are still working in this documentation page
+Last update 16/04/2018
+ High level, close of mapping and modular robot behaviors are be defined in NEP/RIZE using Robot Behavior Specificiation Language based in JSON format. These behaviors can be simple atomic primitives, complex composite actions, conditions and other decision making definitions. The way how behaviors can be specified in this format is shown in this section.
+Primitives A simple primitive can be expressed as a python dictionary as shown bellow:</description>
     </item>
     
   </channel>

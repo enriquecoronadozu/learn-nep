@@ -13,15 +13,15 @@
     
     
     <item>
-      <title>Install NEP/RIZE</title>
+      <title></title>
       <link>https://enriquecoronadozu.github.io/learn-nep/install/</link>
       <pubDate>Fri, 09 Mar 2018 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/install/</guid>
-      <description>Installation in Windows In order to start using NEP in Windows you need basically to donwload and install:
- Python 2.7 for x86 The latest version of NEP  Installing Python Before installing NEP in Windows you need to install Python 2.7 for architecture x86. We recomend to use the Windows x86 MSI Installer from offical Python page.
-Click here to redirect to the official Python webpage
-Very important</description>
+      <description>pre { border-left: 20px solid white; border-right: 50px solid white; padding: 14px; background-color: #F5F5F5; }  Installation in Windows 
+In order to start using NEP in Windows you need basically to follow 2 steps:
+ Install Python 2 or 3 (We recommend python 2.7) Install the latest version of NEP  Step 1: Install Python 
+Before installing NEP in Windows you need to install Python 2.7 or 3.</description>
     </item>
     
   </channel>
