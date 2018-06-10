@@ -373,6 +373,31 @@
 
 <p>A Java version of NEP will be avaliable soon (Aprox July 2018).</p>
 
+<h2 id="nep-in-matlab">NEP in MATLAB</h2>
+
+<p>In order to use the ZeroMQ- and Java-based library of NEP in MATLAB it is needed to follow the next steps:</p>
+
+<p>1.- Run the command <code>prefdir</code> in MATLAB. Navigate to that folder and check for a file named <code>javaclasspath.txt</code>. If the<code>javaclasspath.txt</code> file is not in the folder, then create it as a new txt file..</p>
+
+<p>2.- Open the file <code>javaclasspath.txt</code> in a text editor.</p>
+
+<p>3.- It is needed to add the full path of the jar files <code>jeromq-0.4.3.jar</code>, <code>gson-2.8.4.jar</code> and <code>nep_matlab-&lt;java version&gt;.jar</code> that are inside <code>NEP\lib\matlab</code>. Where the value of<code>&lt;java version&gt;</code> can be <code>1.7</code> for Matlab 2017a and older, and <code>1.8</code> for Matlab 2017b and newer.</p>
+
+<p>For example if NEP is installed in Documents (in Windows) in Matlab 2018a the lines we need to add to the file <code>javaclasspath.txt</code> are:</p>
+
+<pre><code class="language-python">C:\Users\&lt;user_name&gt;\Documents\NEP\lib\matlab\jeromq-0.4.3.jar
+C:\Users\&lt;user_name&gt;\Documents\NEP\lib\matlab\gson-2.8.4.jar
+C:\Users\&lt;user_name&gt;\Documents\NEP\lib\matlab\nep_matlab-1.8.jar
+</code></pre>
+
+<p>where  <code>&lt;user_name&gt;</code> is the name of the user of your PC.</p>
+
+<p>4.- Save and close the  <code>javaclasspath.txt</code> folder</p>
+
+<p>5.- Restart MATLAB</p>
+
+<p>Examples are inside the <code>NEP\samples\matlab</code> folder</p>
+
 <h2 id="nep-in-swift">NEP in Swift</h2>
 
 <p>A Swift version of NEP will be avaliable soon (Aprox September 2018).</p>
