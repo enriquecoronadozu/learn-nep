@@ -46,13 +46,14 @@ Primitives A simple primitive can be expressed as a python dictionary as shown b
     </item>
     
     <item>
-      <title>Node Primitives (NEP)</title>
+      <title>NEP API</title>
       <link>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</link>
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</guid>
-      <description>This tutorial explains how to communicate different nodes using the different patterns supported in NEP  Client-Server In the Client-Server pattern a node (Client) sends a request for some data to other node (Server) and then waits for the response to this request. An example of how to create a simple client-server application is shown bellow:
-Creates a client The next Python script shown a simple example of a client node.</description>
+      <description>This tutorial explains how to communicate nodes using the patterns supported in NEP  Client-Server 
+In the Client-Server pattern a node (Client) sends a request for some data to other node (Server) and then waits for the response to this request. An example of how to create a simple client-server application is shown bellow:
+Creates a client in Python  The next Python script shown a simple example of a client node</description>
     </item>
     
     <item>
@@ -61,11 +62,10 @@ Creates a client The next Python script shown a simple example of a client node.
       <pubDate>Thu, 09 Mar 2017 00:11:02 +0100</pubDate>
       
       <guid>https://enriquecoronadozu.github.io/learn-nep/compatibility/</guid>
-      <description>NEP in CSharp We are still working in this documentation page
-Last update 29/01/2018
- It is possible to communicate C# applications (using NetMQ) and python nodes written with NEP (using ZeroMQ). To install NetMQ in a C# project we need to open the Package Manager Console (Tools/NuGet Package Manager/Package Manager Console) and write:
-Install-Package AsyncIO -Version 0.1.26 Install-Package NetMQ -Version 4.0.0.1 Install-Package Newtonsoft.Json  About NetMQ version
-Tested only in NetMQ version 4.</description>
+      <description>Python is the main programming language of NEP. However bindings and classes for other programming languages based in ZeroMQ are avaliable in the lib folder.
+NEP in CSharp (Visual Studio) We are still working in C# version
+For the moment not all the patterns are suported
+ It is possible to communicate C# applications (using NetMQ) and python nodes written with NEP (using ZeroMQ). To install NetMQ in a C# project we need to open the Package Manager Console of Visual Studio (Tools/NuGet Package Manager/Package Manager Console) and write:</description>
     </item>
     
     <item>
