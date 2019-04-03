@@ -1,92 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/install/</loc>
-    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/behavior/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/rize/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/</loc>
-    <lastmod>2016-03-08T21:07:13+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/behavior/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/compatibility/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/install/</loc>
-    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/</loc>
-    <lastmod>2018-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/rize/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://enriquecoronadozu.github.io/learn-nep/tutorials_nep/</loc>
-    <lastmod>2017-03-09T00:11:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+     <loc>https://enriquecoronadozu.github.io/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://enriquecoronadozu.github.io/patterns/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://enriquecoronadozu.github.io/publish/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://enriquecoronadozu.github.io/server/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://enriquecoronadozu.github.io/c_sharp/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://enriquecoronadozu.github.io/java/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
