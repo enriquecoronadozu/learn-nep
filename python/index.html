@@ -13,7 +13,7 @@
         <meta name="description" content="Project documentation for NEP">
       
       
-        <link rel="canonical" href="https://enriquecoronadozu.github.io/patterns/">
+        <link rel="canonical" href="https://enriquecoronadozu.github.io/python/">
       
       
         <meta name="author" content="Enrique Coronado">
@@ -38,11 +38,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>Basic theory - NEP</title>
+        <title>Python 2 install</title>
       
     
     
@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#nodes-and-inter-process-communication" tabindex="1" class="md-skip">
+      <a href="#select-a-python-version-to-install" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
               NEP
             </span>
             <span class="md-header-nav__topic">
-              Basic theory
+              Step 1 - Install Python
             </span>
           
         </div>
@@ -233,17 +233,38 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Get Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Get Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href=".." title="Installation" class="md-nav__link">
-      Installation
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
   
 
@@ -254,11 +275,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Basic theory
+        Step 1 - Install Python
       </label>
     
-    <a href="./" title="Basic theory" class="md-nav__link md-nav__link--active">
-      Basic theory
+    <a href="./" title="Step 1 - Install Python" class="md-nav__link md-nav__link--active">
+      Step 1 - Install Python
     </a>
     
       
@@ -270,37 +291,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nodes-and-inter-process-communication" title="Nodes and inter-process communication" class="md-nav__link">
-    Nodes and inter-process communication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sockets-and-robot-middlewares" title="Sockets and robot middlewares" class="md-nav__link">
-    Sockets and robot middlewares
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comunication-patterns" title="Comunication patterns" class="md-nav__link">
-    Comunication patterns
+  <a href="#select-a-python-version-to-install" title="Select a Python version to install" class="md-nav__link">
+    Select a Python version to install
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requestprocessreply" title="Request/Process/Reply" class="md-nav__link">
-    Request/Process/Reply
+  <a href="#why-install-python-2" title="Why install python 2?" class="md-nav__link">
+    Why install python 2?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#publish-subscribe" title="Publish-Subscribe" class="md-nav__link">
-    Publish-Subscribe
+  <a href="#why-install-python-3" title="Why install python 3?" class="md-nav__link">
+    Why install python 3?
   </a>
   
 </li>
@@ -311,9 +318,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-architectures" title="Network architectures" class="md-nav__link">
-    Network architectures
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-2-correctly-in-windows" title="Install Python 2 correctly in Windows" class="md-nav__link">
+    Install Python 2 correctly in Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-correctly-in-windows-not-ros-20" title="Install Python 3 correctly in Windows (not ROS 2.0)" class="md-nav__link">
+    Install Python 3 correctly in Windows (not ROS 2.0)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-for-use-ros-20-in-windows" title="Install Python 3 for use ROS 2.0 in Windows" class="md-nav__link">
+    Install Python 3 for use ROS 2.0 in Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-os-x" title="Mac OS X" class="md-nav__link">
+    Mac OS X
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-2-in-macos" title="Install Python 2 in MacOS" class="md-nav__link">
+    Install Python 2 in MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-macos" title="Install Python 3 MacOS" class="md-nav__link">
+    Install Python 3 MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -327,6 +388,59 @@
     
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nep/" title="Step 2 - Install NEP" class="md-nav__link">
+      Step 2 - Install NEP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nep_discovery/" title="Step 3 - Install Discovery Server" class="md-nav__link">
+      Step 3 - Install Discovery Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced/" title="Advanced options" class="md-nav__link">
+      Advanced options
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../theory/" title="Basic theory" class="md-nav__link">
+      Basic theory
+    </a>
+  </li>
+
     
       
       
@@ -338,11 +452,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Python version
+      Python
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Python version
+        Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -382,8 +496,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../c_sharp/" title="C# version" class="md-nav__link">
-      C# version
+    <a href="../c_sharp/" title="C#" class="md-nav__link">
+      C#
     </a>
   </li>
 
@@ -419,37 +533,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nodes-and-inter-process-communication" title="Nodes and inter-process communication" class="md-nav__link">
-    Nodes and inter-process communication
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sockets-and-robot-middlewares" title="Sockets and robot middlewares" class="md-nav__link">
-    Sockets and robot middlewares
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comunication-patterns" title="Comunication patterns" class="md-nav__link">
-    Comunication patterns
+  <a href="#select-a-python-version-to-install" title="Select a Python version to install" class="md-nav__link">
+    Select a Python version to install
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requestprocessreply" title="Request/Process/Reply" class="md-nav__link">
-    Request/Process/Reply
+  <a href="#why-install-python-2" title="Why install python 2?" class="md-nav__link">
+    Why install python 2?
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#publish-subscribe" title="Publish-Subscribe" class="md-nav__link">
-    Publish-Subscribe
+  <a href="#why-install-python-3" title="Why install python 3?" class="md-nav__link">
+    Why install python 3?
   </a>
   
 </li>
@@ -460,9 +560,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-architectures" title="Network architectures" class="md-nav__link">
-    Network architectures
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-2-correctly-in-windows" title="Install Python 2 correctly in Windows" class="md-nav__link">
+    Install Python 2 correctly in Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-correctly-in-windows-not-ros-20" title="Install Python 3 correctly in Windows (not ROS 2.0)" class="md-nav__link">
+    Install Python 3 correctly in Windows (not ROS 2.0)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-for-use-ros-20-in-windows" title="Install Python 3 for use ROS 2.0 in Windows" class="md-nav__link">
+    Install Python 3 for use ROS 2.0 in Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-os-x" title="Mac OS X" class="md-nav__link">
+    Mac OS X
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-2-in-macos" title="Install Python 2 in MacOS" class="md-nav__link">
+    Install Python 2 in MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3-macos" title="Install Python 3 MacOS" class="md-nav__link">
+    Install Python 3 MacOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -483,32 +637,63 @@
               
                 
                 
-                  <h1>Basic theory</h1>
+                  <h1>Step 1 - Install Python</h1>
                 
-                <h2 id="nodes-and-inter-process-communication">Nodes and inter-process communication</h2>
-<p>In order to reduce the effort required to generate more complex robotic systems, robot applications must be divided in a set of simple and interchangeable processes, also denoted as <strong>nodes</strong>. The ways in which different nodes communicates between them is denoted as <em>inter-process communication</em>.  There exist different inter-process communication options. However the most extended approach on Robotics is <em>sockets</em></p>
-<p>The idea of separate a robot application in simple nodes has the main objective to improve the reusability, maintainability and performance of robotic systems. This approach implies to start thinking in a <em>"divide and conquer"</em> way.</p>
-<h2 id="sockets-and-robot-middlewares">Sockets and robot middlewares</h2>
-<p>Sockets are commonly used when: (i) communication between nodes on the same machine is needed or (ii) communication between nodes on different machines or devices is needed. These nodes can be written on different programming language as long as share the same protocol and serialization approach. A socket is mainly defined by an endpoint which is composed by a protocol, a ip address and a port value. An example of endpoint definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
-<p>A typical solution adopted to create distributed robotic systems using sockets are messaging middlewares. NEP uses ZeroMQ, nanomsg, ROS and ROS 2.0 back-end messaging middleware libraries. The approach adopted in NEP is to keep the code independent of the middleware or trasport layer in order to enable an ease switch to future technologies.</p>
-<h2 id="comunication-patterns">Comunication patterns</h2>
-<p>Messaging patterns are generally used to describes the flow of communication between process in distributed systems. Two widely used messaging patterns in robotics are <strong>Request/Process/Reply</strong> and <strong>Publish/Subscribe</strong>.</p>
-<h3 id="requestprocessreply">Request/Process/Reply</h3>
-<p>In the <em>Request/Process/Reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request. However, if a response never comes a deadlock can occur (i.e a read operation cannot be performed when a write operation is in progress, and vice versa). This pattern is good for the cases where sincronization between two task is needed. </p>
-<p><img alt="Material Screenshot" src="../img/cs.png" /></p>
-<h3 id="publish-subscribe">Publish-Subscribe</h3>
-<p>The <em>publish/subscribe</em> model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers. Unlike typical client/server models, the communication in a publish/subscribe model is generally done in an asynchronous way. Most popular publish/subscribe schemes are based on the notion of <strong>topics</strong>. In this scheme subscribers can use a set of keywords called <strong>topics</strong> to filtered the information sent by publishers. </p>
-<p><img alt="Material Screenshot" src="../img/ps.png" /></p>
-<h2 id="network-architectures">Network architectures</h2>
-<p>Network architectures used to creates distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. NEP supports multiple network architectures which includes <strong>direct endpoint descriptions</strong>, <strong>Hybrid Peer to Peer (P2P) master server</strong> . A description of each approach is shown bellow.</p>
+                <h2 id="select-a-python-version-to-install">Select a Python version to install</h2>
+<p>Many libraries support both Python 2 or 3. However, there are still some tools only avaliable for some specific version of Python.</p>
+<h3 id="why-install-python-2">Why install python 2?</h3>
+<p>In order to support most of the robotic software currently avalaible the installation of Python 2 in 32 bits version is highly recommended.  The next robotics tools are only supported in Python 2:</p>
 <ul>
-<li>In a <strong>direct endpoint descriptions</strong> architecture the endpoints are manually set by the user. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases. </li>
+<li>Pepper robot</li>
+<li>Nao robot</li>
+<li>Most robots using ROS (Robot Operating System) </li>
 </ul>
-<p><img alt="Material Screenshot" src="../img/direct.png" /></p>
+<h3 id="why-install-python-3">Why install python 3?</h3>
+<p>Some few libraries in Windows and some new robots only support Python 3.   The next robotics tools are only supported in Python 3:</p>
 <ul>
-<li>When using a <strong>Hybrid P2P</strong> architecture all the nodes in the network are implicitly connected to some node denoted as <strong>master name server</strong>, which performs the management of endpoints in base of identifiers called <strong>topics</strong>. When the master node detects a topic registration request from some node, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the instances which have performed the registration request of the topic (e.g. a publisher or a subscriber). In this approach communication starts when at least one producer ( e.g. a publisher) and one receiver (e.g. a subscriber) have requested the registration of the same topic. This approach reduce manageability problems but is considered a <strong>single point of failure</strong> due that if the <strong>master name server</strong> accidentally crash or stops, new communication between nodes will be not possible. This approach is used in ROS.</li>
+<li>TensorFlow for Windows (for OSX and Ubuntu can be use 2 or 3)</li>
+<li>Vector and Cozmo robots</li>
 </ul>
-<p><img alt="Material Screenshot" src="../img/master.png" /></p>
+<h2 id="windows">Windows</h2>
+<h3 id="install-python-2-correctly-in-windows">Install Python 2 correctly in Windows</h3>
+<ul>
+<li>1.- Go to the <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/downloads/release/python-2716/"> official Python 2 download page </a></li>
+<li>2.- Download  <strong>Windows x86 MSI installer</strong> </li>
+<li>3.- Execute the installer downloaded</li>
+<li>4.- <strong>Very important</strong>: when reaching next interface  be sure of activate <strong>Add python.exe to Path - Will be installed on local hard drive</strong>. The other installation options can be set with their default values</li>
+</ul>
+<p><img alt="Material Screenshot" src="../img/python.png" /></p>
+<ul>
+<li>5.- Continue and finish the installation</li>
+</ul>
+<h3 id="install-python-3-correctly-in-windows-not-ros-20">Install Python 3 correctly in Windows (not ROS 2.0)</h3>
+<ul>
+<li>1.- Go to the <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/"> official Python 3 download page </a></li>
+<li>2.- Download  the lastest Python 3 version</li>
+<li>3.- Execute the installer downloaded</li>
+<li>4.- <strong>Very important</strong>: when reaching next interface</li>
+</ul>
+<p><img alt="Material Screenshot" src="../img/python3.png" /></p>
+<ul>
+<li>5.- Continue and finish the installation </li>
+</ul>
+<h3 id="install-python-3-for-use-ros-20-in-windows">Install Python 3 for use ROS 2.0 in Windows</h3>
+<p>Follow ROS 2.0 instructions <a target="_blank" rel="noopener noreferrer"  href="https://index.ros.org/doc/ros2/Installation/Windows-Install-Binary/#id3"> avaliables here </a>.</p>
+<h2 id="mac-os-x">Mac OS X</h2>
+<h3 id="install-python-2-in-macos">Install Python 2 in MacOS</h3>
+<p>The next steps enable the use of NAO and Pepper robots on OSX</p>
+<ul>
+<li>Go to the <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/downloads/release/python-2716/"> official Python 2 download page </a>.</li>
+<li>Download macOS 64-bit installer, execute this installer and follow the wizard using the default options</li>
+</ul>
+<h3 id="install-python-3-macos">Install Python 3 MacOS</h3>
+<ul>
+<li>Install HomeBrew as indicated in <a target="_blank" rel="noopener noreferrer"  href="https://brew.sh/"> Homebrew official page </a>.</li>
+<li>Open a macOS Terminal prompt and write:</li>
+</ul>
+<pre><code>brew update
+brew install python3
+</code></pre>
                 
                   
                 
@@ -529,7 +714,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -538,19 +723,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installation
+                Introduction
               </span>
             </div>
           </a>
         
         
-          <a href="../publish/" title="Publish-Subscribe" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../nep/" title="Step 2 - Install NEP" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Publish-Subscribe
+                Step 2 - Install NEP
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -582,7 +767,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../assets/javascripts/application.267712eb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
