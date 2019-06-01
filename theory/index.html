@@ -42,7 +42,7 @@
     
     
       
-        <title>Basic theory - NEP</title>
+        <title>Introduction to Software Architectures for Robotics - NEP</title>
       
     
     
@@ -125,7 +125,7 @@
               NEP
             </span>
             <span class="md-header-nav__topic">
-              Basic theory
+              Introduction to Software Architectures for Robotics
             </span>
           
         </div>
@@ -166,7 +166,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -175,7 +175,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
           </div>
@@ -213,7 +213,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -222,7 +222,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
     </div>
@@ -266,8 +266,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../python/" title="Step 1 - Install Python" class="md-nav__link">
-      Step 1 - Install Python
+    <a href="../python/" title="Install Python" class="md-nav__link">
+      Install Python
     </a>
   </li>
 
@@ -278,8 +278,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep/" title="Step 2 - Install NEP" class="md-nav__link">
-      Step 2 - Install NEP
+    <a href="../nep/" title="Install NEP" class="md-nav__link">
+      Install NEP
     </a>
   </li>
 
@@ -290,20 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep_discovery/" title="Step 3 - Install Discovery Server" class="md-nav__link">
-      Step 3 - Install Discovery Server
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../advanced/" title="Advanced options" class="md-nav__link">
-      Advanced options
+    <a href="../nep_discovery/" title="Install Discovery Server" class="md-nav__link">
+      Install Discovery Server
     </a>
   </li>
 
@@ -326,11 +314,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Basic theory
+        Introduction to Software Architectures for Robotics
       </label>
     
-    <a href="./" title="Basic theory" class="md-nav__link md-nav__link--active">
-      Basic theory
+    <a href="./" title="Introduction to Software Architectures for Robotics" class="md-nav__link md-nav__link--active">
+      Introduction to Software Architectures for Robotics
     </a>
     
       
@@ -591,30 +579,30 @@
               
                 
                 
-                  <h1>Basic theory</h1>
+                  <h1>Introduction to Software Architectures for Robotics</h1>
                 
                 <h2 id="nodes-and-inter-process-communication">Nodes and inter-process communication</h2>
-<p>In order to reduce the effort required to generate more complex robotic systems, robot applications must be divided in a set of simple and interchangeable processes, also denoted as <strong>nodes</strong>. The ways in which different nodes communicates between them is denoted as <em>inter-process communication</em>.  There exist different inter-process communication options. However the most extended approach on Robotics is <em>sockets</em></p>
-<p>The idea of separate a robot application in simple nodes has the main objective to improve the reusability, maintainability and performance of robotic systems. This approach implies to start thinking in a <em>"divide and conquer"</em> way.</p>
+<p>In order to reduce the effort required to generate more complex robotic systems, robot applications must be divided into a set of simple and interchangeable processes, also denoted as <strong>nodes</strong>. The ways in which different nodes communicate between them is denoted as <em>inter-process communication</em>. There exist different inter-process communication options. However, the most extended approach on Robotics is <em>sockets</em>. </p>
+<p>The idea of separate a robot application in simple nodes has the main objective to improve the reusability, maintainability and performance of robotic systems. This approach implies to start thinking in a "divide and conquer" way.</p>
 <h2 id="sockets-and-robot-middlewares">Sockets and robot middlewares</h2>
-<p>Sockets are commonly used when: (i) communication between nodes on the same machine is needed or (ii) communication between nodes on different machines or devices is needed. These nodes can be written on different programming language as long as share the same protocol and serialization approach. A socket is mainly defined by an endpoint which is composed by a protocol, a ip address and a port value. An example of endpoint definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip adress and <code>5000</code> is the port of the connection.</p>
-<p>A typical solution adopted to create distributed robotic systems using sockets are messaging middlewares. NEP uses ZeroMQ, nanomsg, ROS and ROS 2.0 back-end messaging middleware libraries. The approach adopted in NEP is to keep the code independent of the middleware or trasport layer in order to enable an ease switch to future technologies.</p>
+<p>Sockets are commonly used when: (i) communication between nodes on the same machine is needed or (ii) communication between nodes on different machines or devices is needed. These nodes can be written on different programming language as long as share the same protocol and serialization approach. A socket is mainly defined by an endpoint which is composed by a protocol, an ip address and a port value. An example of endpoint definition is <code>tcp://127.0.0.1:5000</code>, where <code>tcp</code> indicates the protocol, <code>127.0.0.1</code> indicates local ip address and <code>5000</code> is the port of the connection.</p>
+<p>A typical solution adopted to create distributed robotic systems using sockets is messaging middlewares. NEP uses ZeroMQ, nanomsg, ROS and ROS 2.0 back-end messaging middleware libraries. The approach adopted in NEP is to keep the code independent of the middleware or transport layer in order to enable an ease switch to future technologies.</p>
 <h2 id="comunication-patterns">Comunication patterns</h2>
-<p>Messaging patterns are generally used to describes the flow of communication between process in distributed systems. Two widely used messaging patterns in robotics are <strong>Request/Process/Reply</strong> and <strong>Publish/Subscribe</strong>.</p>
+<p>Messaging patterns are generally used to describes the flow of communication between a process in distributed systems. Two widely used messaging patterns in robotics are <strong>Request/Process/Reply</strong> and <strong>Publish/Subscribe</strong>.</p>
 <h3 id="requestprocessreply">Request/Process/Reply</h3>
-<p>In the <em>Request/Process/Reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request. However, if a response never comes a deadlock can occur (i.e a read operation cannot be performed when a write operation is in progress, and vice versa). This pattern is good for the cases where sincronization between two task is needed. </p>
+<p>In the <em>Request/Process/Reply</em> pattern, also denoted as <em>client/server</em>,  a process sends a request for some data and then waits for the response to this request. However, if a response never comes a deadlock can occur (i.e a read operation cannot be performed when a write operation is in progress, and vice versa). This pattern is good for the cases where synchronization between two tasks is needed. </p>
 <p><img alt="Material Screenshot" src="../img/cs.png" /></p>
 <h3 id="publish-subscribe">Publish-Subscribe</h3>
-<p>The <em>publish/subscribe</em> model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers. Unlike typical client/server models, the communication in a publish/subscribe model is generally done in an asynchronous way. Most popular publish/subscribe schemes are based on the notion of <strong>topics</strong>. In this scheme subscribers can use a set of keywords called <strong>topics</strong> to filtered the information sent by publishers. </p>
+<p>The <em>publish/subscribe</em> model is another classic pattern where the producers of messages, called publishers, send messages without the knowledge of what or if any receiver, called subscribers. Unlike typical client/server models, the communication in a publish/subscribe model is generally done in an asynchronous way. Most popular publish/subscribe schemes are based on the notion of <strong>topics</strong>. In this scheme, subscribers can use a set of keywords called <strong>topics</strong> to filter the information sent by publishers. </p>
 <p><img alt="Material Screenshot" src="../img/ps.png" /></p>
 <h2 id="network-architectures">Network architectures</h2>
-<p>Network architectures used to creates distributed systems are characterised by a number of trade-offs that involves efficiency, determinism, scalability, security and robustness. NEP supports multiple network architectures which includes <strong>direct endpoint descriptions</strong>, <strong>Hybrid Peer to Peer (P2P) master server</strong> . A description of each approach is shown bellow.</p>
+<p>Network architectures used to create distributed systems are characterized by a number of trade-offs that involve efficiency, determinism, scalability, security and robustness. NEP supports multiple network architectures which include <strong>direct endpoint descriptions</strong>, <strong>Hybrid Peer to Peer (P2P) master server</strong> . A description of each approach is shown bellow.</p>
 <ul>
-<li>In a <strong>direct endpoint descriptions</strong> architecture the endpoints are manually set by the user. However, this approach must to be avoided when many process need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases. </li>
+<li>In a <strong>direct endpoint descriptions</strong> architecture the endpoints are manually set by the user. However, this approach must be avoided when many processes need to be connected between them or when it is expected to scale the number of nodes in the future. This is due that the manageability of the system gets worse when the number of nodes increases. </li>
 </ul>
 <p><img alt="Material Screenshot" src="../img/direct.png" /></p>
 <ul>
-<li>When using a <strong>Hybrid P2P</strong> architecture all the nodes in the network are implicitly connected to some node denoted as <strong>master name server</strong>, which performs the management of endpoints in base of identifiers called <strong>topics</strong>. When the master node detects a topic registration request from some node, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the instances which have performed the registration request of the topic (e.g. a publisher or a subscriber). In this approach communication starts when at least one producer ( e.g. a publisher) and one receiver (e.g. a subscriber) have requested the registration of the same topic. This approach reduce manageability problems but is considered a <strong>single point of failure</strong> due that if the <strong>master name server</strong> accidentally crash or stops, new communication between nodes will be not possible. This approach is used in ROS and by the NEP Discovey Server.</li>
+<li>When using a <strong>Hybrid P2P</strong> architecture all the nodes in the network are implicitly connected to some node denoted as <strong>master name server</strong>, which performs the management of endpoints using a set of identifiers called <strong>topics</strong>. When the master node detects a topic registration request from some node, it assigns to the requested topic an endpoint direction (i.e., an IP address and a port). This endpoint information is saved and sent to the instances which have performed the registration request of the topic (e.g. a publisher or a subscriber). In this approach, communication starts when at least one producer ( e.g. a publisher) and one receiver (e.g. a subscriber) have requested the registration of the same topic. This approach reduces manageability problems but is considered a <strong>single point of failure</strong> due that if the <strong>master name server</strong> accidentally crashes or stops, new communication between nodes will be not possible. This approach is used in ROS and by the NEP Discovery Server.</li>
 </ul>
 <p><img alt="Material Screenshot" src="../img/master.png" /></p>
                 
@@ -637,7 +625,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../advanced/" title="Advanced options" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../nep_discovery/" title="Install Discovery Server" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -646,7 +634,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Advanced options
+                Install Discovery Server
               </span>
             </div>
           </a>

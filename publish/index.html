@@ -166,7 +166,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -175,7 +175,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
           </div>
@@ -213,7 +213,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -222,7 +222,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
     </div>
@@ -266,8 +266,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../python/" title="Step 1 - Install Python" class="md-nav__link">
-      Step 1 - Install Python
+    <a href="../python/" title="Install Python" class="md-nav__link">
+      Install Python
     </a>
   </li>
 
@@ -278,8 +278,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep/" title="Step 2 - Install NEP" class="md-nav__link">
-      Step 2 - Install NEP
+    <a href="../nep/" title="Install NEP" class="md-nav__link">
+      Install NEP
     </a>
   </li>
 
@@ -290,20 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep_discovery/" title="Step 3 - Install Discovery Server" class="md-nav__link">
-      Step 3 - Install Discovery Server
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../advanced/" title="Advanced options" class="md-nav__link">
-      Advanced options
+    <a href="../nep_discovery/" title="Install Discovery Server" class="md-nav__link">
+      Install Discovery Server
     </a>
   </li>
 
@@ -319,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../theory/" title="Basic theory" class="md-nav__link">
-      Basic theory
+    <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-nav__link">
+      Introduction to Software Architectures for Robotics
     </a>
   </li>
 
@@ -555,12 +543,12 @@
                 
                 <p>In a Publish-Subscribe pattern, a producer of messages (publisher) send messages without knowing if any receiver (subscriber) exists. </p>
 <p><img alt="Material Screenshot" src="../img/ps.png" /></p>
-<p>Two option are ecpresed this tutorial:</p>
+<p>Two option have expressed this tutorial:</p>
 <ul>
 <li>Option 1: using fixed IP and port values (for very simple architectures)</li>
 <li>Option 2: Using a ROS, ROS2.0, ZMQ and nanomsg reusable architectures</li>
 </ul>
-<p>Options 1 can be enough when the problem to solve requires only to connect two process that run, for example, in diferent machines or in diferent version of Python (2 and 3). However, if it is need to have more lost-lasting, and reusable code, the option 2 is better suited.  </p>
+<p>Options 1 can be enough when the problem to solve requires only to connect two processes that run, for example, in different machines or in different versions of Python (2 and 3). However, if it needs to have more lost-lasting, and reusable code, option 2 is better suited.  </p>
 <h2 id="1-using-fixed-ip-and-port-values"><strong>1.- Using fixed IP and port values </strong></h2>
 <p>A simple publisher node can be defined as:</p>
 <pre><code class="python">import nep
@@ -584,15 +572,15 @@ while True:
 
 <p>First we need to create a new <code>nep.node</code> instance with is denoted as <code>node</code>. The we define the type of architecture to use in the line:
 <code>conf = node.direct(ip = "127.0.0.1", port =  9090, mode ="one2many")</code></p>
-<p>This line define the IP address and port of the publisher to create, as well the type of publisher, which can be 
-<code>"one2many"</code> or <code>many2one</code>. On the one hand, in the <code>"one2many"</code> mode only one publisher can send messages an undefined number of subscribers. On the other hand, in the <code>"many2one"</code> mode an undefined number of publisher can send information to just one subscriber. </p>
+<p>This line defines the IP address and port of the publisher to create, as well as the type of publisher, which can be 
+<code>"one2many"</code> or <code>many2one</code>. On the one hand, in the <code>"one2many"</code> mode only one publisher can send messages an undefined number of subscribers. On the other hand, in the <code>"many2one"</code> mode an undefined number of publishers can send information to just one subscriber. </p>
 <blockquote>
-<p><strong>WARNING 1:</strong> Nodes with diferent mode (one2many or many2one) can not be communicated betweem them. </p>
+<p><strong>WARNING 1:</strong> Nodes with different modes (one2many or many2one) cannot be communicated between them. </p>
 <p><strong>WARNING 2:</strong> It is not possible to execute more than one  <code>"one2many"</code> publishers that have the same IP and port values.</p>
-<p><strong>WARNING 3:</strong> It is not possible to execute more than one  <code>"many2one"</code> susbcribers that have the same IP and port values.</p>
+<p><strong>WARNING 3:</strong> It is not possible to execute more than one  <code>"many2one"</code> subscribers that have the same IP and port values.</p>
 </blockquote>
-<p>Then we need to define a new publisher instance using the <code>new_pub</code> function. In this function we need to define a topic name (message identifier), the type of message ("json" or "string") and the configuration of the publisher. In this case the topic is defined with the name of <code>pub_sub_test</code> and the message type is <code>json</code> (which enable to use python dictionaries). We also select the configuration value defined in <code>conf</code> variable. The created publisher is then defined in the <code>pub</code> instance.</p>
-<p>Finally a message defined as a python dictionary is sent each second using the <code>publish</code> function of the <code>pub</code> instance.</p>
+<p>Then we need to define a new publisher instance using the <code>new_pub</code> function. In this function, we need to define a topic name (message identifier), the type of message ("json" or "string") and the configuration of the publisher. In this case, the topic is defined with the name of <code>pub_sub_test</code> and the message type is <code>json</code> (which enables the use of python dictionaries). We also select the configuration value defined in <code>conf</code> variable. The created publisher is then defined in the <code>pub</code> instance.</p>
+<p>Finally, a message defined as a python dictionary is sent each second using the <code>publish</code> function of the <code>pub</code> instance.</p>
 <p>The subcriber node able to read the messages of the publisher defined before can be defined as:</p>
 <pre><code class="python">import nep
 
@@ -613,9 +601,9 @@ node.spin()
 
 </code></pre>
 
-<p>In this example we use a function denoted as <code>mycallback</code>, which is executed in a diffenert thread and that be executed each time a new message is read by the subscriber. The configuration set to the subscriber must be the same that the publisher. In this case we use the function <code>new_callback</code> to create the subcriber instance. This function requires the same topic name defined in the subscriber (<code>"pub_sub_test"</code>), the type of message to receive (<code>"json"</code>), the function that will be executed each time a message arrives (<code>mycallback</code>), and the subscriber configuration defined in <code>conf</code>.</p>
+<p>In this example, we use a function denoted as <code>mycallback</code>, which is executed in a different thread and that be executed each time a new message is read by the subscriber. The configuration set to the subscriber must be the same that the publisher. In this case, we use the function <code>new_callback</code> to create the subscriber instance. This function requires the same topic name defined in the subscriber (<code>"pub_sub_test"</code>), the type of message to receive (<code>"json"</code>), the function that will be executed each time a message arrives (<code>mycallback</code>), and the subscriber configuration defined in <code>conf</code>.</p>
 <h3 id="communication-between-different-pcs"><strong>Communication between different PCs</strong></h3>
-<p>Different computers using different operating systems can be connected using a direct network configuration. This devices need to be connected the same network and specify the IP address of one of the PCs in the network and the same port. The IP value will depend of the publish-subscribe configuration mode.</p>
+<p>Different computers using different operating systems can be connected using a direct network configuration. These devices need to be connected to the same network and specify the IP address of one of the PCs in the network and the same port. The IP value will depend on the publish-subscribe configuration mode.</p>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -640,7 +628,7 @@ node.spin()
   </tr>
 </table>
 
-<p>For example if a one2many publisher node in a PC with IP <code>192.168.11.1</code> need to communicate with a Subscriber node in other PC with IP <code>192.168.11.2</code>, the configuration of the publisher in port <code>10090</code>  must be:</p>
+<p>For example, if a one2many publisher node in a PC with IP <code>192.168.11.1</code> need to communicate with a Subscriber node in other PC with IP <code>192.168.11.2</code>, the configuration of the publisher in port <code>10090</code>  must be:</p>
 <pre><code class="python">conf = node.direct(ip = &quot;192.168.11.1&quot;, port =  10090, mode =&quot;one2many&quot;)
 </code></pre>
 
@@ -669,7 +657,7 @@ node.spin()
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../theory/" title="Basic theory" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -678,7 +666,7 @@ node.spin()
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Basic theory
+                Introduction to Software Architectures for Robotics
               </span>
             </div>
           </a>

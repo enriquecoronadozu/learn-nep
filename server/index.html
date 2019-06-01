@@ -166,7 +166,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -175,7 +175,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
           </div>
@@ -213,7 +213,7 @@
 
   
 
-<a href="https://enriquecoronadozu.github.io/learn-nep/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/enriquecoronadozu" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -222,7 +222,7 @@
     </div>
   
   <div class="md-source__repository">
-    Enriquecoronadozu
+    GitHub
   </div>
 </a>
     </div>
@@ -266,8 +266,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../python/" title="Step 1 - Install Python" class="md-nav__link">
-      Step 1 - Install Python
+    <a href="../python/" title="Install Python" class="md-nav__link">
+      Install Python
     </a>
   </li>
 
@@ -278,8 +278,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep/" title="Step 2 - Install NEP" class="md-nav__link">
-      Step 2 - Install NEP
+    <a href="../nep/" title="Install NEP" class="md-nav__link">
+      Install NEP
     </a>
   </li>
 
@@ -290,20 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../nep_discovery/" title="Step 3 - Install Discovery Server" class="md-nav__link">
-      Step 3 - Install Discovery Server
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../advanced/" title="Advanced options" class="md-nav__link">
-      Advanced options
+    <a href="../nep_discovery/" title="Install Discovery Server" class="md-nav__link">
+      Install Discovery Server
     </a>
   </li>
 
@@ -319,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../theory/" title="Basic theory" class="md-nav__link">
-      Basic theory
+    <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-nav__link">
+      Introduction to Software Architectures for Robotics
     </a>
   </li>
 
@@ -396,6 +384,26 @@
         
           <li class="md-nav__item">
   <a href="#simple-client" title="Simple client" class="md-nav__link">
+    Simple client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-fixed-ip-and-port_1" title="Using fixed IP and port" class="md-nav__link">
+    Using fixed IP and port
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-client_1" title="Simple client" class="md-nav__link">
     Simple client
   </a>
   
@@ -536,6 +544,26 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-fixed-ip-and-port_1" title="Using fixed IP and port" class="md-nav__link">
+    Using fixed IP and port
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-client_1" title="Simple client" class="md-nav__link">
+    Simple client
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#simple-server" title="Simple server" class="md-nav__link">
     Simple server
@@ -587,6 +615,12 @@
 <h2 id="using-fixed-ip-and-port"><strong> Using fixed IP and port </strong></h2>
 <p>When simple applications with few nodes are needed a fixed endpoint value (IP and port) can be enough</p>
 <h3 id="simple-client">Simple client</h3>
+<p>In the Client-Server pattern, a node (client) sends a request of some data to another node (server). The execution of the client node blocks its execution until a response is sent by the server. </p>
+<p><img alt="Material Screenshot" src="../img/cs.png" /></p>
+<p>Examples of client-server applications are shown below.</p>
+<h2 id="using-fixed-ip-and-port_1"><strong> Using fixed IP and port </strong></h2>
+<p>When simple applications with few nodes are needed a fixed endpoint value (IP and port) can be enough</p>
+<h3 id="simple-client_1">Simple client</h3>
 <p>A simple client node asking each 2 seconds for some information can be defined as:</p>
 <pre><code class="python">import nep 
 import time 
@@ -604,11 +638,11 @@ while True:
 <pre><code>client = nep.client('127.0.0.1', 8014)
 </code></pre>
 
-<p>For this, the IP and PORT parameters are defined as <code>'127.0.0.1'</code> and <code>8014</code> respectivelly.</p>
-<p>The function <code>send_info</code>  can be used to send a request to the server. This request must be defined as a python dictionary. In this case the dictionary <code>{"message":"client request"}</code> is defined to be send as request.</p>
-<p>The function <code>listen_info</code> waits until the server send its response. This function also reads the message sent by the server.</p>
+<p>For this, the IP and PORT parameters are defined as <code>'127.0.0.1'</code> and <code>8014</code> respectively.</p>
+<p>The function <code>send_info</code>  can be used to send a request to the server. This request must be defined as a python dictionary. In this case the dictionary <code>{"message":"client request"}</code> is defined to be send a request.</p>
+<p>The function <code>listen_info</code> waits until the server sends its response. This function also reads the message sent by the server.</p>
 <h3 id="simple-server">Simple server</h3>
-<p>The next Python script shown a simple example of a server node.</p>
+<p>The next Python script shows a simple example of a server node.</p>
 <pre><code class="python">import nep  # Import nep library
 server = nep.server('127.0.0.1', 8014) #Create a new server instance
 
@@ -623,13 +657,13 @@ while True:
 <pre><code>server = nep.server('127.0.0.1', 8014)
 </code></pre>
 
-<p>We need to define the same IP and PORT values that in the client node. The functions <code>listen_info</code> and <code>send_info</code>can be used to read a client request and send a response respectively. In this example the response to be sent in defined as <code>{"message":"hello client"}</code>.</p>
+<p>We need to define the same IP and PORT values in the client node. The functions <code>listen_info</code> and <code>send_info</code>can be used to read a client request and send a response, respectively. In this example the response to be sent in defined as <code>{"message":"hello client"}</code>.</p>
 <h2 id="using-default-python-sockets"><strong>Using default Python sockets</strong></h2>
-<p>The client ans server classes of NEP uses ZeroMQ by deafult (sockets with steroids). However, an optional parameter can be used to select the soxket type. In order to use TCP/IP POSIX sockets a client with port value of 30000 can be defined as:</p>
+<p>The client and server classes of NEP use ZeroMQ by default (sockets with steroids). However, an optional parameter can be used to select the socket type. To use TCP/IP POSIX sockets, a client with a port value of 30000 can be defined as:</p>
 <pre><code>client = nep.client('127.0.0.1', 30000, 'normal')
 </code></pre>
 
-<p>However, instead of dictionaries messages must be send as string, a full example is shown bellow:</p>
+<p>However, instead of dictionaries, messages must be sent as a string. A full example is shown below:</p>
 <pre><code class="python">import nep 
 import time 
 
@@ -658,11 +692,11 @@ while True:
 </code></pre>
 
 <blockquote>
-<p><strong>WARNING:</strong> It is not possible to communicate a  ZeroMQ socket and a normal TCP/IP POSIX socket</p>
+<p><strong>WARNING:</strong> It is not possible to communicate a  ZeroMQ socket and a typical TCP/IP POSIX socket</p>
 </blockquote>
 <h2 id="using-nep-master"><strong> Using NEP master </strong></h2>
-<p>When the number of nodes increases the management of IP and port values becomes a tedious task. In order avoid this problem NEP nodes using the client/server pattern can be managed by the NEP master.</p>
-<p>An example of a client connected through NEP master is shown bellow:</p>
+<p>When the number of nodes increases the management of IP and port values becomes a tedious task. In order to avoid this problem NEP nodes using the client/server pattern can be managed by the NEP master.</p>
+<p>An example of a client connected through NEP master is shown below:</p>
 <pre><code class="python">import nep 
 import time 
 
@@ -676,9 +710,9 @@ while True:
     time.sleep(1) # Wait one second
 </code></pre>
 
-<p>However, the way to define the client present some diferences. First, it is need to create a <code>nep.node</code> instance and define a unique name for this node, in this case that name is defined as <code>"client_test"</code>. Then, it is required to start a new client instance using the <code>new_client()</code> function. It is also requires to define a name for the client. This name, denoted as topic, will be used by the NEP master to assign some suitable IP and port values to the client instance.
-In this case the topic is defined as  <code>"client_server_sample"</code>.</p>
-<p>The server is defined in a similar way but using the <code>new_server()</code> function as shown in the next example:</p>
+<p>However, the way to define the client presents some differences. First, we need to create a <code>nep.node</code> instance and specify a unique name for this node, in this case, that name is defined as <code>"client_test"</code>. Then, it is required to start a new client instance using the <code>new_client()</code> function. It is also needs to define a name for the client. This name, denoted as topic, will be used by the NEP master to assign some suitable IP and port values to the client instance.
+In this case, the topic is defined as  <code>"client_server_sample"</code>.</p>
+<p>The server is defined similarly but using the <code>new_server()</code> function as shown in the next example:</p>
 <pre><code class="python">import nep  # Import nep library
 
 node = nep.node(&quot;server_test&quot;)  # New nep node
@@ -692,7 +726,7 @@ while True:
 </code></pre>
 
 <blockquote>
-<p><strong>WARNING:</strong> NEP master must be first started in order to use these last two examples</p>
+<p><strong>WARNING:</strong> NEP master must be first started to use these last two examples</p>
 </blockquote>
                 
                   
