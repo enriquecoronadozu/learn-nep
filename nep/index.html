@@ -42,7 +42,7 @@
     
     
       
-        <title>Step 2.- Install NEP</title>
+        <title>Install NEP</title>
       
     
     
@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#for-non-programmers" tabindex="1" class="md-skip">
+      <a href="#using-pip" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -303,13 +303,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-non-programmers" title="For non-programmers" class="md-nav__link">
-    For non-programmers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-pip" title="Using pip" class="md-nav__link">
     Using pip
   </a>
@@ -352,35 +345,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#5-github" title="5.- Github" class="md-nav__link">
-    5.- Github
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-old-version-01" title="5.1 Old version (0.1)" class="md-nav__link">
-    5.1 Old version (0.1)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-current-version-10" title="5.2 Current version (1.0)" class="md-nav__link">
-    5.2 Current version (1.0)
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#beta-version-old" title="Beta version (old)" class="md-nav__link">
+    Beta version (old)
+  </a>
   
 </li>
       
@@ -418,8 +391,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-nav__link">
-      Introduction to Software Architectures for Robotics
+    <a href="../theory/" title="Basic Theory" class="md-nav__link">
+      Basic Theory
     </a>
   </li>
 
@@ -521,8 +494,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../matlab_examples/" title="Examples" class="md-nav__link">
-      Examples
+    <a href="../matlab_examples/" title="Publish-Subscribe" class="md-nav__link">
+      Publish-Subscribe
     </a>
   </li>
 
@@ -549,13 +522,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#for-non-programmers" title="For non-programmers" class="md-nav__link">
-    For non-programmers
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#using-pip" title="Using pip" class="md-nav__link">
@@ -600,35 +566,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#5-github" title="5.- Github" class="md-nav__link">
-    5.- Github
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-old-version-01" title="5.1 Old version (0.1)" class="md-nav__link">
-    5.1 Old version (0.1)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-current-version-10" title="5.2 Current version (1.0)" class="md-nav__link">
-    5.2 Current version (1.0)
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#beta-version-old" title="Beta version (old)" class="md-nav__link">
+    Beta version (old)
+  </a>
   
 </li>
       
@@ -651,20 +597,19 @@
                 
                   <h1>Install NEP</h1>
                 
-                <h2 id="for-non-programmers">For non-programmers</h2>
-<p>NEP is included in RIZE (Robot Programming From Zero Experience). This tool enables non-programmers to develop robot applications (links soon).</p>
-<h2 id="using-pip">Using pip</h2>
-<p>For developers, nep can be conveniently installed using pip, just write the right commands in some terminal</p>
+                <h2 id="using-pip">Using pip</h2>
+<p>For developers, nep can be conveniently installed using pip as explained below.</p>
 <p><strong> If you have only one version of Python (2 or 3) installed </strong> </p>
-<pre><code>pip install nep
+<p>Write in a terminal: </p>
+<pre><code>pip install -U nep
 pip install tornado
 </code></pre>
 
-<p>For Python 2 also install:</p>
+<p>For Python 2 also write:</p>
 <pre><code>pip install trollius
 </code></pre>
 
-<p>For Python 3 also install:</p>
+<p>For Python 3 also write:</p>
 <pre><code>pip install asyncio
 </code></pre>
 
@@ -719,44 +664,46 @@ python3 -m pip install -U tornado
 <tbody>
 <tr>
 <td>nanomsg</td>
-<td>Easy</td>
-<td>Very complex</td>
-<td>Very complex</td>
-<td>Binaries must be compiled in many cases</td>
+<td>Very easy</td>
+<td>Complex</td>
+<td>Complex</td>
+<td>Binaries must be compiled in Linux and OSX and in few Windows 10 cases.</td>
 </tr>
 <tr>
 <td>ROS</td>
 <td>N.A</td>
-<td>Complex</td>
+<td>Easy</td>
 <td>N.A</td>
-<td>ROS do not fully supports Windows and Mac OS X</td>
+<td>ROS 1.0  do not fully supports Windows and Mac OS X</td>
 </tr>
 <tr>
 <td>ROS 2.0</td>
-<td>Very complex</td>
 <td>Complex</td>
-<td>Complex</td>
+<td>Easy</td>
+<td>Complicated</td>
 <td>ROS 2.0 only supports Windows 10, few version of Ubuntu and MacOS X (10.14 Mojave still not supported)</td>
 </tr>
 </tbody>
 </table>
 <p>NEP using <strong>ZeroMQ</strong> as back-end has been tested with success in Windows 7, 8, 8.1 and 10, Ubuntu 16.04, 16.10, 18.04 and 18.10, as well as Mac OS X latest versions, including Mojave (10.14).</p>
 <h3 id="2-using-ros">2.- Using ROS</h3>
-<p>Follow steps for intall ROS from official documentation </p>
+<p>Steps for install ROS from the official documentation </p>
 <ul>
 <li><a  target="_blank" rel="noopener noreferrer"href="http://www.ros.org/install/"> ROS installation details</a></li>
 </ul>
 <h3 id="3-using-ros-20">3.- Using ROS 2.0</h3>
-<p>Follow steps for intall ROS 2.0 from official documentation </p>
+<p>Steps for install ROS 2.0 from the official documentation </p>
 <ul>
 <li><a  target="_blank" rel="noopener noreferrer" href="https://index.ros.org/doc/ros2/Installation/"> ROS 2.0 installation details</a></li>
 </ul>
 <h3 id="4-using-nanomsg">4.- Using Nanomsg</h3>
 <p>Pre-compiled binaries for Windows  -  <a  target="_blank" rel="noopener noreferrer" href="https://bitbucket.org/enriquecoronadozu/nep-installers/downloads/nanomsg-1.0.win32-py2.7.exe"> download here</a></p>
-<h3 id="5-github">5.- Github</h3>
-<h4 id="51-old-version-01">5.1 Old version (0.1)</h4>
+<blockquote>
+<p>In contruction ...</p>
+</blockquote>
+<h2 id="beta-version-old">Beta version (old)</h2>
 <p>NEP Beta version (warning: older presents a different API and fewer capabilities): </p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/enriquecoronadozu/NEP"> <strong>Link to older version</strong></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/enriquecoronadozu/NEP-beta-version"> <strong>Link to older version</strong></a></p>
 <pre><code class="latex">@incollection{coronado2019design,
   title={Design of a Human-Centered Robot Framework for End-User Programming and Applications},
   author={Coronado, Enrique and Mastrogiovanni, Fulvio and Venture, Gentiane},
@@ -766,9 +713,6 @@ python3 -m pip install -U tornado
   publisher={Springer}
 }
 </code></pre>
-
-<h4 id="52-current-version-10">5.2 Current version (1.0)</h4>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/enriquecoronadozu/NEP-beta-version"> <strong>Link to current version</strong></a></p>
                 
                   
                 

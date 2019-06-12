@@ -42,7 +42,7 @@
     
     
       
-        <title>NEP in MATLAB</title>
+        <title>Publish-Subscribe - NEP</title>
       
     
     
@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#nep-in-matlab-examples" tabindex="1" class="md-skip">
+      <a href="#matlab-as-subscriber" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
               NEP
             </span>
             <span class="md-header-nav__topic">
-              Examples
+              Publish-Subscribe
             </span>
           
         </div>
@@ -307,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-nav__link">
-      Introduction to Software Architectures for Robotics
+    <a href="../theory/" title="Basic Theory" class="md-nav__link">
+      Basic Theory
     </a>
   </li>
 
@@ -417,22 +417,18 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Examples
+        Publish-Subscribe
       </label>
     
-    <a href="./" title="Examples" class="md-nav__link md-nav__link--active">
-      Examples
+    <a href="./" title="Publish-Subscribe" class="md-nav__link md-nav__link--active">
+      Publish-Subscribe
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -529,8 +525,6 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -613,8 +607,9 @@
               
                 
                 
-                <h1 id="nep-in-matlab-examples">NEP in MATLAB: Examples</h1>
-<blockquote>
+                  <h1>Publish-Subscribe</h1>
+                
+                <blockquote>
 <p>NOTE: It is required matlab 2018b or above</p>
 </blockquote>
 <h2 id="matlab-as-subscriber">MATLAB as Subscriber</h2>
@@ -796,7 +791,7 @@ sub = node.new_sub(&quot;matlab&quot;, &quot;json&quot;, conf)
 <pre><code>import nep.node;
 node = nep.node(&quot;publisher_sample&quot;);
 
-pub = node.new_sub(&quot;matlab&quot;, &quot;192.168.0.100&quot;, 9090,&quot;one2many&quot;);
+pub = node.new_pub(&quot;matlab&quot;, &quot;192.168.0.100&quot;, 9090,&quot;one2many&quot;);
 
 msg = struct('message','hello','value',0);
 json_msg = jsonencode(msg);
@@ -828,7 +823,7 @@ end
 <pre><code>import nep.node;
 node = nep.node(&quot;publisher_sample&quot;);
 
-pub = node.new_sub(&quot;matlab&quot;, &quot;192.168.0.100&quot;, 9090,&quot;one2many&quot;);
+pub = node.new_pub(&quot;matlab&quot;, &quot;192.168.0.100&quot;, 9090,&quot;one2many&quot;);
 
 msg = struct('message','hello','value',0);
 json_msg = jsonencode(msg);

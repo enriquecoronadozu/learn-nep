@@ -42,7 +42,7 @@
     
     
       
-        <title>Python 2 install</title>
+        <title>Install Python</title>
       
     
     
@@ -320,15 +320,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-python-3-correctly-in-windows-not-ros-20" title="Install Python 3 correctly in Windows (not ROS 2.0)" class="md-nav__link">
-    Install Python 3 correctly in Windows (not ROS 2.0)
+  <a href="#install-python-3-correctly-in-windows-if-not-using-ros-20" title="Install Python 3 correctly in Windows (if not using ROS 2.0)" class="md-nav__link">
+    Install Python 3 correctly in Windows (if not using ROS 2.0)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-python-3-for-use-ros-20-in-windows" title="Install Python 3 for use ROS 2.0 in Windows" class="md-nav__link">
-    Install Python 3 for use ROS 2.0 in Windows
+  <a href="#install-python-3-using-ros-20-in-windows" title="Install Python 3 using ROS 2.0 in Windows" class="md-nav__link">
+    Install Python 3 using ROS 2.0 in Windows
   </a>
   
 </li>
@@ -411,8 +411,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../theory/" title="Introduction to Software Architectures for Robotics" class="md-nav__link">
-      Introduction to Software Architectures for Robotics
+    <a href="../theory/" title="Basic Theory" class="md-nav__link">
+      Basic Theory
     </a>
   </li>
 
@@ -514,8 +514,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../matlab_examples/" title="Examples" class="md-nav__link">
-      Examples
+    <a href="../matlab_examples/" title="Publish-Subscribe" class="md-nav__link">
+      Publish-Subscribe
     </a>
   </li>
 
@@ -573,15 +573,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-python-3-correctly-in-windows-not-ros-20" title="Install Python 3 correctly in Windows (not ROS 2.0)" class="md-nav__link">
-    Install Python 3 correctly in Windows (not ROS 2.0)
+  <a href="#install-python-3-correctly-in-windows-if-not-using-ros-20" title="Install Python 3 correctly in Windows (if not using ROS 2.0)" class="md-nav__link">
+    Install Python 3 correctly in Windows (if not using ROS 2.0)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-python-3-for-use-ros-20-in-windows" title="Install Python 3 for use ROS 2.0 in Windows" class="md-nav__link">
-    Install Python 3 for use ROS 2.0 in Windows
+  <a href="#install-python-3-using-ros-20-in-windows" title="Install Python 3 using ROS 2.0 in Windows" class="md-nav__link">
+    Install Python 3 using ROS 2.0 in Windows
   </a>
   
 </li>
@@ -638,32 +638,42 @@
                   <h1>Install Python</h1>
                 
                 <h2 id="important-information-for-users">Important information for users</h2>
-<p>The first step is to install Python in your computer, we need to select between Python 2 (recommended) or Python 3.</p>
-<p>Install <strong>Python 2</strong> if you are using the next robots:</p>
+<p>There are two options to select: <strong>Python 2 (recommended)</strong> or <strong>Python 3</strong>.</p>
+<p>Install <strong>Python 2</strong> if you are using the next robots or devices:</p>
 <ul>
 <li>Nao</li>
 <li>Pepper</li>
+<li>Leap Motion</li>
 </ul>
 <p>Install <strong>Python 3</strong> if you are using:</p>
 <ul>
 <li>Vector</li>
 <li>Cozmo</li>
+<li>TensorFlow in Windows</li>
 </ul>
 <h2 id="important-information-for-developers">Important information for developers</h2>
-<p>We highly recommend using the official installers of Python from its  <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/">  official web </a>. For programming in Python and many other languages we recommend <a target="_blank" rel="noopener noreferrer"  href="https://code.visualstudio.com/"> Visual Studio Code </a>.</p>
+<p>It is highly recommended to use the official installers of Python from the  <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/">  Python website </a>. For programming in Python and Javascript, it is recommended to install and use <a target="_blank" rel="noopener noreferrer"  href="https://code.visualstudio.com/"> Visual Studio Code </a>.</p>
 <h2 id="windows">Windows</h2>
 <h3 id="install-python-2-correctly-in-windows">Install Python 2 correctly in Windows</h3>
 <ul>
 <li>1.- Go to the <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/downloads/release/python-2716/"> official Python 2 download page </a></li>
-<li>2.- Download  <strong>Windows x86 MSI installer</strong> . Be sure that is the x86 (32 bits) version.</li>
-<li>3.- Execute the installer downloaded</li>
-<li>4.- <strong>Very important</strong>: when reaching the interface shown below, be sure of activate <strong>Add python.exe to Path - Will be installed on local hard drive</strong>.</li>
+<li>2.- Download  <strong>Windows x86 MSI installer</strong>.  <font color="#ff0000">Be sure that you downloaded the x86 (32 bits) version</font>.</li>
 </ul>
+<blockquote>
+<p>NEP can work with 64 bits version of Python but many robot software is only compatible with 32 bits</p>
+</blockquote>
+<ul>
+<li>3.- Execute the installer downloaded</li>
+<li>4.- <b><font color="#ff0000">Very important</font></b>: when reaching the interface shown below, be sure of activate <strong>Add python.exe to Path - Will be installed on local hard drive</strong>.</li>
+</ul>
+<blockquote>
+<p>If this step is not done correctly you will not able to install python packages using pip. You can reinstall Python 2.7 or add C:\Python27 to the PATH  environment variable.</p>
+</blockquote>
 <p><img alt="Material Screenshot" src="../img/python.png" /></p>
 <ul>
 <li>5.- Continue and finish the installation</li>
 </ul>
-<h3 id="install-python-3-correctly-in-windows-not-ros-20">Install Python 3 correctly in Windows (not ROS 2.0)</h3>
+<h3 id="install-python-3-correctly-in-windows-if-not-using-ros-20">Install Python 3 correctly in Windows (if not using ROS 2.0)</h3>
 <ul>
 <li>1.- Go to the <a target="_blank" rel="noopener noreferrer"  href="https://www.python.org/"> official Python 3 download page </a></li>
 <li>2.- Download  the lastest Python 3 version</li>
@@ -672,9 +682,9 @@
 </ul>
 <p><img alt="Material Screenshot" src="../img/python3.png" /></p>
 <ul>
-<li>5.- Continue and finish the installation </li>
+<li>5.- Continue and finish the installation</li>
 </ul>
-<h3 id="install-python-3-for-use-ros-20-in-windows">Install Python 3 for use ROS 2.0 in Windows</h3>
+<h3 id="install-python-3-using-ros-20-in-windows">Install Python 3 using ROS 2.0 in Windows</h3>
 <p>Follow ROS 2.0 instructions <a target="_blank" rel="noopener noreferrer"  href="https://index.ros.org/doc/ros2/Installation/Windows-Install-Binary/#id3"> avaliables here </a>.</p>
 <h2 id="mac-os-x">Mac OS X</h2>
 <h3 id="install-python-2-in-macos">Install Python 2 in MacOS</h3>
